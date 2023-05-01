@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { Currency, Token, TradeType } from '@uniswap/sdk-core';
-import { Pair } from '@uniswap/v2-sdk';
-import { Pool } from '@uniswap/v3-sdk';
+import { Currency, Token, TradeType } from '@mageswap/sdk-core';
+import { Pair } from '@mageswap/v2-sdk';
+import { Pool } from '@mageswap/v3-sdk';
 import _ from 'lodash';
 
 import { ITokenListProvider, ITokenProvider, ITokenValidatorProvider, TokenValidationResult } from '../../../providers';

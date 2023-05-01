@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { Protocol } from '@uniswap/router-sdk';
-import { TradeType } from '@uniswap/sdk-core';
-import { Pool } from '@uniswap/v3-sdk';
+import { Protocol } from '@mageswap/router-sdk';
+import { TradeType } from '@mageswap/sdk-core';
+import { Pool } from '@mageswap/v3-sdk';
 import sinon from 'sinon';
 import { ChainId, DAI_MAINNET, USDC_MAINNET, V3Route, V3RouteWithValidQuote } from '../../../../../../build/main';
 import {

@@ -1,4 +1,4 @@
-import { Token } from '@uniswap/sdk-core';
+import { Token } from '@mageswap/sdk-core';
 import retry from 'async-retry';
 import Timeout from 'await-timeout';
 import { gql, GraphQLClient } from 'graphql-request';
@@ -131,10 +131,9 @@ export class V3SubgraphProvider implements IV3SubgraphProvider {
     let pools: RawV3SubgraphPool[] = [];
 
     log.info(
-      `Getting V3 pools from the subgraph with page size ${PAGE_SIZE}${
-        providerConfig?.blockNumber
-          ? ` as of block ${providerConfig?.blockNumber}`
-          : ''
+      `Getting V3 pools from the subgraph with page size ${PAGE_SIZE}${providerConfig?.blockNumber
+        ? ` as of block ${providerConfig?.blockNumber}`
+        : ''
       }.`
     );
 

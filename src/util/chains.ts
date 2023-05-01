@@ -1,4 +1,4 @@
-import { Currency, Ether, NativeCurrency, Token } from '@uniswap/sdk-core';
+import { Currency, Ether, NativeCurrency, Token } from '@mageswap/sdk-core';
 
 
 export enum ChainId {

@@ -1,8 +1,8 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { Token } from '@uniswap/sdk-core';
-import { TokenList } from '@uniswap/token-lists';
-import { Pair } from '@uniswap/v2-sdk';
-import { encodeSqrtRatioX96, FeeAmount, Pool } from '@uniswap/v3-sdk';
+import { Token } from '@mageswap/sdk-core';
+import { TokenList } from '@mageswap/token-lists';
+import { Pair } from '@mageswap/v2-sdk';
+import { encodeSqrtRatioX96, FeeAmount, Pool } from '@mageswap/v3-sdk';
 import _ from 'lodash';
 import {
   AlphaRouterConfig,

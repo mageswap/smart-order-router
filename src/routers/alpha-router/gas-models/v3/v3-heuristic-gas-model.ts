@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { Percent, Price, TradeType } from '@uniswap/sdk-core';
-import { Pool } from '@uniswap/v3-sdk';
+import { Percent, Price, TradeType } from '@mageswap/sdk-core';
+import { Pool } from '@mageswap/v3-sdk';
 import _ from 'lodash';
 
 import {
@@ -268,7 +268,7 @@ export class V3HeuristicGasModelFactory extends IOnChainGasModelFactory {
           `Unable to find ${nativeCurrency.symbol} pool with the quote token, ${quoteToken.symbol} to produce gas adjusted costs. Using amountToken to calculate gas costs.`
         );
       }
-      
+
       // Highest liquidity pool for the non quote token / ETH
       // A pool with the non quote token / ETH should not be required and errors should be handled separately
       if (nativeAmountPool) {
@@ -279,7 +279,7 @@ export class V3HeuristicGasModelFactory extends IOnChainGasModelFactory {
           routeWithValidQuote.amount.quotient,
           routeWithValidQuote.quote.quotient
         );
-        
+
         const inputIsToken0 =
           nativeAmountPool.token0.address == nativeCurrency.address;
         // ratio of input / native

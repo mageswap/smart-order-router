@@ -1,5 +1,5 @@
-import { Protocol } from '@uniswap/router-sdk';
-import { Currency, CurrencyAmount, Token, TradeType } from '@uniswap/sdk-core';
+import { Protocol } from '@mageswap/router-sdk';
+import { Currency, CurrencyAmount, Token, TradeType } from '@mageswap/sdk-core';
 import { ChainId } from '../../../../../../build/main';
 import { CachedRoutes, CacheMode, IRouteCachingProvider } from '../../../../../../src';
 

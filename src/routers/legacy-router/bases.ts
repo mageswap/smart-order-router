@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { Token } from '@uniswap/sdk-core';
+import { Token } from '@mageswap/sdk-core';
 
 import {
   BTC_BSC,
