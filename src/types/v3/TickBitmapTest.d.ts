@@ -13,63 +13,63 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface TickBitmapTestInterface extends ethers.utils.Interface {
   functions: {
-    "bitmap(int16)": FunctionFragment;
-    "flipTick(int24)": FunctionFragment;
-    "getGasCostOfFlipTick(int24)": FunctionFragment;
-    "getGasCostOfNextInitializedTickWithinOneWord(int24,bool)": FunctionFragment;
-    "isInitialized(int24)": FunctionFragment;
-    "nextInitializedTickWithinOneWord(int24,bool)": FunctionFragment;
+    'bitmap(int16)': FunctionFragment;
+    'flipTick(int24)': FunctionFragment;
+    'getGasCostOfFlipTick(int24)': FunctionFragment;
+    'getGasCostOfNextInitializedTickWithinOneWord(int24,bool)': FunctionFragment;
+    'isInitialized(int24)': FunctionFragment;
+    'nextInitializedTickWithinOneWord(int24,bool)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "bitmap",
+    functionFragment: 'bitmap',
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "flipTick",
+    functionFragment: 'flipTick',
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "getGasCostOfFlipTick",
+    functionFragment: 'getGasCostOfFlipTick',
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "getGasCostOfNextInitializedTickWithinOneWord",
+    functionFragment: 'getGasCostOfNextInitializedTickWithinOneWord',
     values: [BigNumberish, boolean]
   ): string;
   encodeFunctionData(
-    functionFragment: "isInitialized",
+    functionFragment: 'isInitialized',
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "nextInitializedTickWithinOneWord",
+    functionFragment: 'nextInitializedTickWithinOneWord',
     values: [BigNumberish, boolean]
   ): string;
 
-  decodeFunctionResult(functionFragment: "bitmap", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "flipTick", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'bitmap', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'flipTick', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "getGasCostOfFlipTick",
+    functionFragment: 'getGasCostOfFlipTick',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "getGasCostOfNextInitializedTickWithinOneWord",
+    functionFragment: 'getGasCostOfNextInitializedTickWithinOneWord',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "isInitialized",
+    functionFragment: 'isInitialized',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "nextInitializedTickWithinOneWord",
+    functionFragment: 'nextInitializedTickWithinOneWord',
     data: BytesLike
   ): Result;
 

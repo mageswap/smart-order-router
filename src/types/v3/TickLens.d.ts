@@ -12,24 +12,24 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface TickLensInterface extends ethers.utils.Interface {
   functions: {
-    "getPopulatedTicksInWord(address,int16)": FunctionFragment;
+    'getPopulatedTicksInWord(address,int16)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "getPopulatedTicksInWord",
+    functionFragment: 'getPopulatedTicksInWord',
     values: [string, BigNumberish]
   ): string;
 
   decodeFunctionResult(
-    functionFragment: "getPopulatedTicksInWord",
+    functionFragment: 'getPopulatedTicksInWord',
     data: BytesLike
   ): Result;
 

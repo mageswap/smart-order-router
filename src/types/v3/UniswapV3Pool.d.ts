@@ -13,206 +13,206 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface UniswapV3PoolInterface extends ethers.utils.Interface {
   functions: {
-    "burn(int24,int24,uint128)": FunctionFragment;
-    "collect(address,int24,int24,uint128,uint128)": FunctionFragment;
-    "collectProtocol(address,uint128,uint128)": FunctionFragment;
-    "factory()": FunctionFragment;
-    "fee()": FunctionFragment;
-    "feeGrowthGlobal0X128()": FunctionFragment;
-    "feeGrowthGlobal1X128()": FunctionFragment;
-    "flash(address,uint256,uint256,bytes)": FunctionFragment;
-    "increaseObservationCardinalityNext(uint16)": FunctionFragment;
-    "initialize(uint160)": FunctionFragment;
-    "liquidity()": FunctionFragment;
-    "maxLiquidityPerTick()": FunctionFragment;
-    "mint(address,int24,int24,uint128,bytes)": FunctionFragment;
-    "observations(uint256)": FunctionFragment;
-    "observe(uint32[])": FunctionFragment;
-    "positions(bytes32)": FunctionFragment;
-    "protocolFees()": FunctionFragment;
-    "setFeeProtocol(uint8,uint8)": FunctionFragment;
-    "slot0()": FunctionFragment;
-    "snapshotCumulativesInside(int24,int24)": FunctionFragment;
-    "swap(address,bool,int256,uint160,bytes)": FunctionFragment;
-    "tickBitmap(int16)": FunctionFragment;
-    "tickSpacing()": FunctionFragment;
-    "ticks(int24)": FunctionFragment;
-    "token0()": FunctionFragment;
-    "token1()": FunctionFragment;
+    'burn(int24,int24,uint128)': FunctionFragment;
+    'collect(address,int24,int24,uint128,uint128)': FunctionFragment;
+    'collectProtocol(address,uint128,uint128)': FunctionFragment;
+    'factory()': FunctionFragment;
+    'fee()': FunctionFragment;
+    'feeGrowthGlobal0X128()': FunctionFragment;
+    'feeGrowthGlobal1X128()': FunctionFragment;
+    'flash(address,uint256,uint256,bytes)': FunctionFragment;
+    'increaseObservationCardinalityNext(uint16)': FunctionFragment;
+    'initialize(uint160)': FunctionFragment;
+    'liquidity()': FunctionFragment;
+    'maxLiquidityPerTick()': FunctionFragment;
+    'mint(address,int24,int24,uint128,bytes)': FunctionFragment;
+    'observations(uint256)': FunctionFragment;
+    'observe(uint32[])': FunctionFragment;
+    'positions(bytes32)': FunctionFragment;
+    'protocolFees()': FunctionFragment;
+    'setFeeProtocol(uint8,uint8)': FunctionFragment;
+    'slot0()': FunctionFragment;
+    'snapshotCumulativesInside(int24,int24)': FunctionFragment;
+    'swap(address,bool,int256,uint160,bytes)': FunctionFragment;
+    'tickBitmap(int16)': FunctionFragment;
+    'tickSpacing()': FunctionFragment;
+    'ticks(int24)': FunctionFragment;
+    'token0()': FunctionFragment;
+    'token1()': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "burn",
+    functionFragment: 'burn',
     values: [BigNumberish, BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "collect",
+    functionFragment: 'collect',
     values: [string, BigNumberish, BigNumberish, BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "collectProtocol",
+    functionFragment: 'collectProtocol',
     values: [string, BigNumberish, BigNumberish]
   ): string;
-  encodeFunctionData(functionFragment: "factory", values?: undefined): string;
-  encodeFunctionData(functionFragment: "fee", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'factory', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'fee', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "feeGrowthGlobal0X128",
+    functionFragment: 'feeGrowthGlobal0X128',
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: "feeGrowthGlobal1X128",
+    functionFragment: 'feeGrowthGlobal1X128',
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: "flash",
+    functionFragment: 'flash',
     values: [string, BigNumberish, BigNumberish, BytesLike]
   ): string;
   encodeFunctionData(
-    functionFragment: "increaseObservationCardinalityNext",
+    functionFragment: 'increaseObservationCardinalityNext',
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "initialize",
+    functionFragment: 'initialize',
     values: [BigNumberish]
   ): string;
-  encodeFunctionData(functionFragment: "liquidity", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'liquidity', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "maxLiquidityPerTick",
+    functionFragment: 'maxLiquidityPerTick',
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: "mint",
+    functionFragment: 'mint',
     values: [string, BigNumberish, BigNumberish, BigNumberish, BytesLike]
   ): string;
   encodeFunctionData(
-    functionFragment: "observations",
+    functionFragment: 'observations',
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "observe",
+    functionFragment: 'observe',
     values: [BigNumberish[]]
   ): string;
   encodeFunctionData(
-    functionFragment: "positions",
+    functionFragment: 'positions',
     values: [BytesLike]
   ): string;
   encodeFunctionData(
-    functionFragment: "protocolFees",
+    functionFragment: 'protocolFees',
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: "setFeeProtocol",
+    functionFragment: 'setFeeProtocol',
     values: [BigNumberish, BigNumberish]
   ): string;
-  encodeFunctionData(functionFragment: "slot0", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'slot0', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "snapshotCumulativesInside",
+    functionFragment: 'snapshotCumulativesInside',
     values: [BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "swap",
+    functionFragment: 'swap',
     values: [string, boolean, BigNumberish, BigNumberish, BytesLike]
   ): string;
   encodeFunctionData(
-    functionFragment: "tickBitmap",
+    functionFragment: 'tickBitmap',
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "tickSpacing",
+    functionFragment: 'tickSpacing',
     values?: undefined
   ): string;
-  encodeFunctionData(functionFragment: "ticks", values: [BigNumberish]): string;
-  encodeFunctionData(functionFragment: "token0", values?: undefined): string;
-  encodeFunctionData(functionFragment: "token1", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'ticks', values: [BigNumberish]): string;
+  encodeFunctionData(functionFragment: 'token0', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'token1', values?: undefined): string;
 
-  decodeFunctionResult(functionFragment: "burn", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "collect", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'burn', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'collect', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "collectProtocol",
+    functionFragment: 'collectProtocol',
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "factory", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "fee", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'factory', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'fee', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "feeGrowthGlobal0X128",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "feeGrowthGlobal1X128",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: "flash", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "increaseObservationCardinalityNext",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "liquidity", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "maxLiquidityPerTick",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: "mint", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "observations",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: "observe", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "positions", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "protocolFees",
+    functionFragment: 'feeGrowthGlobal0X128',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "setFeeProtocol",
+    functionFragment: 'feeGrowthGlobal1X128',
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "slot0", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'flash', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "snapshotCumulativesInside",
+    functionFragment: 'increaseObservationCardinalityNext',
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "swap", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "tickBitmap", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'initialize', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'liquidity', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "tickSpacing",
+    functionFragment: 'maxLiquidityPerTick',
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "ticks", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "token0", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "token1", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'mint', data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: 'observations',
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(functionFragment: 'observe', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'positions', data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: 'protocolFees',
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: 'setFeeProtocol',
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(functionFragment: 'slot0', data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: 'snapshotCumulativesInside',
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(functionFragment: 'swap', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'tickBitmap', data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: 'tickSpacing',
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(functionFragment: 'ticks', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'token0', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'token1', data: BytesLike): Result;
 
   events: {
-    "Burn(address,int24,int24,uint128,uint256,uint256)": EventFragment;
-    "Collect(address,address,int24,int24,uint128,uint128)": EventFragment;
-    "CollectProtocol(address,address,uint128,uint128)": EventFragment;
-    "Flash(address,address,uint256,uint256,uint256,uint256)": EventFragment;
-    "IncreaseObservationCardinalityNext(uint16,uint16)": EventFragment;
-    "Initialize(uint160,int24)": EventFragment;
-    "Mint(address,address,int24,int24,uint128,uint256,uint256)": EventFragment;
-    "SetFeeProtocol(uint8,uint8,uint8,uint8)": EventFragment;
-    "Swap(address,address,int256,int256,uint160,uint128,int24)": EventFragment;
+    'Burn(address,int24,int24,uint128,uint256,uint256)': EventFragment;
+    'Collect(address,address,int24,int24,uint128,uint128)': EventFragment;
+    'CollectProtocol(address,address,uint128,uint128)': EventFragment;
+    'Flash(address,address,uint256,uint256,uint256,uint256)': EventFragment;
+    'IncreaseObservationCardinalityNext(uint16,uint16)': EventFragment;
+    'Initialize(uint160,int24)': EventFragment;
+    'Mint(address,address,int24,int24,uint128,uint256,uint256)': EventFragment;
+    'SetFeeProtocol(uint8,uint8,uint8,uint8)': EventFragment;
+    'Swap(address,address,int256,int256,uint160,uint128,int24)': EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: "Burn"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "Collect"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "CollectProtocol"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "Flash"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'Burn'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'Collect'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'CollectProtocol'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'Flash'): EventFragment;
   getEvent(
-    nameOrSignatureOrTopic: "IncreaseObservationCardinalityNext"
+    nameOrSignatureOrTopic: 'IncreaseObservationCardinalityNext'
   ): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "Initialize"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "Mint"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "SetFeeProtocol"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "Swap"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'Initialize'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'Mint'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'SetFeeProtocol'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'Swap'): EventFragment;
 }
 
 export type BurnEvent = TypedEvent<
@@ -454,9 +454,7 @@ export class UniswapV3Pool extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    slot0(
-      overrides?: CallOverrides
-    ): Promise<
+    slot0(overrides?: CallOverrides): Promise<
       [BigNumber, number, number, number, number, number, boolean] & {
         sqrtPriceX96: BigNumber;
         tick: number;
@@ -633,9 +631,7 @@ export class UniswapV3Pool extends BaseContract {
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  slot0(
-    overrides?: CallOverrides
-  ): Promise<
+  slot0(overrides?: CallOverrides): Promise<
     [BigNumber, number, number, number, number, number, boolean] & {
       sqrtPriceX96: BigNumber;
       tick: number;
@@ -819,9 +815,7 @@ export class UniswapV3Pool extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    slot0(
-      overrides?: CallOverrides
-    ): Promise<
+    slot0(overrides?: CallOverrides): Promise<
       [BigNumber, number, number, number, number, number, boolean] & {
         sqrtPriceX96: BigNumber;
         tick: number;
@@ -894,7 +888,7 @@ export class UniswapV3Pool extends BaseContract {
   };
 
   filters: {
-    "Burn(address,int24,int24,uint128,uint256,uint256)"(
+    'Burn(address,int24,int24,uint128,uint256,uint256)'(
       owner?: string | null,
       tickLower?: BigNumberish | null,
       tickUpper?: BigNumberish | null,
@@ -932,7 +926,7 @@ export class UniswapV3Pool extends BaseContract {
       }
     >;
 
-    "Collect(address,address,int24,int24,uint128,uint128)"(
+    'Collect(address,address,int24,int24,uint128,uint128)'(
       owner?: string | null,
       recipient?: null,
       tickLower?: BigNumberish | null,
@@ -970,7 +964,7 @@ export class UniswapV3Pool extends BaseContract {
       }
     >;
 
-    "CollectProtocol(address,address,uint128,uint128)"(
+    'CollectProtocol(address,address,uint128,uint128)'(
       sender?: string | null,
       recipient?: string | null,
       amount0?: null,
@@ -1000,7 +994,7 @@ export class UniswapV3Pool extends BaseContract {
       }
     >;
 
-    "Flash(address,address,uint256,uint256,uint256,uint256)"(
+    'Flash(address,address,uint256,uint256,uint256,uint256)'(
       sender?: string | null,
       recipient?: string | null,
       amount0?: null,
@@ -1038,7 +1032,7 @@ export class UniswapV3Pool extends BaseContract {
       }
     >;
 
-    "IncreaseObservationCardinalityNext(uint16,uint16)"(
+    'IncreaseObservationCardinalityNext(uint16,uint16)'(
       observationCardinalityNextOld?: null,
       observationCardinalityNextNew?: null
     ): TypedEventFilter<
@@ -1060,7 +1054,7 @@ export class UniswapV3Pool extends BaseContract {
       }
     >;
 
-    "Initialize(uint160,int24)"(
+    'Initialize(uint160,int24)'(
       sqrtPriceX96?: null,
       tick?: null
     ): TypedEventFilter<
@@ -1076,7 +1070,7 @@ export class UniswapV3Pool extends BaseContract {
       { sqrtPriceX96: BigNumber; tick: number }
     >;
 
-    "Mint(address,address,int24,int24,uint128,uint256,uint256)"(
+    'Mint(address,address,int24,int24,uint128,uint256,uint256)'(
       sender?: null,
       owner?: string | null,
       tickLower?: BigNumberish | null,
@@ -1118,7 +1112,7 @@ export class UniswapV3Pool extends BaseContract {
       }
     >;
 
-    "SetFeeProtocol(uint8,uint8,uint8,uint8)"(
+    'SetFeeProtocol(uint8,uint8,uint8,uint8)'(
       feeProtocol0Old?: null,
       feeProtocol1Old?: null,
       feeProtocol0New?: null,
@@ -1148,7 +1142,7 @@ export class UniswapV3Pool extends BaseContract {
       }
     >;
 
-    "Swap(address,address,int256,int256,uint160,uint128,int24)"(
+    'Swap(address,address,int256,int256,uint160,uint128,int24)'(
       sender?: string | null,
       recipient?: string | null,
       amount0?: null,

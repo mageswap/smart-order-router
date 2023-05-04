@@ -13,123 +13,123 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface GasPriceOracleInterface extends ethers.utils.Interface {
   functions: {
-    "decimals()": FunctionFragment;
-    "gasPrice()": FunctionFragment;
-    "getL1Fee(bytes)": FunctionFragment;
-    "getL1GasUsed(bytes)": FunctionFragment;
-    "l1BaseFee()": FunctionFragment;
-    "overhead()": FunctionFragment;
-    "owner()": FunctionFragment;
-    "renounceOwnership()": FunctionFragment;
-    "scalar()": FunctionFragment;
-    "setDecimals(uint256)": FunctionFragment;
-    "setGasPrice(uint256)": FunctionFragment;
-    "setL1BaseFee(uint256)": FunctionFragment;
-    "setOverhead(uint256)": FunctionFragment;
-    "setScalar(uint256)": FunctionFragment;
-    "transferOwnership(address)": FunctionFragment;
+    'decimals()': FunctionFragment;
+    'gasPrice()': FunctionFragment;
+    'getL1Fee(bytes)': FunctionFragment;
+    'getL1GasUsed(bytes)': FunctionFragment;
+    'l1BaseFee()': FunctionFragment;
+    'overhead()': FunctionFragment;
+    'owner()': FunctionFragment;
+    'renounceOwnership()': FunctionFragment;
+    'scalar()': FunctionFragment;
+    'setDecimals(uint256)': FunctionFragment;
+    'setGasPrice(uint256)': FunctionFragment;
+    'setL1BaseFee(uint256)': FunctionFragment;
+    'setOverhead(uint256)': FunctionFragment;
+    'setScalar(uint256)': FunctionFragment;
+    'transferOwnership(address)': FunctionFragment;
   };
 
-  encodeFunctionData(functionFragment: "decimals", values?: undefined): string;
-  encodeFunctionData(functionFragment: "gasPrice", values?: undefined): string;
-  encodeFunctionData(functionFragment: "getL1Fee", values: [BytesLike]): string;
+  encodeFunctionData(functionFragment: 'decimals', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'gasPrice', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'getL1Fee', values: [BytesLike]): string;
   encodeFunctionData(
-    functionFragment: "getL1GasUsed",
+    functionFragment: 'getL1GasUsed',
     values: [BytesLike]
   ): string;
-  encodeFunctionData(functionFragment: "l1BaseFee", values?: undefined): string;
-  encodeFunctionData(functionFragment: "overhead", values?: undefined): string;
-  encodeFunctionData(functionFragment: "owner", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'l1BaseFee', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'overhead', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'owner', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "renounceOwnership",
+    functionFragment: 'renounceOwnership',
     values?: undefined
   ): string;
-  encodeFunctionData(functionFragment: "scalar", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'scalar', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "setDecimals",
+    functionFragment: 'setDecimals',
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "setGasPrice",
+    functionFragment: 'setGasPrice',
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "setL1BaseFee",
+    functionFragment: 'setL1BaseFee',
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "setOverhead",
+    functionFragment: 'setOverhead',
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "setScalar",
+    functionFragment: 'setScalar',
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "transferOwnership",
+    functionFragment: 'transferOwnership',
     values: [string]
   ): string;
 
-  decodeFunctionResult(functionFragment: "decimals", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "gasPrice", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "getL1Fee", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'decimals', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'gasPrice', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'getL1Fee', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "getL1GasUsed",
+    functionFragment: 'getL1GasUsed',
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "l1BaseFee", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "overhead", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'l1BaseFee', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'overhead', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'owner', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "renounceOwnership",
+    functionFragment: 'renounceOwnership',
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "scalar", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'scalar', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "setDecimals",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "setGasPrice",
+    functionFragment: 'setDecimals',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "setL1BaseFee",
+    functionFragment: 'setGasPrice',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "setOverhead",
+    functionFragment: 'setL1BaseFee',
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "setScalar", data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "transferOwnership",
+    functionFragment: 'setOverhead',
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(functionFragment: 'setScalar', data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: 'transferOwnership',
     data: BytesLike
   ): Result;
 
   events: {
-    "DecimalsUpdated(uint256)": EventFragment;
-    "GasPriceUpdated(uint256)": EventFragment;
-    "L1BaseFeeUpdated(uint256)": EventFragment;
-    "OverheadUpdated(uint256)": EventFragment;
-    "OwnershipTransferred(address,address)": EventFragment;
-    "ScalarUpdated(uint256)": EventFragment;
+    'DecimalsUpdated(uint256)': EventFragment;
+    'GasPriceUpdated(uint256)': EventFragment;
+    'L1BaseFeeUpdated(uint256)': EventFragment;
+    'OverheadUpdated(uint256)': EventFragment;
+    'OwnershipTransferred(address,address)': EventFragment;
+    'ScalarUpdated(uint256)': EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: "DecimalsUpdated"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "GasPriceUpdated"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "L1BaseFeeUpdated"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "OverheadUpdated"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "OwnershipTransferred"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "ScalarUpdated"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'DecimalsUpdated'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'GasPriceUpdated'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'L1BaseFeeUpdated'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'OverheadUpdated'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'OwnershipTransferred'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'ScalarUpdated'): EventFragment;
 }
 
 export type DecimalsUpdatedEvent = TypedEvent<
@@ -353,7 +353,7 @@ export class GasPriceOracle extends BaseContract {
   };
 
   filters: {
-    "DecimalsUpdated(uint256)"(
+    'DecimalsUpdated(uint256)'(
       undefined?: null
     ): TypedEventFilter<[BigNumber], { arg0: BigNumber }>;
 
@@ -361,7 +361,7 @@ export class GasPriceOracle extends BaseContract {
       undefined?: null
     ): TypedEventFilter<[BigNumber], { arg0: BigNumber }>;
 
-    "GasPriceUpdated(uint256)"(
+    'GasPriceUpdated(uint256)'(
       undefined?: null
     ): TypedEventFilter<[BigNumber], { arg0: BigNumber }>;
 
@@ -369,7 +369,7 @@ export class GasPriceOracle extends BaseContract {
       undefined?: null
     ): TypedEventFilter<[BigNumber], { arg0: BigNumber }>;
 
-    "L1BaseFeeUpdated(uint256)"(
+    'L1BaseFeeUpdated(uint256)'(
       undefined?: null
     ): TypedEventFilter<[BigNumber], { arg0: BigNumber }>;
 
@@ -377,7 +377,7 @@ export class GasPriceOracle extends BaseContract {
       undefined?: null
     ): TypedEventFilter<[BigNumber], { arg0: BigNumber }>;
 
-    "OverheadUpdated(uint256)"(
+    'OverheadUpdated(uint256)'(
       undefined?: null
     ): TypedEventFilter<[BigNumber], { arg0: BigNumber }>;
 
@@ -385,7 +385,7 @@ export class GasPriceOracle extends BaseContract {
       undefined?: null
     ): TypedEventFilter<[BigNumber], { arg0: BigNumber }>;
 
-    "OwnershipTransferred(address,address)"(
+    'OwnershipTransferred(address,address)'(
       previousOwner?: string | null,
       newOwner?: string | null
     ): TypedEventFilter<
@@ -401,7 +401,7 @@ export class GasPriceOracle extends BaseContract {
       { previousOwner: string; newOwner: string }
     >;
 
-    "ScalarUpdated(uint256)"(
+    'ScalarUpdated(uint256)'(
       undefined?: null
     ): TypedEventFilter<[BigNumber], { arg0: BigNumber }>;
 

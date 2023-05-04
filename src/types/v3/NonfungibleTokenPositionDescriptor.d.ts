@@ -12,60 +12,60 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface NonfungibleTokenPositionDescriptorInterface
   extends ethers.utils.Interface {
   functions: {
-    "WETH9()": FunctionFragment;
-    "flipRatio(address,address,uint256)": FunctionFragment;
-    "nativeCurrencyLabel()": FunctionFragment;
-    "nativeCurrencyLabelBytes()": FunctionFragment;
-    "tokenRatioPriority(address,uint256)": FunctionFragment;
-    "tokenURI(address,uint256)": FunctionFragment;
+    'WETH9()': FunctionFragment;
+    'flipRatio(address,address,uint256)': FunctionFragment;
+    'nativeCurrencyLabel()': FunctionFragment;
+    'nativeCurrencyLabelBytes()': FunctionFragment;
+    'tokenRatioPriority(address,uint256)': FunctionFragment;
+    'tokenURI(address,uint256)': FunctionFragment;
   };
 
-  encodeFunctionData(functionFragment: "WETH9", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'WETH9', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "flipRatio",
+    functionFragment: 'flipRatio',
     values: [string, string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "nativeCurrencyLabel",
+    functionFragment: 'nativeCurrencyLabel',
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: "nativeCurrencyLabelBytes",
+    functionFragment: 'nativeCurrencyLabelBytes',
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: "tokenRatioPriority",
+    functionFragment: 'tokenRatioPriority',
     values: [string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "tokenURI",
+    functionFragment: 'tokenURI',
     values: [string, BigNumberish]
   ): string;
 
-  decodeFunctionResult(functionFragment: "WETH9", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "flipRatio", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'WETH9', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'flipRatio', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "nativeCurrencyLabel",
+    functionFragment: 'nativeCurrencyLabel',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "nativeCurrencyLabelBytes",
+    functionFragment: 'nativeCurrencyLabelBytes',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "tokenRatioPriority",
+    functionFragment: 'tokenRatioPriority',
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "tokenURI", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'tokenURI', data: BytesLike): Result;
 
   events: {};
 }

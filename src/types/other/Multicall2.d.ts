@@ -13,120 +13,120 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface Multicall2Interface extends ethers.utils.Interface {
   functions: {
-    "aggregate(tuple[])": FunctionFragment;
-    "blockAndAggregate(tuple[])": FunctionFragment;
-    "getBlockHash(uint256)": FunctionFragment;
-    "getBlockNumber()": FunctionFragment;
-    "getCurrentBlockCoinbase()": FunctionFragment;
-    "getCurrentBlockDifficulty()": FunctionFragment;
-    "getCurrentBlockGasLimit()": FunctionFragment;
-    "getCurrentBlockTimestamp()": FunctionFragment;
-    "getEthBalance(address)": FunctionFragment;
-    "getLastBlockHash()": FunctionFragment;
-    "tryAggregate(bool,tuple[])": FunctionFragment;
-    "tryBlockAndAggregate(bool,tuple[])": FunctionFragment;
+    'aggregate(tuple[])': FunctionFragment;
+    'blockAndAggregate(tuple[])': FunctionFragment;
+    'getBlockHash(uint256)': FunctionFragment;
+    'getBlockNumber()': FunctionFragment;
+    'getCurrentBlockCoinbase()': FunctionFragment;
+    'getCurrentBlockDifficulty()': FunctionFragment;
+    'getCurrentBlockGasLimit()': FunctionFragment;
+    'getCurrentBlockTimestamp()': FunctionFragment;
+    'getEthBalance(address)': FunctionFragment;
+    'getLastBlockHash()': FunctionFragment;
+    'tryAggregate(bool,tuple[])': FunctionFragment;
+    'tryBlockAndAggregate(bool,tuple[])': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "aggregate",
+    functionFragment: 'aggregate',
     values: [{ target: string; callData: BytesLike }[]]
   ): string;
   encodeFunctionData(
-    functionFragment: "blockAndAggregate",
+    functionFragment: 'blockAndAggregate',
     values: [{ target: string; callData: BytesLike }[]]
   ): string;
   encodeFunctionData(
-    functionFragment: "getBlockHash",
+    functionFragment: 'getBlockHash',
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "getBlockNumber",
+    functionFragment: 'getBlockNumber',
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: "getCurrentBlockCoinbase",
+    functionFragment: 'getCurrentBlockCoinbase',
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: "getCurrentBlockDifficulty",
+    functionFragment: 'getCurrentBlockDifficulty',
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: "getCurrentBlockGasLimit",
+    functionFragment: 'getCurrentBlockGasLimit',
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: "getCurrentBlockTimestamp",
+    functionFragment: 'getCurrentBlockTimestamp',
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: "getEthBalance",
+    functionFragment: 'getEthBalance',
     values: [string]
   ): string;
   encodeFunctionData(
-    functionFragment: "getLastBlockHash",
+    functionFragment: 'getLastBlockHash',
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: "tryAggregate",
+    functionFragment: 'tryAggregate',
     values: [boolean, { target: string; callData: BytesLike }[]]
   ): string;
   encodeFunctionData(
-    functionFragment: "tryBlockAndAggregate",
+    functionFragment: 'tryBlockAndAggregate',
     values: [boolean, { target: string; callData: BytesLike }[]]
   ): string;
 
-  decodeFunctionResult(functionFragment: "aggregate", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'aggregate', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "blockAndAggregate",
+    functionFragment: 'blockAndAggregate',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "getBlockHash",
+    functionFragment: 'getBlockHash',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "getBlockNumber",
+    functionFragment: 'getBlockNumber',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "getCurrentBlockCoinbase",
+    functionFragment: 'getCurrentBlockCoinbase',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "getCurrentBlockDifficulty",
+    functionFragment: 'getCurrentBlockDifficulty',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "getCurrentBlockGasLimit",
+    functionFragment: 'getCurrentBlockGasLimit',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "getCurrentBlockTimestamp",
+    functionFragment: 'getCurrentBlockTimestamp',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "getEthBalance",
+    functionFragment: 'getEthBalance',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "getLastBlockHash",
+    functionFragment: 'getLastBlockHash',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "tryAggregate",
+    functionFragment: 'tryAggregate',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "tryBlockAndAggregate",
+    functionFragment: 'tryBlockAndAggregate',
     data: BytesLike
   ): Result;
 

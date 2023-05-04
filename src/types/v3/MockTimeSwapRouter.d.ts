@@ -14,37 +14,37 @@ import {
   Overrides,
   PayableOverrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface MockTimeSwapRouterInterface extends ethers.utils.Interface {
   functions: {
-    "WETH9()": FunctionFragment;
-    "exactInput((bytes,address,uint256,uint256,uint256))": FunctionFragment;
-    "exactInputSingle((address,address,uint24,address,uint256,uint256,uint256,uint160))": FunctionFragment;
-    "exactOutput((bytes,address,uint256,uint256,uint256))": FunctionFragment;
-    "exactOutputSingle((address,address,uint24,address,uint256,uint256,uint256,uint160))": FunctionFragment;
-    "factory()": FunctionFragment;
-    "multicall(bytes[])": FunctionFragment;
-    "refundETH()": FunctionFragment;
-    "selfPermit(address,uint256,uint256,uint8,bytes32,bytes32)": FunctionFragment;
-    "selfPermitAllowed(address,uint256,uint256,uint8,bytes32,bytes32)": FunctionFragment;
-    "selfPermitAllowedIfNecessary(address,uint256,uint256,uint8,bytes32,bytes32)": FunctionFragment;
-    "selfPermitIfNecessary(address,uint256,uint256,uint8,bytes32,bytes32)": FunctionFragment;
-    "setTime(uint256)": FunctionFragment;
-    "sweepToken(address,uint256,address)": FunctionFragment;
-    "sweepTokenWithFee(address,uint256,address,uint256,address)": FunctionFragment;
-    "uniswapV3SwapCallback(int256,int256,bytes)": FunctionFragment;
-    "unwrapWETH9(uint256,address)": FunctionFragment;
-    "unwrapWETH9WithFee(uint256,address,uint256,address)": FunctionFragment;
+    'WETH9()': FunctionFragment;
+    'exactInput((bytes,address,uint256,uint256,uint256))': FunctionFragment;
+    'exactInputSingle((address,address,uint24,address,uint256,uint256,uint256,uint160))': FunctionFragment;
+    'exactOutput((bytes,address,uint256,uint256,uint256))': FunctionFragment;
+    'exactOutputSingle((address,address,uint24,address,uint256,uint256,uint256,uint160))': FunctionFragment;
+    'factory()': FunctionFragment;
+    'multicall(bytes[])': FunctionFragment;
+    'refundETH()': FunctionFragment;
+    'selfPermit(address,uint256,uint256,uint8,bytes32,bytes32)': FunctionFragment;
+    'selfPermitAllowed(address,uint256,uint256,uint8,bytes32,bytes32)': FunctionFragment;
+    'selfPermitAllowedIfNecessary(address,uint256,uint256,uint8,bytes32,bytes32)': FunctionFragment;
+    'selfPermitIfNecessary(address,uint256,uint256,uint8,bytes32,bytes32)': FunctionFragment;
+    'setTime(uint256)': FunctionFragment;
+    'sweepToken(address,uint256,address)': FunctionFragment;
+    'sweepTokenWithFee(address,uint256,address,uint256,address)': FunctionFragment;
+    'uniswapV3SwapCallback(int256,int256,bytes)': FunctionFragment;
+    'unwrapWETH9(uint256,address)': FunctionFragment;
+    'unwrapWETH9WithFee(uint256,address,uint256,address)': FunctionFragment;
   };
 
-  encodeFunctionData(functionFragment: "WETH9", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'WETH9', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "exactInput",
+    functionFragment: 'exactInput',
     values: [
       {
         path: BytesLike;
@@ -56,7 +56,7 @@ interface MockTimeSwapRouterInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: "exactInputSingle",
+    functionFragment: 'exactInputSingle',
     values: [
       {
         tokenIn: string;
@@ -71,7 +71,7 @@ interface MockTimeSwapRouterInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: "exactOutput",
+    functionFragment: 'exactOutput',
     values: [
       {
         path: BytesLike;
@@ -83,7 +83,7 @@ interface MockTimeSwapRouterInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: "exactOutputSingle",
+    functionFragment: 'exactOutputSingle',
     values: [
       {
         tokenIn: string;
@@ -97,14 +97,14 @@ interface MockTimeSwapRouterInterface extends ethers.utils.Interface {
       }
     ]
   ): string;
-  encodeFunctionData(functionFragment: "factory", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'factory', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "multicall",
+    functionFragment: 'multicall',
     values: [BytesLike[]]
   ): string;
-  encodeFunctionData(functionFragment: "refundETH", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'refundETH', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "selfPermit",
+    functionFragment: 'selfPermit',
     values: [
       string,
       BigNumberish,
@@ -115,7 +115,7 @@ interface MockTimeSwapRouterInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: "selfPermitAllowed",
+    functionFragment: 'selfPermitAllowed',
     values: [
       string,
       BigNumberish,
@@ -126,7 +126,7 @@ interface MockTimeSwapRouterInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: "selfPermitAllowedIfNecessary",
+    functionFragment: 'selfPermitAllowedIfNecessary',
     values: [
       string,
       BigNumberish,
@@ -137,7 +137,7 @@ interface MockTimeSwapRouterInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: "selfPermitIfNecessary",
+    functionFragment: 'selfPermitIfNecessary',
     values: [
       string,
       BigNumberish,
@@ -148,76 +148,76 @@ interface MockTimeSwapRouterInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: "setTime",
+    functionFragment: 'setTime',
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "sweepToken",
+    functionFragment: 'sweepToken',
     values: [string, BigNumberish, string]
   ): string;
   encodeFunctionData(
-    functionFragment: "sweepTokenWithFee",
+    functionFragment: 'sweepTokenWithFee',
     values: [string, BigNumberish, string, BigNumberish, string]
   ): string;
   encodeFunctionData(
-    functionFragment: "uniswapV3SwapCallback",
+    functionFragment: 'uniswapV3SwapCallback',
     values: [BigNumberish, BigNumberish, BytesLike]
   ): string;
   encodeFunctionData(
-    functionFragment: "unwrapWETH9",
+    functionFragment: 'unwrapWETH9',
     values: [BigNumberish, string]
   ): string;
   encodeFunctionData(
-    functionFragment: "unwrapWETH9WithFee",
+    functionFragment: 'unwrapWETH9WithFee',
     values: [BigNumberish, string, BigNumberish, string]
   ): string;
 
-  decodeFunctionResult(functionFragment: "WETH9", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "exactInput", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'WETH9', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'exactInput', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "exactInputSingle",
+    functionFragment: 'exactInputSingle',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "exactOutput",
+    functionFragment: 'exactOutput',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "exactOutputSingle",
+    functionFragment: 'exactOutputSingle',
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "factory", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "multicall", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "refundETH", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "selfPermit", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'factory', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'multicall', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'refundETH', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'selfPermit', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "selfPermitAllowed",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "selfPermitAllowedIfNecessary",
+    functionFragment: 'selfPermitAllowed',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "selfPermitIfNecessary",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: "setTime", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "sweepToken", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "sweepTokenWithFee",
+    functionFragment: 'selfPermitAllowedIfNecessary',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "uniswapV3SwapCallback",
+    functionFragment: 'selfPermitIfNecessary',
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(functionFragment: 'setTime', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'sweepToken', data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: 'sweepTokenWithFee',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "unwrapWETH9",
+    functionFragment: 'uniswapV3SwapCallback',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "unwrapWETH9WithFee",
+    functionFragment: 'unwrapWETH9',
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: 'unwrapWETH9WithFee',
     data: BytesLike
   ): Result;
 

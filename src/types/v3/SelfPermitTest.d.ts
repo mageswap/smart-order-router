@@ -13,22 +13,22 @@ import {
   ContractTransaction,
   PayableOverrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface SelfPermitTestInterface extends ethers.utils.Interface {
   functions: {
-    "selfPermit(address,uint256,uint256,uint8,bytes32,bytes32)": FunctionFragment;
-    "selfPermitAllowed(address,uint256,uint256,uint8,bytes32,bytes32)": FunctionFragment;
-    "selfPermitAllowedIfNecessary(address,uint256,uint256,uint8,bytes32,bytes32)": FunctionFragment;
-    "selfPermitIfNecessary(address,uint256,uint256,uint8,bytes32,bytes32)": FunctionFragment;
+    'selfPermit(address,uint256,uint256,uint8,bytes32,bytes32)': FunctionFragment;
+    'selfPermitAllowed(address,uint256,uint256,uint8,bytes32,bytes32)': FunctionFragment;
+    'selfPermitAllowedIfNecessary(address,uint256,uint256,uint8,bytes32,bytes32)': FunctionFragment;
+    'selfPermitIfNecessary(address,uint256,uint256,uint8,bytes32,bytes32)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "selfPermit",
+    functionFragment: 'selfPermit',
     values: [
       string,
       BigNumberish,
@@ -39,7 +39,7 @@ interface SelfPermitTestInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: "selfPermitAllowed",
+    functionFragment: 'selfPermitAllowed',
     values: [
       string,
       BigNumberish,
@@ -50,7 +50,7 @@ interface SelfPermitTestInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: "selfPermitAllowedIfNecessary",
+    functionFragment: 'selfPermitAllowedIfNecessary',
     values: [
       string,
       BigNumberish,
@@ -61,7 +61,7 @@ interface SelfPermitTestInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: "selfPermitIfNecessary",
+    functionFragment: 'selfPermitIfNecessary',
     values: [
       string,
       BigNumberish,
@@ -72,17 +72,17 @@ interface SelfPermitTestInterface extends ethers.utils.Interface {
     ]
   ): string;
 
-  decodeFunctionResult(functionFragment: "selfPermit", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'selfPermit', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "selfPermitAllowed",
+    functionFragment: 'selfPermitAllowed',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "selfPermitAllowedIfNecessary",
+    functionFragment: 'selfPermitAllowedIfNecessary',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "selfPermitIfNecessary",
+    functionFragment: 'selfPermitIfNecessary',
     data: BytesLike
   ): Result;
 

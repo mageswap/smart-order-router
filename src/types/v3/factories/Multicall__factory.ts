@@ -2,29 +2,29 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
-import { Provider } from "@ethersproject/providers";
-import type { Multicall, MulticallInterface } from "../Multicall";
+import { Contract, Signer, utils } from 'ethers';
+import { Provider } from '@ethersproject/providers';
+import type { Multicall, MulticallInterface } from '../Multicall';
 
 const _abi = [
   {
     inputs: [
       {
-        internalType: "bytes[]",
-        name: "data",
-        type: "bytes[]",
+        internalType: 'bytes[]',
+        name: 'data',
+        type: 'bytes[]',
       },
     ],
-    name: "multicall",
+    name: 'multicall',
     outputs: [
       {
-        internalType: "bytes[]",
-        name: "results",
-        type: "bytes[]",
+        internalType: 'bytes[]',
+        name: 'results',
+        type: 'bytes[]',
       },
     ],
-    stateMutability: "payable",
-    type: "function",
+    stateMutability: 'payable',
+    type: 'function',
   },
 ];
 

@@ -13,74 +13,74 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface UniswapV2FactoryInterface extends ethers.utils.Interface {
   functions: {
-    "allPairs(uint256)": FunctionFragment;
-    "allPairsLength()": FunctionFragment;
-    "createPair(address,address)": FunctionFragment;
-    "feeTo()": FunctionFragment;
-    "feeToSetter()": FunctionFragment;
-    "getPair(address,address)": FunctionFragment;
-    "setFeeTo(address)": FunctionFragment;
-    "setFeeToSetter(address)": FunctionFragment;
+    'allPairs(uint256)': FunctionFragment;
+    'allPairsLength()': FunctionFragment;
+    'createPair(address,address)': FunctionFragment;
+    'feeTo()': FunctionFragment;
+    'feeToSetter()': FunctionFragment;
+    'getPair(address,address)': FunctionFragment;
+    'setFeeTo(address)': FunctionFragment;
+    'setFeeToSetter(address)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "allPairs",
+    functionFragment: 'allPairs',
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "allPairsLength",
+    functionFragment: 'allPairsLength',
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: "createPair",
+    functionFragment: 'createPair',
     values: [string, string]
   ): string;
-  encodeFunctionData(functionFragment: "feeTo", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'feeTo', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "feeToSetter",
+    functionFragment: 'feeToSetter',
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: "getPair",
+    functionFragment: 'getPair',
     values: [string, string]
   ): string;
-  encodeFunctionData(functionFragment: "setFeeTo", values: [string]): string;
+  encodeFunctionData(functionFragment: 'setFeeTo', values: [string]): string;
   encodeFunctionData(
-    functionFragment: "setFeeToSetter",
+    functionFragment: 'setFeeToSetter',
     values: [string]
   ): string;
 
-  decodeFunctionResult(functionFragment: "allPairs", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'allPairs', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "allPairsLength",
+    functionFragment: 'allPairsLength',
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "createPair", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "feeTo", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'createPair', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'feeTo', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "feeToSetter",
+    functionFragment: 'feeToSetter',
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "getPair", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "setFeeTo", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'getPair', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'setFeeTo', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "setFeeToSetter",
+    functionFragment: 'setFeeToSetter',
     data: BytesLike
   ): Result;
 
   events: {
-    "PairCreated(address,address,address,uint256)": EventFragment;
+    'PairCreated(address,address,address,uint256)': EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: "PairCreated"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'PairCreated'): EventFragment;
 }
 
 export type PairCreatedEvent = TypedEvent<
@@ -227,7 +227,7 @@ export class UniswapV2Factory extends BaseContract {
   };
 
   filters: {
-    "PairCreated(address,address,address,uint256)"(
+    'PairCreated(address,address,address,uint256)'(
       token0?: string | null,
       token1?: string | null,
       pair?: null,

@@ -13,26 +13,26 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface IQuoterV2Interface extends ethers.utils.Interface {
   functions: {
-    "quoteExactInput(bytes,uint256)": FunctionFragment;
-    "quoteExactInputSingle((address,address,uint256,uint24,uint160))": FunctionFragment;
-    "quoteExactOutput(bytes,uint256)": FunctionFragment;
-    "quoteExactOutputSingle((address,address,uint256,uint24,uint160))": FunctionFragment;
+    'quoteExactInput(bytes,uint256)': FunctionFragment;
+    'quoteExactInputSingle((address,address,uint256,uint24,uint160))': FunctionFragment;
+    'quoteExactOutput(bytes,uint256)': FunctionFragment;
+    'quoteExactOutputSingle((address,address,uint256,uint24,uint160))': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "quoteExactInput",
+    functionFragment: 'quoteExactInput',
     values: [BytesLike, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "quoteExactInputSingle",
+    functionFragment: 'quoteExactInputSingle',
     values: [
       {
         tokenIn: string;
@@ -44,11 +44,11 @@ interface IQuoterV2Interface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: "quoteExactOutput",
+    functionFragment: 'quoteExactOutput',
     values: [BytesLike, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "quoteExactOutputSingle",
+    functionFragment: 'quoteExactOutputSingle',
     values: [
       {
         tokenIn: string;
@@ -61,19 +61,19 @@ interface IQuoterV2Interface extends ethers.utils.Interface {
   ): string;
 
   decodeFunctionResult(
-    functionFragment: "quoteExactInput",
+    functionFragment: 'quoteExactInput',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "quoteExactInputSingle",
+    functionFragment: 'quoteExactInputSingle',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "quoteExactOutput",
+    functionFragment: 'quoteExactOutput',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "quoteExactOutputSingle",
+    functionFragment: 'quoteExactOutputSingle',
     data: BytesLike
   ): Result;
 

@@ -14,29 +14,29 @@ import {
   Overrides,
   PayableOverrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface IV3MigratorInterface extends ethers.utils.Interface {
   functions: {
-    "createAndInitializePoolIfNecessary(address,address,uint24,uint160)": FunctionFragment;
-    "migrate((address,uint256,uint8,address,address,uint24,int24,int24,uint256,uint256,address,uint256,bool))": FunctionFragment;
-    "multicall(bytes[])": FunctionFragment;
-    "selfPermit(address,uint256,uint256,uint8,bytes32,bytes32)": FunctionFragment;
-    "selfPermitAllowed(address,uint256,uint256,uint8,bytes32,bytes32)": FunctionFragment;
-    "selfPermitAllowedIfNecessary(address,uint256,uint256,uint8,bytes32,bytes32)": FunctionFragment;
-    "selfPermitIfNecessary(address,uint256,uint256,uint8,bytes32,bytes32)": FunctionFragment;
+    'createAndInitializePoolIfNecessary(address,address,uint24,uint160)': FunctionFragment;
+    'migrate((address,uint256,uint8,address,address,uint24,int24,int24,uint256,uint256,address,uint256,bool))': FunctionFragment;
+    'multicall(bytes[])': FunctionFragment;
+    'selfPermit(address,uint256,uint256,uint8,bytes32,bytes32)': FunctionFragment;
+    'selfPermitAllowed(address,uint256,uint256,uint8,bytes32,bytes32)': FunctionFragment;
+    'selfPermitAllowedIfNecessary(address,uint256,uint256,uint8,bytes32,bytes32)': FunctionFragment;
+    'selfPermitIfNecessary(address,uint256,uint256,uint8,bytes32,bytes32)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "createAndInitializePoolIfNecessary",
+    functionFragment: 'createAndInitializePoolIfNecessary',
     values: [string, string, BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "migrate",
+    functionFragment: 'migrate',
     values: [
       {
         pair: string;
@@ -56,11 +56,11 @@ interface IV3MigratorInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: "multicall",
+    functionFragment: 'multicall',
     values: [BytesLike[]]
   ): string;
   encodeFunctionData(
-    functionFragment: "selfPermit",
+    functionFragment: 'selfPermit',
     values: [
       string,
       BigNumberish,
@@ -71,7 +71,7 @@ interface IV3MigratorInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: "selfPermitAllowed",
+    functionFragment: 'selfPermitAllowed',
     values: [
       string,
       BigNumberish,
@@ -82,7 +82,7 @@ interface IV3MigratorInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: "selfPermitAllowedIfNecessary",
+    functionFragment: 'selfPermitAllowedIfNecessary',
     values: [
       string,
       BigNumberish,
@@ -93,7 +93,7 @@ interface IV3MigratorInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: "selfPermitIfNecessary",
+    functionFragment: 'selfPermitIfNecessary',
     values: [
       string,
       BigNumberish,
@@ -105,22 +105,22 @@ interface IV3MigratorInterface extends ethers.utils.Interface {
   ): string;
 
   decodeFunctionResult(
-    functionFragment: "createAndInitializePoolIfNecessary",
+    functionFragment: 'createAndInitializePoolIfNecessary',
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "migrate", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "multicall", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "selfPermit", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'migrate', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'multicall', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'selfPermit', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "selfPermitAllowed",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "selfPermitAllowedIfNecessary",
+    functionFragment: 'selfPermitAllowed',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "selfPermitIfNecessary",
+    functionFragment: 'selfPermitAllowedIfNecessary',
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: 'selfPermitIfNecessary',
     data: BytesLike
   ): Result;
 

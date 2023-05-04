@@ -13,63 +13,63 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface OracleSlippageTestInterface extends ethers.utils.Interface {
   functions: {
-    "WETH9()": FunctionFragment;
-    "checkOracleSlippage(bytes[],uint128[],uint24,uint32)": FunctionFragment;
-    "factory()": FunctionFragment;
-    "registerPool(address,address,address,uint24)": FunctionFragment;
-    "setTime(uint256)": FunctionFragment;
-    "testGetBlockStartingAndCurrentTick(address)": FunctionFragment;
-    "testGetSyntheticTicks(bytes[],uint128[],uint32)": FunctionFragment;
+    'WETH9()': FunctionFragment;
+    'checkOracleSlippage(bytes[],uint128[],uint24,uint32)': FunctionFragment;
+    'factory()': FunctionFragment;
+    'registerPool(address,address,address,uint24)': FunctionFragment;
+    'setTime(uint256)': FunctionFragment;
+    'testGetBlockStartingAndCurrentTick(address)': FunctionFragment;
+    'testGetSyntheticTicks(bytes[],uint128[],uint32)': FunctionFragment;
   };
 
-  encodeFunctionData(functionFragment: "WETH9", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'WETH9', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "checkOracleSlippage",
+    functionFragment: 'checkOracleSlippage',
     values: [BytesLike[], BigNumberish[], BigNumberish, BigNumberish]
   ): string;
-  encodeFunctionData(functionFragment: "factory", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'factory', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "registerPool",
+    functionFragment: 'registerPool',
     values: [string, string, string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "setTime",
+    functionFragment: 'setTime',
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "testGetBlockStartingAndCurrentTick",
+    functionFragment: 'testGetBlockStartingAndCurrentTick',
     values: [string]
   ): string;
   encodeFunctionData(
-    functionFragment: "testGetSyntheticTicks",
+    functionFragment: 'testGetSyntheticTicks',
     values: [BytesLike[], BigNumberish[], BigNumberish]
   ): string;
 
-  decodeFunctionResult(functionFragment: "WETH9", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'WETH9', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "checkOracleSlippage",
+    functionFragment: 'checkOracleSlippage',
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "factory", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'factory', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "registerPool",
+    functionFragment: 'registerPool',
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "setTime", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'setTime', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "testGetBlockStartingAndCurrentTick",
+    functionFragment: 'testGetBlockStartingAndCurrentTick',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "testGetSyntheticTicks",
+    functionFragment: 'testGetSyntheticTicks',
     data: BytesLike
   ): Result;
 
@@ -122,7 +122,7 @@ export class OracleSlippageTest extends BaseContract {
   functions: {
     WETH9(overrides?: CallOverrides): Promise<[string]>;
 
-    "checkOracleSlippage(bytes[],uint128[],uint24,uint32)"(
+    'checkOracleSlippage(bytes[],uint128[],uint24,uint32)'(
       paths: BytesLike[],
       amounts: BigNumberish[],
       maximumTickDivergence: BigNumberish,
@@ -130,7 +130,7 @@ export class OracleSlippageTest extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[void]>;
 
-    "checkOracleSlippage(bytes,uint24,uint32)"(
+    'checkOracleSlippage(bytes,uint24,uint32)'(
       path: BytesLike,
       maximumTickDivergence: BigNumberish,
       secondsAgo: BigNumberish,
@@ -159,7 +159,7 @@ export class OracleSlippageTest extends BaseContract {
       [number, number] & { blockStartingTick: number; currentTick: number }
     >;
 
-    "testGetSyntheticTicks(bytes[],uint128[],uint32)"(
+    'testGetSyntheticTicks(bytes[],uint128[],uint32)'(
       paths: BytesLike[],
       amounts: BigNumberish[],
       secondsAgo: BigNumberish,
@@ -171,7 +171,7 @@ export class OracleSlippageTest extends BaseContract {
       }
     >;
 
-    "testGetSyntheticTicks(bytes,uint32)"(
+    'testGetSyntheticTicks(bytes,uint32)'(
       path: BytesLike,
       secondsAgo: BigNumberish,
       overrides?: CallOverrides
@@ -185,7 +185,7 @@ export class OracleSlippageTest extends BaseContract {
 
   WETH9(overrides?: CallOverrides): Promise<string>;
 
-  "checkOracleSlippage(bytes[],uint128[],uint24,uint32)"(
+  'checkOracleSlippage(bytes[],uint128[],uint24,uint32)'(
     paths: BytesLike[],
     amounts: BigNumberish[],
     maximumTickDivergence: BigNumberish,
@@ -193,7 +193,7 @@ export class OracleSlippageTest extends BaseContract {
     overrides?: CallOverrides
   ): Promise<void>;
 
-  "checkOracleSlippage(bytes,uint24,uint32)"(
+  'checkOracleSlippage(bytes,uint24,uint32)'(
     path: BytesLike,
     maximumTickDivergence: BigNumberish,
     secondsAgo: BigNumberish,
@@ -222,7 +222,7 @@ export class OracleSlippageTest extends BaseContract {
     [number, number] & { blockStartingTick: number; currentTick: number }
   >;
 
-  "testGetSyntheticTicks(bytes[],uint128[],uint32)"(
+  'testGetSyntheticTicks(bytes[],uint128[],uint32)'(
     paths: BytesLike[],
     amounts: BigNumberish[],
     secondsAgo: BigNumberish,
@@ -234,7 +234,7 @@ export class OracleSlippageTest extends BaseContract {
     }
   >;
 
-  "testGetSyntheticTicks(bytes,uint32)"(
+  'testGetSyntheticTicks(bytes,uint32)'(
     path: BytesLike,
     secondsAgo: BigNumberish,
     overrides?: CallOverrides
@@ -248,7 +248,7 @@ export class OracleSlippageTest extends BaseContract {
   callStatic: {
     WETH9(overrides?: CallOverrides): Promise<string>;
 
-    "checkOracleSlippage(bytes[],uint128[],uint24,uint32)"(
+    'checkOracleSlippage(bytes[],uint128[],uint24,uint32)'(
       paths: BytesLike[],
       amounts: BigNumberish[],
       maximumTickDivergence: BigNumberish,
@@ -256,7 +256,7 @@ export class OracleSlippageTest extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    "checkOracleSlippage(bytes,uint24,uint32)"(
+    'checkOracleSlippage(bytes,uint24,uint32)'(
       path: BytesLike,
       maximumTickDivergence: BigNumberish,
       secondsAgo: BigNumberish,
@@ -282,7 +282,7 @@ export class OracleSlippageTest extends BaseContract {
       [number, number] & { blockStartingTick: number; currentTick: number }
     >;
 
-    "testGetSyntheticTicks(bytes[],uint128[],uint32)"(
+    'testGetSyntheticTicks(bytes[],uint128[],uint32)'(
       paths: BytesLike[],
       amounts: BigNumberish[],
       secondsAgo: BigNumberish,
@@ -294,7 +294,7 @@ export class OracleSlippageTest extends BaseContract {
       }
     >;
 
-    "testGetSyntheticTicks(bytes,uint32)"(
+    'testGetSyntheticTicks(bytes,uint32)'(
       path: BytesLike,
       secondsAgo: BigNumberish,
       overrides?: CallOverrides
@@ -311,7 +311,7 @@ export class OracleSlippageTest extends BaseContract {
   estimateGas: {
     WETH9(overrides?: CallOverrides): Promise<BigNumber>;
 
-    "checkOracleSlippage(bytes[],uint128[],uint24,uint32)"(
+    'checkOracleSlippage(bytes[],uint128[],uint24,uint32)'(
       paths: BytesLike[],
       amounts: BigNumberish[],
       maximumTickDivergence: BigNumberish,
@@ -319,7 +319,7 @@ export class OracleSlippageTest extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    "checkOracleSlippage(bytes,uint24,uint32)"(
+    'checkOracleSlippage(bytes,uint24,uint32)'(
       path: BytesLike,
       maximumTickDivergence: BigNumberish,
       secondsAgo: BigNumberish,
@@ -346,14 +346,14 @@ export class OracleSlippageTest extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    "testGetSyntheticTicks(bytes[],uint128[],uint32)"(
+    'testGetSyntheticTicks(bytes[],uint128[],uint32)'(
       paths: BytesLike[],
       amounts: BigNumberish[],
       secondsAgo: BigNumberish,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    "testGetSyntheticTicks(bytes,uint32)"(
+    'testGetSyntheticTicks(bytes,uint32)'(
       path: BytesLike,
       secondsAgo: BigNumberish,
       overrides?: CallOverrides
@@ -363,7 +363,7 @@ export class OracleSlippageTest extends BaseContract {
   populateTransaction: {
     WETH9(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    "checkOracleSlippage(bytes[],uint128[],uint24,uint32)"(
+    'checkOracleSlippage(bytes[],uint128[],uint24,uint32)'(
       paths: BytesLike[],
       amounts: BigNumberish[],
       maximumTickDivergence: BigNumberish,
@@ -371,7 +371,7 @@ export class OracleSlippageTest extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    "checkOracleSlippage(bytes,uint24,uint32)"(
+    'checkOracleSlippage(bytes,uint24,uint32)'(
       path: BytesLike,
       maximumTickDivergence: BigNumberish,
       secondsAgo: BigNumberish,
@@ -398,14 +398,14 @@ export class OracleSlippageTest extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    "testGetSyntheticTicks(bytes[],uint128[],uint32)"(
+    'testGetSyntheticTicks(bytes[],uint128[],uint32)'(
       paths: BytesLike[],
       amounts: BigNumberish[],
       secondsAgo: BigNumberish,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    "testGetSyntheticTicks(bytes,uint32)"(
+    'testGetSyntheticTicks(bytes,uint32)'(
       path: BytesLike,
       secondsAgo: BigNumberish,
       overrides?: CallOverrides

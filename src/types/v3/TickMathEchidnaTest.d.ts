@@ -12,33 +12,33 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface TickMathEchidnaTestInterface extends ethers.utils.Interface {
   functions: {
-    "checkGetSqrtRatioAtTickInvariants(int24)": FunctionFragment;
-    "checkGetTickAtSqrtRatioInvariants(uint160)": FunctionFragment;
+    'checkGetSqrtRatioAtTickInvariants(int24)': FunctionFragment;
+    'checkGetTickAtSqrtRatioInvariants(uint160)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "checkGetSqrtRatioAtTickInvariants",
+    functionFragment: 'checkGetSqrtRatioAtTickInvariants',
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "checkGetTickAtSqrtRatioInvariants",
+    functionFragment: 'checkGetTickAtSqrtRatioInvariants',
     values: [BigNumberish]
   ): string;
 
   decodeFunctionResult(
-    functionFragment: "checkGetSqrtRatioAtTickInvariants",
+    functionFragment: 'checkGetSqrtRatioAtTickInvariants',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "checkGetTickAtSqrtRatioInvariants",
+    functionFragment: 'checkGetTickAtSqrtRatioInvariants',
     data: BytesLike
   ): Result;
 

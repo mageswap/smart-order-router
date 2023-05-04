@@ -12,23 +12,23 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface UniswapV3PoolDeployerInterface extends ethers.utils.Interface {
   functions: {
-    "parameters()": FunctionFragment;
+    'parameters()': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "parameters",
+    functionFragment: 'parameters',
     values?: undefined
   ): string;
 
-  decodeFunctionResult(functionFragment: "parameters", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'parameters', data: BytesLike): Result;
 
   events: {};
 }
@@ -77,9 +77,7 @@ export class UniswapV3PoolDeployer extends BaseContract {
   interface: UniswapV3PoolDeployerInterface;
 
   functions: {
-    parameters(
-      overrides?: CallOverrides
-    ): Promise<
+    parameters(overrides?: CallOverrides): Promise<
       [string, string, string, number, number] & {
         factory: string;
         token0: string;
@@ -90,9 +88,7 @@ export class UniswapV3PoolDeployer extends BaseContract {
     >;
   };
 
-  parameters(
-    overrides?: CallOverrides
-  ): Promise<
+  parameters(overrides?: CallOverrides): Promise<
     [string, string, string, number, number] & {
       factory: string;
       token0: string;
@@ -103,9 +99,7 @@ export class UniswapV3PoolDeployer extends BaseContract {
   >;
 
   callStatic: {
-    parameters(
-      overrides?: CallOverrides
-    ): Promise<
+    parameters(overrides?: CallOverrides): Promise<
       [string, string, string, number, number] & {
         factory: string;
         token0: string;

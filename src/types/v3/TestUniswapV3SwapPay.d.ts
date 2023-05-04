@@ -13,20 +13,20 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface TestUniswapV3SwapPayInterface extends ethers.utils.Interface {
   functions: {
-    "swap(address,address,bool,uint160,int256,uint256,uint256)": FunctionFragment;
-    "uniswapV3SwapCallback(int256,int256,bytes)": FunctionFragment;
+    'swap(address,address,bool,uint160,int256,uint256,uint256)': FunctionFragment;
+    'uniswapV3SwapCallback(int256,int256,bytes)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "swap",
+    functionFragment: 'swap',
     values: [
       string,
       string,
@@ -38,13 +38,13 @@ interface TestUniswapV3SwapPayInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: "uniswapV3SwapCallback",
+    functionFragment: 'uniswapV3SwapCallback',
     values: [BigNumberish, BigNumberish, BytesLike]
   ): string;
 
-  decodeFunctionResult(functionFragment: "swap", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'swap', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "uniswapV3SwapCallback",
+    functionFragment: 'uniswapV3SwapCallback',
     data: BytesLike
   ): Result;
 

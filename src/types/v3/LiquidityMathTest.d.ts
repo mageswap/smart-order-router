@@ -12,30 +12,30 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface LiquidityMathTestInterface extends ethers.utils.Interface {
   functions: {
-    "addDelta(uint128,int128)": FunctionFragment;
-    "getGasCostOfAddDelta(uint128,int128)": FunctionFragment;
+    'addDelta(uint128,int128)': FunctionFragment;
+    'getGasCostOfAddDelta(uint128,int128)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "addDelta",
+    functionFragment: 'addDelta',
     values: [BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "getGasCostOfAddDelta",
+    functionFragment: 'getGasCostOfAddDelta',
     values: [BigNumberish, BigNumberish]
   ): string;
 
-  decodeFunctionResult(functionFragment: "addDelta", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'addDelta', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "getGasCostOfAddDelta",
+    functionFragment: 'getGasCostOfAddDelta',
     data: BytesLike
   ): Result;
 

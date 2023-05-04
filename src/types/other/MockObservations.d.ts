@@ -12,35 +12,35 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface MockObservationsInterface extends ethers.utils.Interface {
   functions: {
-    "observations(uint256)": FunctionFragment;
-    "observe(uint32[])": FunctionFragment;
-    "slot0()": FunctionFragment;
+    'observations(uint256)': FunctionFragment;
+    'observe(uint32[])': FunctionFragment;
+    'slot0()': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "observations",
+    functionFragment: 'observations',
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "observe",
+    functionFragment: 'observe',
     values: [BigNumberish[]]
   ): string;
-  encodeFunctionData(functionFragment: "slot0", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'slot0', values?: undefined): string;
 
   decodeFunctionResult(
-    functionFragment: "observations",
+    functionFragment: 'observations',
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "observe", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "slot0", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'observe', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'slot0', data: BytesLike): Result;
 
   events: {};
 }

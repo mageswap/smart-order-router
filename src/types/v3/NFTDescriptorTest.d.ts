@@ -12,33 +12,33 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface NFTDescriptorTestInterface extends ethers.utils.Interface {
   functions: {
-    "addressToString(address)": FunctionFragment;
-    "constructTokenURI((uint256,address,address,string,string,uint8,uint8,bool,int24,int24,int24,int24,uint24,address))": FunctionFragment;
-    "feeToPercentString(uint24)": FunctionFragment;
-    "fixedPointToDecimalString(uint160,uint8,uint8)": FunctionFragment;
-    "generateSVGImage((uint256,address,address,string,string,uint8,uint8,bool,int24,int24,int24,int24,uint24,address))": FunctionFragment;
-    "getGasCostOfConstructTokenURI((uint256,address,address,string,string,uint8,uint8,bool,int24,int24,int24,int24,uint24,address))": FunctionFragment;
-    "isRare(uint256,address)": FunctionFragment;
-    "rangeLocation(int24,int24)": FunctionFragment;
-    "sliceTokenHex(address,uint256)": FunctionFragment;
-    "tickToDecimalString(int24,int24,uint8,uint8,bool)": FunctionFragment;
-    "tokenToColorHex(address,uint256)": FunctionFragment;
+    'addressToString(address)': FunctionFragment;
+    'constructTokenURI((uint256,address,address,string,string,uint8,uint8,bool,int24,int24,int24,int24,uint24,address))': FunctionFragment;
+    'feeToPercentString(uint24)': FunctionFragment;
+    'fixedPointToDecimalString(uint160,uint8,uint8)': FunctionFragment;
+    'generateSVGImage((uint256,address,address,string,string,uint8,uint8,bool,int24,int24,int24,int24,uint24,address))': FunctionFragment;
+    'getGasCostOfConstructTokenURI((uint256,address,address,string,string,uint8,uint8,bool,int24,int24,int24,int24,uint24,address))': FunctionFragment;
+    'isRare(uint256,address)': FunctionFragment;
+    'rangeLocation(int24,int24)': FunctionFragment;
+    'sliceTokenHex(address,uint256)': FunctionFragment;
+    'tickToDecimalString(int24,int24,uint8,uint8,bool)': FunctionFragment;
+    'tokenToColorHex(address,uint256)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "addressToString",
+    functionFragment: 'addressToString',
     values: [string]
   ): string;
   encodeFunctionData(
-    functionFragment: "constructTokenURI",
+    functionFragment: 'constructTokenURI',
     values: [
       {
         tokenId: BigNumberish;
@@ -59,15 +59,15 @@ interface NFTDescriptorTestInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: "feeToPercentString",
+    functionFragment: 'feeToPercentString',
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "fixedPointToDecimalString",
+    functionFragment: 'fixedPointToDecimalString',
     values: [BigNumberish, BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "generateSVGImage",
+    functionFragment: 'generateSVGImage',
     values: [
       {
         tokenId: BigNumberish;
@@ -88,7 +88,7 @@ interface NFTDescriptorTestInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: "getGasCostOfConstructTokenURI",
+    functionFragment: 'getGasCostOfConstructTokenURI',
     values: [
       {
         tokenId: BigNumberish;
@@ -109,65 +109,65 @@ interface NFTDescriptorTestInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: "isRare",
+    functionFragment: 'isRare',
     values: [BigNumberish, string]
   ): string;
   encodeFunctionData(
-    functionFragment: "rangeLocation",
+    functionFragment: 'rangeLocation',
     values: [BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "sliceTokenHex",
+    functionFragment: 'sliceTokenHex',
     values: [string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "tickToDecimalString",
+    functionFragment: 'tickToDecimalString',
     values: [BigNumberish, BigNumberish, BigNumberish, BigNumberish, boolean]
   ): string;
   encodeFunctionData(
-    functionFragment: "tokenToColorHex",
+    functionFragment: 'tokenToColorHex',
     values: [string, BigNumberish]
   ): string;
 
   decodeFunctionResult(
-    functionFragment: "addressToString",
+    functionFragment: 'addressToString',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "constructTokenURI",
+    functionFragment: 'constructTokenURI',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "feeToPercentString",
+    functionFragment: 'feeToPercentString',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "fixedPointToDecimalString",
+    functionFragment: 'fixedPointToDecimalString',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "generateSVGImage",
+    functionFragment: 'generateSVGImage',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "getGasCostOfConstructTokenURI",
+    functionFragment: 'getGasCostOfConstructTokenURI',
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "isRare", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'isRare', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "rangeLocation",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "sliceTokenHex",
+    functionFragment: 'rangeLocation',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "tickToDecimalString",
+    functionFragment: 'sliceTokenHex',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "tokenToColorHex",
+    functionFragment: 'tickToDecimalString',
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: 'tokenToColorHex',
     data: BytesLike
   ): Result;
 

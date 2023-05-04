@@ -14,34 +14,34 @@ import {
   Overrides,
   PayableOverrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface V3MigratorInterface extends ethers.utils.Interface {
   functions: {
-    "WETH9()": FunctionFragment;
-    "createAndInitializePoolIfNecessary(address,address,uint24,uint160)": FunctionFragment;
-    "factory()": FunctionFragment;
-    "migrate((address,uint256,uint8,address,address,uint24,int24,int24,uint256,uint256,address,uint256,bool))": FunctionFragment;
-    "multicall(bytes[])": FunctionFragment;
-    "nonfungiblePositionManager()": FunctionFragment;
-    "selfPermit(address,uint256,uint256,uint8,bytes32,bytes32)": FunctionFragment;
-    "selfPermitAllowed(address,uint256,uint256,uint8,bytes32,bytes32)": FunctionFragment;
-    "selfPermitAllowedIfNecessary(address,uint256,uint256,uint8,bytes32,bytes32)": FunctionFragment;
-    "selfPermitIfNecessary(address,uint256,uint256,uint8,bytes32,bytes32)": FunctionFragment;
+    'WETH9()': FunctionFragment;
+    'createAndInitializePoolIfNecessary(address,address,uint24,uint160)': FunctionFragment;
+    'factory()': FunctionFragment;
+    'migrate((address,uint256,uint8,address,address,uint24,int24,int24,uint256,uint256,address,uint256,bool))': FunctionFragment;
+    'multicall(bytes[])': FunctionFragment;
+    'nonfungiblePositionManager()': FunctionFragment;
+    'selfPermit(address,uint256,uint256,uint8,bytes32,bytes32)': FunctionFragment;
+    'selfPermitAllowed(address,uint256,uint256,uint8,bytes32,bytes32)': FunctionFragment;
+    'selfPermitAllowedIfNecessary(address,uint256,uint256,uint8,bytes32,bytes32)': FunctionFragment;
+    'selfPermitIfNecessary(address,uint256,uint256,uint8,bytes32,bytes32)': FunctionFragment;
   };
 
-  encodeFunctionData(functionFragment: "WETH9", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'WETH9', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "createAndInitializePoolIfNecessary",
+    functionFragment: 'createAndInitializePoolIfNecessary',
     values: [string, string, BigNumberish, BigNumberish]
   ): string;
-  encodeFunctionData(functionFragment: "factory", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'factory', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "migrate",
+    functionFragment: 'migrate',
     values: [
       {
         pair: string;
@@ -61,15 +61,15 @@ interface V3MigratorInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: "multicall",
+    functionFragment: 'multicall',
     values: [BytesLike[]]
   ): string;
   encodeFunctionData(
-    functionFragment: "nonfungiblePositionManager",
+    functionFragment: 'nonfungiblePositionManager',
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: "selfPermit",
+    functionFragment: 'selfPermit',
     values: [
       string,
       BigNumberish,
@@ -80,7 +80,7 @@ interface V3MigratorInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: "selfPermitAllowed",
+    functionFragment: 'selfPermitAllowed',
     values: [
       string,
       BigNumberish,
@@ -91,7 +91,7 @@ interface V3MigratorInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: "selfPermitAllowedIfNecessary",
+    functionFragment: 'selfPermitAllowedIfNecessary',
     values: [
       string,
       BigNumberish,
@@ -102,7 +102,7 @@ interface V3MigratorInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: "selfPermitIfNecessary",
+    functionFragment: 'selfPermitIfNecessary',
     values: [
       string,
       BigNumberish,
@@ -113,29 +113,29 @@ interface V3MigratorInterface extends ethers.utils.Interface {
     ]
   ): string;
 
-  decodeFunctionResult(functionFragment: "WETH9", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'WETH9', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "createAndInitializePoolIfNecessary",
+    functionFragment: 'createAndInitializePoolIfNecessary',
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "factory", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "migrate", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "multicall", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'factory', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'migrate', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'multicall', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "nonfungiblePositionManager",
+    functionFragment: 'nonfungiblePositionManager',
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "selfPermit", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'selfPermit', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "selfPermitAllowed",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "selfPermitAllowedIfNecessary",
+    functionFragment: 'selfPermitAllowed',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "selfPermitIfNecessary",
+    functionFragment: 'selfPermitAllowedIfNecessary',
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: 'selfPermitIfNecessary',
     data: BytesLike
   ): Result;
 

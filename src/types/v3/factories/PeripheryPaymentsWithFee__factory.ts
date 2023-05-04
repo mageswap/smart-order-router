@@ -2,152 +2,152 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
-import { Provider } from "@ethersproject/providers";
+import { Contract, Signer, utils } from 'ethers';
+import { Provider } from '@ethersproject/providers';
 import type {
   PeripheryPaymentsWithFee,
   PeripheryPaymentsWithFeeInterface,
-} from "../PeripheryPaymentsWithFee";
+} from '../PeripheryPaymentsWithFee';
 
 const _abi = [
   {
     inputs: [],
-    name: "WETH9",
+    name: 'WETH9',
     outputs: [
       {
-        internalType: "address",
-        name: "",
-        type: "address",
+        internalType: 'address',
+        name: '',
+        type: 'address',
       },
     ],
-    stateMutability: "view",
-    type: "function",
+    stateMutability: 'view',
+    type: 'function',
   },
   {
     inputs: [],
-    name: "factory",
+    name: 'factory',
     outputs: [
       {
-        internalType: "address",
-        name: "",
-        type: "address",
+        internalType: 'address',
+        name: '',
+        type: 'address',
       },
     ],
-    stateMutability: "view",
-    type: "function",
+    stateMutability: 'view',
+    type: 'function',
   },
   {
     inputs: [],
-    name: "refundETH",
+    name: 'refundETH',
     outputs: [],
-    stateMutability: "payable",
-    type: "function",
+    stateMutability: 'payable',
+    type: 'function',
   },
   {
     inputs: [
       {
-        internalType: "address",
-        name: "token",
-        type: "address",
+        internalType: 'address',
+        name: 'token',
+        type: 'address',
       },
       {
-        internalType: "uint256",
-        name: "amountMinimum",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'amountMinimum',
+        type: 'uint256',
       },
       {
-        internalType: "address",
-        name: "recipient",
-        type: "address",
+        internalType: 'address',
+        name: 'recipient',
+        type: 'address',
       },
     ],
-    name: "sweepToken",
+    name: 'sweepToken',
     outputs: [],
-    stateMutability: "payable",
-    type: "function",
+    stateMutability: 'payable',
+    type: 'function',
   },
   {
     inputs: [
       {
-        internalType: "address",
-        name: "token",
-        type: "address",
+        internalType: 'address',
+        name: 'token',
+        type: 'address',
       },
       {
-        internalType: "uint256",
-        name: "amountMinimum",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'amountMinimum',
+        type: 'uint256',
       },
       {
-        internalType: "address",
-        name: "recipient",
-        type: "address",
+        internalType: 'address',
+        name: 'recipient',
+        type: 'address',
       },
       {
-        internalType: "uint256",
-        name: "feeBips",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'feeBips',
+        type: 'uint256',
       },
       {
-        internalType: "address",
-        name: "feeRecipient",
-        type: "address",
+        internalType: 'address',
+        name: 'feeRecipient',
+        type: 'address',
       },
     ],
-    name: "sweepTokenWithFee",
+    name: 'sweepTokenWithFee',
     outputs: [],
-    stateMutability: "payable",
-    type: "function",
+    stateMutability: 'payable',
+    type: 'function',
   },
   {
     inputs: [
       {
-        internalType: "uint256",
-        name: "amountMinimum",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'amountMinimum',
+        type: 'uint256',
       },
       {
-        internalType: "address",
-        name: "recipient",
-        type: "address",
+        internalType: 'address',
+        name: 'recipient',
+        type: 'address',
       },
     ],
-    name: "unwrapWETH9",
+    name: 'unwrapWETH9',
     outputs: [],
-    stateMutability: "payable",
-    type: "function",
+    stateMutability: 'payable',
+    type: 'function',
   },
   {
     inputs: [
       {
-        internalType: "uint256",
-        name: "amountMinimum",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'amountMinimum',
+        type: 'uint256',
       },
       {
-        internalType: "address",
-        name: "recipient",
-        type: "address",
+        internalType: 'address',
+        name: 'recipient',
+        type: 'address',
       },
       {
-        internalType: "uint256",
-        name: "feeBips",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'feeBips',
+        type: 'uint256',
       },
       {
-        internalType: "address",
-        name: "feeRecipient",
-        type: "address",
+        internalType: 'address',
+        name: 'feeRecipient',
+        type: 'address',
       },
     ],
-    name: "unwrapWETH9WithFee",
+    name: 'unwrapWETH9WithFee',
     outputs: [],
-    stateMutability: "payable",
-    type: "function",
+    stateMutability: 'payable',
+    type: 'function',
   },
   {
-    stateMutability: "payable",
-    type: "receive",
+    stateMutability: 'payable',
+    type: 'receive',
   },
 ];
 

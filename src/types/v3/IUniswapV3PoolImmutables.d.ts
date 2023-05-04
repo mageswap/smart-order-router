@@ -12,47 +12,47 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface IUniswapV3PoolImmutablesInterface extends ethers.utils.Interface {
   functions: {
-    "factory()": FunctionFragment;
-    "fee()": FunctionFragment;
-    "maxLiquidityPerTick()": FunctionFragment;
-    "tickSpacing()": FunctionFragment;
-    "token0()": FunctionFragment;
-    "token1()": FunctionFragment;
+    'factory()': FunctionFragment;
+    'fee()': FunctionFragment;
+    'maxLiquidityPerTick()': FunctionFragment;
+    'tickSpacing()': FunctionFragment;
+    'token0()': FunctionFragment;
+    'token1()': FunctionFragment;
   };
 
-  encodeFunctionData(functionFragment: "factory", values?: undefined): string;
-  encodeFunctionData(functionFragment: "fee", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'factory', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'fee', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "maxLiquidityPerTick",
+    functionFragment: 'maxLiquidityPerTick',
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: "tickSpacing",
+    functionFragment: 'tickSpacing',
     values?: undefined
   ): string;
-  encodeFunctionData(functionFragment: "token0", values?: undefined): string;
-  encodeFunctionData(functionFragment: "token1", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'token0', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'token1', values?: undefined): string;
 
-  decodeFunctionResult(functionFragment: "factory", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "fee", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'factory', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'fee', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "maxLiquidityPerTick",
+    functionFragment: 'maxLiquidityPerTick',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "tickSpacing",
+    functionFragment: 'tickSpacing',
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "token0", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "token1", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'token0', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'token1', data: BytesLike): Result;
 
   events: {};
 }

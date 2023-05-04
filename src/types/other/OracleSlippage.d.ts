@@ -12,32 +12,32 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface OracleSlippageInterface extends ethers.utils.Interface {
   functions: {
-    "WETH9()": FunctionFragment;
-    "checkOracleSlippage(bytes[],uint128[],uint24,uint32)": FunctionFragment;
-    "factory()": FunctionFragment;
+    'WETH9()': FunctionFragment;
+    'checkOracleSlippage(bytes[],uint128[],uint24,uint32)': FunctionFragment;
+    'factory()': FunctionFragment;
   };
 
-  encodeFunctionData(functionFragment: "WETH9", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'WETH9', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "checkOracleSlippage",
+    functionFragment: 'checkOracleSlippage',
     values: [BytesLike[], BigNumberish[], BigNumberish, BigNumberish]
   ): string;
-  encodeFunctionData(functionFragment: "factory", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'factory', values?: undefined): string;
 
-  decodeFunctionResult(functionFragment: "WETH9", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'WETH9', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "checkOracleSlippage",
+    functionFragment: 'checkOracleSlippage',
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "factory", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'factory', data: BytesLike): Result;
 
   events: {};
 }
@@ -88,7 +88,7 @@ export class OracleSlippage extends BaseContract {
   functions: {
     WETH9(overrides?: CallOverrides): Promise<[string]>;
 
-    "checkOracleSlippage(bytes[],uint128[],uint24,uint32)"(
+    'checkOracleSlippage(bytes[],uint128[],uint24,uint32)'(
       paths: BytesLike[],
       amounts: BigNumberish[],
       maximumTickDivergence: BigNumberish,
@@ -96,7 +96,7 @@ export class OracleSlippage extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[void]>;
 
-    "checkOracleSlippage(bytes,uint24,uint32)"(
+    'checkOracleSlippage(bytes,uint24,uint32)'(
       path: BytesLike,
       maximumTickDivergence: BigNumberish,
       secondsAgo: BigNumberish,
@@ -108,7 +108,7 @@ export class OracleSlippage extends BaseContract {
 
   WETH9(overrides?: CallOverrides): Promise<string>;
 
-  "checkOracleSlippage(bytes[],uint128[],uint24,uint32)"(
+  'checkOracleSlippage(bytes[],uint128[],uint24,uint32)'(
     paths: BytesLike[],
     amounts: BigNumberish[],
     maximumTickDivergence: BigNumberish,
@@ -116,7 +116,7 @@ export class OracleSlippage extends BaseContract {
     overrides?: CallOverrides
   ): Promise<void>;
 
-  "checkOracleSlippage(bytes,uint24,uint32)"(
+  'checkOracleSlippage(bytes,uint24,uint32)'(
     path: BytesLike,
     maximumTickDivergence: BigNumberish,
     secondsAgo: BigNumberish,
@@ -128,7 +128,7 @@ export class OracleSlippage extends BaseContract {
   callStatic: {
     WETH9(overrides?: CallOverrides): Promise<string>;
 
-    "checkOracleSlippage(bytes[],uint128[],uint24,uint32)"(
+    'checkOracleSlippage(bytes[],uint128[],uint24,uint32)'(
       paths: BytesLike[],
       amounts: BigNumberish[],
       maximumTickDivergence: BigNumberish,
@@ -136,7 +136,7 @@ export class OracleSlippage extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    "checkOracleSlippage(bytes,uint24,uint32)"(
+    'checkOracleSlippage(bytes,uint24,uint32)'(
       path: BytesLike,
       maximumTickDivergence: BigNumberish,
       secondsAgo: BigNumberish,
@@ -151,7 +151,7 @@ export class OracleSlippage extends BaseContract {
   estimateGas: {
     WETH9(overrides?: CallOverrides): Promise<BigNumber>;
 
-    "checkOracleSlippage(bytes[],uint128[],uint24,uint32)"(
+    'checkOracleSlippage(bytes[],uint128[],uint24,uint32)'(
       paths: BytesLike[],
       amounts: BigNumberish[],
       maximumTickDivergence: BigNumberish,
@@ -159,7 +159,7 @@ export class OracleSlippage extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    "checkOracleSlippage(bytes,uint24,uint32)"(
+    'checkOracleSlippage(bytes,uint24,uint32)'(
       path: BytesLike,
       maximumTickDivergence: BigNumberish,
       secondsAgo: BigNumberish,
@@ -172,7 +172,7 @@ export class OracleSlippage extends BaseContract {
   populateTransaction: {
     WETH9(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    "checkOracleSlippage(bytes[],uint128[],uint24,uint32)"(
+    'checkOracleSlippage(bytes[],uint128[],uint24,uint32)'(
       paths: BytesLike[],
       amounts: BigNumberish[],
       maximumTickDivergence: BigNumberish,
@@ -180,7 +180,7 @@ export class OracleSlippage extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    "checkOracleSlippage(bytes,uint24,uint32)"(
+    'checkOracleSlippage(bytes,uint24,uint32)'(
       path: BytesLike,
       maximumTickDivergence: BigNumberish,
       secondsAgo: BigNumberish,

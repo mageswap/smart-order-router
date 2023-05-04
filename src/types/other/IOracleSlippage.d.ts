@@ -12,24 +12,24 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface IOracleSlippageInterface extends ethers.utils.Interface {
   functions: {
-    "checkOracleSlippage(bytes[],uint128[],uint24,uint32)": FunctionFragment;
+    'checkOracleSlippage(bytes[],uint128[],uint24,uint32)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "checkOracleSlippage",
+    functionFragment: 'checkOracleSlippage',
     values: [BytesLike[], BigNumberish[], BigNumberish, BigNumberish]
   ): string;
 
   decodeFunctionResult(
-    functionFragment: "checkOracleSlippage",
+    functionFragment: 'checkOracleSlippage',
     data: BytesLike
   ): Result;
 
@@ -80,7 +80,7 @@ export class IOracleSlippage extends BaseContract {
   interface: IOracleSlippageInterface;
 
   functions: {
-    "checkOracleSlippage(bytes[],uint128[],uint24,uint32)"(
+    'checkOracleSlippage(bytes[],uint128[],uint24,uint32)'(
       paths: BytesLike[],
       amounts: BigNumberish[],
       maximumTickDivergence: BigNumberish,
@@ -88,7 +88,7 @@ export class IOracleSlippage extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[void]>;
 
-    "checkOracleSlippage(bytes,uint24,uint32)"(
+    'checkOracleSlippage(bytes,uint24,uint32)'(
       path: BytesLike,
       maximumTickDivergence: BigNumberish,
       secondsAgo: BigNumberish,
@@ -96,7 +96,7 @@ export class IOracleSlippage extends BaseContract {
     ): Promise<[void]>;
   };
 
-  "checkOracleSlippage(bytes[],uint128[],uint24,uint32)"(
+  'checkOracleSlippage(bytes[],uint128[],uint24,uint32)'(
     paths: BytesLike[],
     amounts: BigNumberish[],
     maximumTickDivergence: BigNumberish,
@@ -104,7 +104,7 @@ export class IOracleSlippage extends BaseContract {
     overrides?: CallOverrides
   ): Promise<void>;
 
-  "checkOracleSlippage(bytes,uint24,uint32)"(
+  'checkOracleSlippage(bytes,uint24,uint32)'(
     path: BytesLike,
     maximumTickDivergence: BigNumberish,
     secondsAgo: BigNumberish,
@@ -112,7 +112,7 @@ export class IOracleSlippage extends BaseContract {
   ): Promise<void>;
 
   callStatic: {
-    "checkOracleSlippage(bytes[],uint128[],uint24,uint32)"(
+    'checkOracleSlippage(bytes[],uint128[],uint24,uint32)'(
       paths: BytesLike[],
       amounts: BigNumberish[],
       maximumTickDivergence: BigNumberish,
@@ -120,7 +120,7 @@ export class IOracleSlippage extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    "checkOracleSlippage(bytes,uint24,uint32)"(
+    'checkOracleSlippage(bytes,uint24,uint32)'(
       path: BytesLike,
       maximumTickDivergence: BigNumberish,
       secondsAgo: BigNumberish,
@@ -131,7 +131,7 @@ export class IOracleSlippage extends BaseContract {
   filters: {};
 
   estimateGas: {
-    "checkOracleSlippage(bytes[],uint128[],uint24,uint32)"(
+    'checkOracleSlippage(bytes[],uint128[],uint24,uint32)'(
       paths: BytesLike[],
       amounts: BigNumberish[],
       maximumTickDivergence: BigNumberish,
@@ -139,7 +139,7 @@ export class IOracleSlippage extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    "checkOracleSlippage(bytes,uint24,uint32)"(
+    'checkOracleSlippage(bytes,uint24,uint32)'(
       path: BytesLike,
       maximumTickDivergence: BigNumberish,
       secondsAgo: BigNumberish,
@@ -148,7 +148,7 @@ export class IOracleSlippage extends BaseContract {
   };
 
   populateTransaction: {
-    "checkOracleSlippage(bytes[],uint128[],uint24,uint32)"(
+    'checkOracleSlippage(bytes[],uint128[],uint24,uint32)'(
       paths: BytesLike[],
       amounts: BigNumberish[],
       maximumTickDivergence: BigNumberish,
@@ -156,7 +156,7 @@ export class IOracleSlippage extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    "checkOracleSlippage(bytes,uint24,uint32)"(
+    'checkOracleSlippage(bytes,uint24,uint32)'(
       path: BytesLike,
       maximumTickDivergence: BigNumberish,
       secondsAgo: BigNumberish,

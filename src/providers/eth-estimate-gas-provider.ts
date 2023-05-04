@@ -105,7 +105,7 @@ export class EthEstimateGasSimulator extends Simulator {
         quoteGasAdjusted,
         estimatedGasUsed,
         estimatedGasUsedQuoteToken,
-        estimatedGasUsedUSD  as any
+        estimatedGasUsedUSD as any
       ),
       simulationStatus: SimulationStatus.Succeeded,
     };

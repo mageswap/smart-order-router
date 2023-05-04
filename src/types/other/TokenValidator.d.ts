@@ -13,53 +13,53 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface TokenValidatorInterface extends ethers.utils.Interface {
   functions: {
-    "batchValidate(address[],address[],uint256)": FunctionFragment;
-    "factoryV2()": FunctionFragment;
-    "positionManager()": FunctionFragment;
-    "uniswapV2Call(address,uint256,uint256,bytes)": FunctionFragment;
-    "validate(address,address[],uint256)": FunctionFragment;
+    'batchValidate(address[],address[],uint256)': FunctionFragment;
+    'factoryV2()': FunctionFragment;
+    'positionManager()': FunctionFragment;
+    'uniswapV2Call(address,uint256,uint256,bytes)': FunctionFragment;
+    'validate(address,address[],uint256)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "batchValidate",
+    functionFragment: 'batchValidate',
     values: [string[], string[], BigNumberish]
   ): string;
-  encodeFunctionData(functionFragment: "factoryV2", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'factoryV2', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "positionManager",
+    functionFragment: 'positionManager',
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: "uniswapV2Call",
+    functionFragment: 'uniswapV2Call',
     values: [string, BigNumberish, BigNumberish, BytesLike]
   ): string;
   encodeFunctionData(
-    functionFragment: "validate",
+    functionFragment: 'validate',
     values: [string, string[], BigNumberish]
   ): string;
 
   decodeFunctionResult(
-    functionFragment: "batchValidate",
+    functionFragment: 'batchValidate',
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "factoryV2", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'factoryV2', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "positionManager",
+    functionFragment: 'positionManager',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "uniswapV2Call",
+    functionFragment: 'uniswapV2Call',
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "validate", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'validate', data: BytesLike): Result;
 
   events: {};
 }

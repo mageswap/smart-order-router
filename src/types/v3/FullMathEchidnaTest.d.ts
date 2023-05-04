@@ -12,42 +12,42 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface FullMathEchidnaTestInterface extends ethers.utils.Interface {
   functions: {
-    "checkMulDiv(uint256,uint256,uint256)": FunctionFragment;
-    "checkMulDivRounding(uint256,uint256,uint256)": FunctionFragment;
-    "checkMulDivRoundingUp(uint256,uint256,uint256)": FunctionFragment;
+    'checkMulDiv(uint256,uint256,uint256)': FunctionFragment;
+    'checkMulDivRounding(uint256,uint256,uint256)': FunctionFragment;
+    'checkMulDivRoundingUp(uint256,uint256,uint256)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "checkMulDiv",
+    functionFragment: 'checkMulDiv',
     values: [BigNumberish, BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "checkMulDivRounding",
+    functionFragment: 'checkMulDivRounding',
     values: [BigNumberish, BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "checkMulDivRoundingUp",
+    functionFragment: 'checkMulDivRoundingUp',
     values: [BigNumberish, BigNumberish, BigNumberish]
   ): string;
 
   decodeFunctionResult(
-    functionFragment: "checkMulDiv",
+    functionFragment: 'checkMulDiv',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "checkMulDivRounding",
+    functionFragment: 'checkMulDivRounding',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "checkMulDivRoundingUp",
+    functionFragment: 'checkMulDivRoundingUp',
     data: BytesLike
   ): Result;
 

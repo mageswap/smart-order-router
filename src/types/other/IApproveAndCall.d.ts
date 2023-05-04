@@ -14,47 +14,47 @@ import {
   Overrides,
   PayableOverrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface IApproveAndCallInterface extends ethers.utils.Interface {
   functions: {
-    "approveMax(address)": FunctionFragment;
-    "approveMaxMinusOne(address)": FunctionFragment;
-    "approveZeroThenMax(address)": FunctionFragment;
-    "approveZeroThenMaxMinusOne(address)": FunctionFragment;
-    "callPositionManager(bytes)": FunctionFragment;
-    "getApprovalType(address,uint256)": FunctionFragment;
-    "increaseLiquidity((address,address,uint256,uint256,uint256))": FunctionFragment;
-    "mint((address,address,uint24,int24,int24,uint256,uint256,address))": FunctionFragment;
+    'approveMax(address)': FunctionFragment;
+    'approveMaxMinusOne(address)': FunctionFragment;
+    'approveZeroThenMax(address)': FunctionFragment;
+    'approveZeroThenMaxMinusOne(address)': FunctionFragment;
+    'callPositionManager(bytes)': FunctionFragment;
+    'getApprovalType(address,uint256)': FunctionFragment;
+    'increaseLiquidity((address,address,uint256,uint256,uint256))': FunctionFragment;
+    'mint((address,address,uint24,int24,int24,uint256,uint256,address))': FunctionFragment;
   };
 
-  encodeFunctionData(functionFragment: "approveMax", values: [string]): string;
+  encodeFunctionData(functionFragment: 'approveMax', values: [string]): string;
   encodeFunctionData(
-    functionFragment: "approveMaxMinusOne",
+    functionFragment: 'approveMaxMinusOne',
     values: [string]
   ): string;
   encodeFunctionData(
-    functionFragment: "approveZeroThenMax",
+    functionFragment: 'approveZeroThenMax',
     values: [string]
   ): string;
   encodeFunctionData(
-    functionFragment: "approveZeroThenMaxMinusOne",
+    functionFragment: 'approveZeroThenMaxMinusOne',
     values: [string]
   ): string;
   encodeFunctionData(
-    functionFragment: "callPositionManager",
+    functionFragment: 'callPositionManager',
     values: [BytesLike]
   ): string;
   encodeFunctionData(
-    functionFragment: "getApprovalType",
+    functionFragment: 'getApprovalType',
     values: [string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "increaseLiquidity",
+    functionFragment: 'increaseLiquidity',
     values: [
       {
         token0: string;
@@ -66,7 +66,7 @@ interface IApproveAndCallInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: "mint",
+    functionFragment: 'mint',
     values: [
       {
         token0: string;
@@ -81,32 +81,32 @@ interface IApproveAndCallInterface extends ethers.utils.Interface {
     ]
   ): string;
 
-  decodeFunctionResult(functionFragment: "approveMax", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'approveMax', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "approveMaxMinusOne",
+    functionFragment: 'approveMaxMinusOne',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "approveZeroThenMax",
+    functionFragment: 'approveZeroThenMax',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "approveZeroThenMaxMinusOne",
+    functionFragment: 'approveZeroThenMaxMinusOne',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "callPositionManager",
+    functionFragment: 'callPositionManager',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "getApprovalType",
+    functionFragment: 'getApprovalType',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "increaseLiquidity",
+    functionFragment: 'increaseLiquidity',
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "mint", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'mint', data: BytesLike): Result;
 
   events: {};
 }

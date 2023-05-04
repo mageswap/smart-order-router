@@ -13,23 +13,23 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface UniswapV2MigratorInterface extends ethers.utils.Interface {
   functions: {
-    "migrate(address,uint256,uint256,address,uint256)": FunctionFragment;
+    'migrate(address,uint256,uint256,address,uint256)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "migrate",
+    functionFragment: 'migrate',
     values: [string, BigNumberish, BigNumberish, string, BigNumberish]
   ): string;
 
-  decodeFunctionResult(functionFragment: "migrate", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'migrate', data: BytesLike): Result;
 
   events: {};
 }

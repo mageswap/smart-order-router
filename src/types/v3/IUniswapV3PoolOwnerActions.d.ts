@@ -13,33 +13,33 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface IUniswapV3PoolOwnerActionsInterface extends ethers.utils.Interface {
   functions: {
-    "collectProtocol(address,uint128,uint128)": FunctionFragment;
-    "setFeeProtocol(uint8,uint8)": FunctionFragment;
+    'collectProtocol(address,uint128,uint128)': FunctionFragment;
+    'setFeeProtocol(uint8,uint8)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "collectProtocol",
+    functionFragment: 'collectProtocol',
     values: [string, BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "setFeeProtocol",
+    functionFragment: 'setFeeProtocol',
     values: [BigNumberish, BigNumberish]
   ): string;
 
   decodeFunctionResult(
-    functionFragment: "collectProtocol",
+    functionFragment: 'collectProtocol',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "setFeeProtocol",
+    functionFragment: 'setFeeProtocol',
     data: BytesLike
   ): Result;
 

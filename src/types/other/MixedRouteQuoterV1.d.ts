@@ -13,36 +13,36 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface MixedRouteQuoterV1Interface extends ethers.utils.Interface {
   functions: {
-    "WETH9()": FunctionFragment;
-    "factory()": FunctionFragment;
-    "factoryV2()": FunctionFragment;
-    "quoteExactInput(bytes,uint256)": FunctionFragment;
-    "quoteExactInputSingleV2((address,address,uint256))": FunctionFragment;
-    "quoteExactInputSingleV3((address,address,uint256,uint24,uint160))": FunctionFragment;
-    "uniswapV3SwapCallback(int256,int256,bytes)": FunctionFragment;
+    'WETH9()': FunctionFragment;
+    'factory()': FunctionFragment;
+    'factoryV2()': FunctionFragment;
+    'quoteExactInput(bytes,uint256)': FunctionFragment;
+    'quoteExactInputSingleV2((address,address,uint256))': FunctionFragment;
+    'quoteExactInputSingleV3((address,address,uint256,uint24,uint160))': FunctionFragment;
+    'uniswapV3SwapCallback(int256,int256,bytes)': FunctionFragment;
   };
 
-  encodeFunctionData(functionFragment: "WETH9", values?: undefined): string;
-  encodeFunctionData(functionFragment: "factory", values?: undefined): string;
-  encodeFunctionData(functionFragment: "factoryV2", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'WETH9', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'factory', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'factoryV2', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "quoteExactInput",
+    functionFragment: 'quoteExactInput',
     values: [BytesLike, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "quoteExactInputSingleV2",
+    functionFragment: 'quoteExactInputSingleV2',
     values: [{ tokenIn: string; tokenOut: string; amountIn: BigNumberish }]
   ): string;
   encodeFunctionData(
-    functionFragment: "quoteExactInputSingleV3",
+    functionFragment: 'quoteExactInputSingleV3',
     values: [
       {
         tokenIn: string;
@@ -54,27 +54,27 @@ interface MixedRouteQuoterV1Interface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: "uniswapV3SwapCallback",
+    functionFragment: 'uniswapV3SwapCallback',
     values: [BigNumberish, BigNumberish, BytesLike]
   ): string;
 
-  decodeFunctionResult(functionFragment: "WETH9", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "factory", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "factoryV2", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'WETH9', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'factory', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'factoryV2', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "quoteExactInput",
+    functionFragment: 'quoteExactInput',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "quoteExactInputSingleV2",
+    functionFragment: 'quoteExactInputSingleV2',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "quoteExactInputSingleV3",
+    functionFragment: 'quoteExactInputSingleV3',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "uniswapV3SwapCallback",
+    functionFragment: 'uniswapV3SwapCallback',
     data: BytesLike
   ): Result;
 

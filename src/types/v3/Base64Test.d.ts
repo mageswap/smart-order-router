@@ -12,27 +12,27 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface Base64TestInterface extends ethers.utils.Interface {
   functions: {
-    "encode(bytes)": FunctionFragment;
-    "getGasCostOfEncode(bytes)": FunctionFragment;
+    'encode(bytes)': FunctionFragment;
+    'getGasCostOfEncode(bytes)': FunctionFragment;
   };
 
-  encodeFunctionData(functionFragment: "encode", values: [BytesLike]): string;
+  encodeFunctionData(functionFragment: 'encode', values: [BytesLike]): string;
   encodeFunctionData(
-    functionFragment: "getGasCostOfEncode",
+    functionFragment: 'getGasCostOfEncode',
     values: [BytesLike]
   ): string;
 
-  decodeFunctionResult(functionFragment: "encode", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'encode', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "getGasCostOfEncode",
+    functionFragment: 'getGasCostOfEncode',
     data: BytesLike
   ): Result;
 

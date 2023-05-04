@@ -11,7 +11,6 @@ import {
   PopulatedTransaction,
   BaseContract,
   ContractTransaction,
-  PayableOverrides,
   CallOverrides,
 } from 'ethers';
 import { BytesLike } from '@ethersproject/bytes';
@@ -19,22 +18,34 @@ import { Listener, Provider } from '@ethersproject/providers';
 import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
 import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
-interface MulticallInterface extends ethers.utils.Interface {
+interface BitMathEchidnaTestInterface extends ethers.utils.Interface {
   functions: {
-    'multicall(bytes[])': FunctionFragment;
+    'leastSignificantBitInvariant(uint256)': FunctionFragment;
+    'mostSignificantBitInvariant(uint256)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: 'multicall',
-    values: [BytesLike[]]
+    functionFragment: 'leastSignificantBitInvariant',
+    values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
+    functionFragment: 'mostSignificantBitInvariant',
+    values: [BigNumberish]
   ): string;
 
-  decodeFunctionResult(functionFragment: 'multicall', data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: 'leastSignificantBitInvariant',
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: 'mostSignificantBitInvariant',
+    data: BytesLike
+  ): Result;
 
   events: {};
 }
 
-export class Multicall extends BaseContract {
+export class BitMathEchidnaTest extends BaseContract {
   connect(signerOrProvider: Signer | Provider | string): this;
   attach(addressOrName: string): this;
   deployed(): Promise<this>;
@@ -75,37 +86,65 @@ export class Multicall extends BaseContract {
     toBlock?: string | number | undefined
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
-  interface: MulticallInterface;
+  interface: BitMathEchidnaTestInterface;
 
   functions: {
-    multicall(
-      data: BytesLike[],
-      overrides?: PayableOverrides & { from?: string | Promise<string> }
-    ): Promise<ContractTransaction>;
+    leastSignificantBitInvariant(
+      input: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<[void]>;
+
+    mostSignificantBitInvariant(
+      input: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<[void]>;
   };
 
-  multicall(
-    data: BytesLike[],
-    overrides?: PayableOverrides & { from?: string | Promise<string> }
-  ): Promise<ContractTransaction>;
+  leastSignificantBitInvariant(
+    input: BigNumberish,
+    overrides?: CallOverrides
+  ): Promise<void>;
+
+  mostSignificantBitInvariant(
+    input: BigNumberish,
+    overrides?: CallOverrides
+  ): Promise<void>;
 
   callStatic: {
-    multicall(data: BytesLike[], overrides?: CallOverrides): Promise<string[]>;
+    leastSignificantBitInvariant(
+      input: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    mostSignificantBitInvariant(
+      input: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<void>;
   };
 
   filters: {};
 
   estimateGas: {
-    multicall(
-      data: BytesLike[],
-      overrides?: PayableOverrides & { from?: string | Promise<string> }
+    leastSignificantBitInvariant(
+      input: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    mostSignificantBitInvariant(
+      input: BigNumberish,
+      overrides?: CallOverrides
     ): Promise<BigNumber>;
   };
 
   populateTransaction: {
-    multicall(
-      data: BytesLike[],
-      overrides?: PayableOverrides & { from?: string | Promise<string> }
+    leastSignificantBitInvariant(
+      input: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    mostSignificantBitInvariant(
+      input: BigNumberish,
+      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
   };
 }

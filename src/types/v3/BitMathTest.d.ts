@@ -12,51 +12,51 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface BitMathTestInterface extends ethers.utils.Interface {
   functions: {
-    "getGasCostOfLeastSignificantBit(uint256)": FunctionFragment;
-    "getGasCostOfMostSignificantBit(uint256)": FunctionFragment;
-    "leastSignificantBit(uint256)": FunctionFragment;
-    "mostSignificantBit(uint256)": FunctionFragment;
+    'getGasCostOfLeastSignificantBit(uint256)': FunctionFragment;
+    'getGasCostOfMostSignificantBit(uint256)': FunctionFragment;
+    'leastSignificantBit(uint256)': FunctionFragment;
+    'mostSignificantBit(uint256)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "getGasCostOfLeastSignificantBit",
+    functionFragment: 'getGasCostOfLeastSignificantBit',
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "getGasCostOfMostSignificantBit",
+    functionFragment: 'getGasCostOfMostSignificantBit',
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "leastSignificantBit",
+    functionFragment: 'leastSignificantBit',
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "mostSignificantBit",
+    functionFragment: 'mostSignificantBit',
     values: [BigNumberish]
   ): string;
 
   decodeFunctionResult(
-    functionFragment: "getGasCostOfLeastSignificantBit",
+    functionFragment: 'getGasCostOfLeastSignificantBit',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "getGasCostOfMostSignificantBit",
+    functionFragment: 'getGasCostOfMostSignificantBit',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "leastSignificantBit",
+    functionFragment: 'leastSignificantBit',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "mostSignificantBit",
+    functionFragment: 'mostSignificantBit',
     data: BytesLike
   ): Result;
 

@@ -12,33 +12,33 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface TickLensTestInterface extends ethers.utils.Interface {
   functions: {
-    "getGasCostOfGetPopulatedTicksInWord(address,int16)": FunctionFragment;
-    "getPopulatedTicksInWord(address,int16)": FunctionFragment;
+    'getGasCostOfGetPopulatedTicksInWord(address,int16)': FunctionFragment;
+    'getPopulatedTicksInWord(address,int16)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "getGasCostOfGetPopulatedTicksInWord",
+    functionFragment: 'getGasCostOfGetPopulatedTicksInWord',
     values: [string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "getPopulatedTicksInWord",
+    functionFragment: 'getPopulatedTicksInWord',
     values: [string, BigNumberish]
   ): string;
 
   decodeFunctionResult(
-    functionFragment: "getGasCostOfGetPopulatedTicksInWord",
+    functionFragment: 'getGasCostOfGetPopulatedTicksInWord',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "getPopulatedTicksInWord",
+    functionFragment: 'getPopulatedTicksInWord',
     data: BytesLike
   ): Result;
 

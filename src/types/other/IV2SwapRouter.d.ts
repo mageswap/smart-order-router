@@ -13,33 +13,33 @@ import {
   ContractTransaction,
   PayableOverrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface IV2SwapRouterInterface extends ethers.utils.Interface {
   functions: {
-    "swapExactTokensForTokens(uint256,uint256,address[],address)": FunctionFragment;
-    "swapTokensForExactTokens(uint256,uint256,address[],address)": FunctionFragment;
+    'swapExactTokensForTokens(uint256,uint256,address[],address)': FunctionFragment;
+    'swapTokensForExactTokens(uint256,uint256,address[],address)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "swapExactTokensForTokens",
+    functionFragment: 'swapExactTokensForTokens',
     values: [BigNumberish, BigNumberish, string[], string]
   ): string;
   encodeFunctionData(
-    functionFragment: "swapTokensForExactTokens",
+    functionFragment: 'swapTokensForExactTokens',
     values: [BigNumberish, BigNumberish, string[], string]
   ): string;
 
   decodeFunctionResult(
-    functionFragment: "swapExactTokensForTokens",
+    functionFragment: 'swapExactTokensForTokens',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "swapTokensForExactTokens",
+    functionFragment: 'swapTokensForExactTokens',
     data: BytesLike
   ): Result;
 

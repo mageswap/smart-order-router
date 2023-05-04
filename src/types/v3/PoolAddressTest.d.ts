@@ -12,42 +12,42 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface PoolAddressTestInterface extends ethers.utils.Interface {
   functions: {
-    "POOL_INIT_CODE_HASH()": FunctionFragment;
-    "computeAddress(address,address,address,uint24)": FunctionFragment;
-    "getGasCostOfComputeAddress(address,address,address,uint24)": FunctionFragment;
+    'POOL_INIT_CODE_HASH()': FunctionFragment;
+    'computeAddress(address,address,address,uint24)': FunctionFragment;
+    'getGasCostOfComputeAddress(address,address,address,uint24)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "POOL_INIT_CODE_HASH",
+    functionFragment: 'POOL_INIT_CODE_HASH',
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: "computeAddress",
+    functionFragment: 'computeAddress',
     values: [string, string, string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "getGasCostOfComputeAddress",
+    functionFragment: 'getGasCostOfComputeAddress',
     values: [string, string, string, BigNumberish]
   ): string;
 
   decodeFunctionResult(
-    functionFragment: "POOL_INIT_CODE_HASH",
+    functionFragment: 'POOL_INIT_CODE_HASH',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "computeAddress",
+    functionFragment: 'computeAddress',
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "getGasCostOfComputeAddress",
+    functionFragment: 'getGasCostOfComputeAddress',
     data: BytesLike
   ): Result;
 

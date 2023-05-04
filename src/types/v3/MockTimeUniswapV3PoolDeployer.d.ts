@@ -13,36 +13,36 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface MockTimeUniswapV3PoolDeployerInterface
   extends ethers.utils.Interface {
   functions: {
-    "deploy(address,address,address,uint24,int24)": FunctionFragment;
-    "parameters()": FunctionFragment;
+    'deploy(address,address,address,uint24,int24)': FunctionFragment;
+    'parameters()': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "deploy",
+    functionFragment: 'deploy',
     values: [string, string, string, BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: "parameters",
+    functionFragment: 'parameters',
     values?: undefined
   ): string;
 
-  decodeFunctionResult(functionFragment: "deploy", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "parameters", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'deploy', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'parameters', data: BytesLike): Result;
 
   events: {
-    "PoolDeployed(address)": EventFragment;
+    'PoolDeployed(address)': EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: "PoolDeployed"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'PoolDeployed'): EventFragment;
 }
 
 export type PoolDeployedEvent = TypedEvent<[string] & { pool: string }>;
@@ -100,9 +100,7 @@ export class MockTimeUniswapV3PoolDeployer extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    parameters(
-      overrides?: CallOverrides
-    ): Promise<
+    parameters(overrides?: CallOverrides): Promise<
       [string, string, string, number, number] & {
         factory: string;
         token0: string;
@@ -122,9 +120,7 @@ export class MockTimeUniswapV3PoolDeployer extends BaseContract {
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  parameters(
-    overrides?: CallOverrides
-  ): Promise<
+  parameters(overrides?: CallOverrides): Promise<
     [string, string, string, number, number] & {
       factory: string;
       token0: string;
@@ -144,9 +140,7 @@ export class MockTimeUniswapV3PoolDeployer extends BaseContract {
       overrides?: CallOverrides
     ): Promise<string>;
 
-    parameters(
-      overrides?: CallOverrides
-    ): Promise<
+    parameters(overrides?: CallOverrides): Promise<
       [string, string, string, number, number] & {
         factory: string;
         token0: string;
@@ -158,7 +152,7 @@ export class MockTimeUniswapV3PoolDeployer extends BaseContract {
   };
 
   filters: {
-    "PoolDeployed(address)"(
+    'PoolDeployed(address)'(
       pool?: null
     ): TypedEventFilter<[string], { pool: string }>;
 

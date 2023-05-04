@@ -12,27 +12,27 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface ImmutableStateInterface extends ethers.utils.Interface {
   functions: {
-    "factoryV2()": FunctionFragment;
-    "positionManager()": FunctionFragment;
+    'factoryV2()': FunctionFragment;
+    'positionManager()': FunctionFragment;
   };
 
-  encodeFunctionData(functionFragment: "factoryV2", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'factoryV2', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "positionManager",
+    functionFragment: 'positionManager',
     values?: undefined
   ): string;
 
-  decodeFunctionResult(functionFragment: "factoryV2", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'factoryV2', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "positionManager",
+    functionFragment: 'positionManager',
     data: BytesLike
   ): Result;
 
