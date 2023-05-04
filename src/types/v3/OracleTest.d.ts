@@ -12,84 +12,84 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface OracleTestInterface extends ethers.utils.Interface {
   functions: {
-    'consult(address,uint32)': FunctionFragment;
-    'getBlockStartingTickAndLiquidity(address)': FunctionFragment;
-    'getChainedPrice(address[],int24[])': FunctionFragment;
-    'getGasCostOfConsult(address,uint32)': FunctionFragment;
-    'getGasCostOfGetQuoteAtTick(int24,uint128,address,address)': FunctionFragment;
-    'getOldestObservationSecondsAgo(address)': FunctionFragment;
-    'getQuoteAtTick(int24,uint128,address,address)': FunctionFragment;
-    'getWeightedArithmeticMeanTick(tuple[])': FunctionFragment;
+    "consult(address,uint32)": FunctionFragment;
+    "getBlockStartingTickAndLiquidity(address)": FunctionFragment;
+    "getChainedPrice(address[],int24[])": FunctionFragment;
+    "getGasCostOfConsult(address,uint32)": FunctionFragment;
+    "getGasCostOfGetQuoteAtTick(int24,uint128,address,address)": FunctionFragment;
+    "getOldestObservationSecondsAgo(address)": FunctionFragment;
+    "getQuoteAtTick(int24,uint128,address,address)": FunctionFragment;
+    "getWeightedArithmeticMeanTick(tuple[])": FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: 'consult',
+    functionFragment: "consult",
     values: [string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getBlockStartingTickAndLiquidity',
+    functionFragment: "getBlockStartingTickAndLiquidity",
     values: [string]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getChainedPrice',
+    functionFragment: "getChainedPrice",
     values: [string[], BigNumberish[]]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getGasCostOfConsult',
+    functionFragment: "getGasCostOfConsult",
     values: [string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getGasCostOfGetQuoteAtTick',
+    functionFragment: "getGasCostOfGetQuoteAtTick",
     values: [BigNumberish, BigNumberish, string, string]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getOldestObservationSecondsAgo',
+    functionFragment: "getOldestObservationSecondsAgo",
     values: [string]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getQuoteAtTick',
+    functionFragment: "getQuoteAtTick",
     values: [BigNumberish, BigNumberish, string, string]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getWeightedArithmeticMeanTick',
+    functionFragment: "getWeightedArithmeticMeanTick",
     values: [{ tick: BigNumberish; weight: BigNumberish }[]]
   ): string;
 
-  decodeFunctionResult(functionFragment: 'consult', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "consult", data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: 'getBlockStartingTickAndLiquidity',
+    functionFragment: "getBlockStartingTickAndLiquidity",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getChainedPrice',
+    functionFragment: "getChainedPrice",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getGasCostOfConsult',
+    functionFragment: "getGasCostOfConsult",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getGasCostOfGetQuoteAtTick',
+    functionFragment: "getGasCostOfGetQuoteAtTick",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getOldestObservationSecondsAgo',
+    functionFragment: "getOldestObservationSecondsAgo",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getQuoteAtTick',
+    functionFragment: "getQuoteAtTick",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getWeightedArithmeticMeanTick',
+    functionFragment: "getWeightedArithmeticMeanTick",
     data: BytesLike
   ): Result;
 

@@ -13,63 +13,63 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface IUniswapV3FactoryInterface extends ethers.utils.Interface {
   functions: {
-    'createPool(address,address,uint24)': FunctionFragment;
-    'enableFeeAmount(uint24,int24)': FunctionFragment;
-    'feeAmountTickSpacing(uint24)': FunctionFragment;
-    'getPool(address,address,uint24)': FunctionFragment;
-    'owner()': FunctionFragment;
-    'setOwner(address)': FunctionFragment;
+    "createPool(address,address,uint24)": FunctionFragment;
+    "enableFeeAmount(uint24,int24)": FunctionFragment;
+    "feeAmountTickSpacing(uint24)": FunctionFragment;
+    "getPool(address,address,uint24)": FunctionFragment;
+    "owner()": FunctionFragment;
+    "setOwner(address)": FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: 'createPool',
+    functionFragment: "createPool",
     values: [string, string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'enableFeeAmount',
+    functionFragment: "enableFeeAmount",
     values: [BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'feeAmountTickSpacing',
+    functionFragment: "feeAmountTickSpacing",
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getPool',
+    functionFragment: "getPool",
     values: [string, string, BigNumberish]
   ): string;
-  encodeFunctionData(functionFragment: 'owner', values?: undefined): string;
-  encodeFunctionData(functionFragment: 'setOwner', values: [string]): string;
+  encodeFunctionData(functionFragment: "owner", values?: undefined): string;
+  encodeFunctionData(functionFragment: "setOwner", values: [string]): string;
 
-  decodeFunctionResult(functionFragment: 'createPool', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "createPool", data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: 'enableFeeAmount',
+    functionFragment: "enableFeeAmount",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'feeAmountTickSpacing',
+    functionFragment: "feeAmountTickSpacing",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: 'getPool', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'owner', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'setOwner', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "getPool", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "setOwner", data: BytesLike): Result;
 
   events: {
-    'FeeAmountEnabled(uint24,int24)': EventFragment;
-    'OwnerChanged(address,address)': EventFragment;
-    'PoolCreated(address,address,uint24,int24,address)': EventFragment;
+    "FeeAmountEnabled(uint24,int24)": EventFragment;
+    "OwnerChanged(address,address)": EventFragment;
+    "PoolCreated(address,address,uint24,int24,address)": EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: 'FeeAmountEnabled'): EventFragment;
-  getEvent(nameOrSignatureOrTopic: 'OwnerChanged'): EventFragment;
-  getEvent(nameOrSignatureOrTopic: 'PoolCreated'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "FeeAmountEnabled"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "OwnerChanged"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "PoolCreated"): EventFragment;
 }
 
 export type FeeAmountEnabledEvent = TypedEvent<
@@ -231,7 +231,7 @@ export class IUniswapV3Factory extends BaseContract {
   };
 
   filters: {
-    'FeeAmountEnabled(uint24,int24)'(
+    "FeeAmountEnabled(uint24,int24)"(
       fee?: BigNumberish | null,
       tickSpacing?: BigNumberish | null
     ): TypedEventFilter<[number, number], { fee: number; tickSpacing: number }>;
@@ -241,7 +241,7 @@ export class IUniswapV3Factory extends BaseContract {
       tickSpacing?: BigNumberish | null
     ): TypedEventFilter<[number, number], { fee: number; tickSpacing: number }>;
 
-    'OwnerChanged(address,address)'(
+    "OwnerChanged(address,address)"(
       oldOwner?: string | null,
       newOwner?: string | null
     ): TypedEventFilter<
@@ -257,7 +257,7 @@ export class IUniswapV3Factory extends BaseContract {
       { oldOwner: string; newOwner: string }
     >;
 
-    'PoolCreated(address,address,uint24,int24,address)'(
+    "PoolCreated(address,address,uint24,int24,address)"(
       token0?: string | null,
       token1?: string | null,
       fee?: BigNumberish | null,

@@ -13,60 +13,60 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface TestUniswapV3CalleeInterface extends ethers.utils.Interface {
   functions: {
-    'swap0ForExact1(address,uint256,address,uint160)': FunctionFragment;
-    'swap1ForExact0(address,uint256,address,uint160)': FunctionFragment;
-    'swapExact0For1(address,uint256,address,uint160)': FunctionFragment;
-    'swapExact1For0(address,uint256,address,uint160)': FunctionFragment;
-    'uniswapV3SwapCallback(int256,int256,bytes)': FunctionFragment;
+    "swap0ForExact1(address,uint256,address,uint160)": FunctionFragment;
+    "swap1ForExact0(address,uint256,address,uint160)": FunctionFragment;
+    "swapExact0For1(address,uint256,address,uint160)": FunctionFragment;
+    "swapExact1For0(address,uint256,address,uint160)": FunctionFragment;
+    "uniswapV3SwapCallback(int256,int256,bytes)": FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: 'swap0ForExact1',
+    functionFragment: "swap0ForExact1",
     values: [string, BigNumberish, string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'swap1ForExact0',
+    functionFragment: "swap1ForExact0",
     values: [string, BigNumberish, string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'swapExact0For1',
+    functionFragment: "swapExact0For1",
     values: [string, BigNumberish, string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'swapExact1For0',
+    functionFragment: "swapExact1For0",
     values: [string, BigNumberish, string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'uniswapV3SwapCallback',
+    functionFragment: "uniswapV3SwapCallback",
     values: [BigNumberish, BigNumberish, BytesLike]
   ): string;
 
   decodeFunctionResult(
-    functionFragment: 'swap0ForExact1',
+    functionFragment: "swap0ForExact1",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'swap1ForExact0',
+    functionFragment: "swap1ForExact0",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'swapExact0For1',
+    functionFragment: "swapExact0For1",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'swapExact1For0',
+    functionFragment: "swapExact1For0",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'uniswapV3SwapCallback',
+    functionFragment: "uniswapV3SwapCallback",
     data: BytesLike
   ): Result;
 

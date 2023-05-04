@@ -2,54 +2,54 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from 'ethers';
-import { Provider } from '@ethersproject/providers';
-import type { IWETH, IWETHInterface } from '../IWETH';
+import { Contract, Signer, utils } from "ethers";
+import { Provider } from "@ethersproject/providers";
+import type { IWETH, IWETHInterface } from "../IWETH";
 
 const _abi = [
   {
     inputs: [],
-    name: 'deposit',
+    name: "deposit",
     outputs: [],
-    stateMutability: 'payable',
-    type: 'function',
+    stateMutability: "payable",
+    type: "function",
   },
   {
     inputs: [
       {
-        internalType: 'address',
-        name: 'to',
-        type: 'address',
+        internalType: "address",
+        name: "to",
+        type: "address",
       },
       {
-        internalType: 'uint256',
-        name: 'value',
-        type: 'uint256',
+        internalType: "uint256",
+        name: "value",
+        type: "uint256",
       },
     ],
-    name: 'transfer',
+    name: "transfer",
     outputs: [
       {
-        internalType: 'bool',
-        name: '',
-        type: 'bool',
+        internalType: "bool",
+        name: "",
+        type: "bool",
       },
     ],
-    stateMutability: 'nonpayable',
-    type: 'function',
+    stateMutability: "nonpayable",
+    type: "function",
   },
   {
     inputs: [
       {
-        internalType: 'uint256',
-        name: '',
-        type: 'uint256',
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
       },
     ],
-    name: 'withdraw',
+    name: "withdraw",
     outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function',
+    stateMutability: "nonpayable",
+    type: "function",
   },
 ];
 

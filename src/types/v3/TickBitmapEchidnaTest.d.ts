@@ -13,32 +13,32 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface TickBitmapEchidnaTestInterface extends ethers.utils.Interface {
   functions: {
-    'checkNextInitializedTickWithinOneWordInvariants(int24,bool)': FunctionFragment;
-    'flipTick(int24)': FunctionFragment;
+    "checkNextInitializedTickWithinOneWordInvariants(int24,bool)": FunctionFragment;
+    "flipTick(int24)": FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: 'checkNextInitializedTickWithinOneWordInvariants',
+    functionFragment: "checkNextInitializedTickWithinOneWordInvariants",
     values: [BigNumberish, boolean]
   ): string;
   encodeFunctionData(
-    functionFragment: 'flipTick',
+    functionFragment: "flipTick",
     values: [BigNumberish]
   ): string;
 
   decodeFunctionResult(
-    functionFragment: 'checkNextInitializedTickWithinOneWordInvariants',
+    functionFragment: "checkNextInitializedTickWithinOneWordInvariants",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: 'flipTick', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "flipTick", data: BytesLike): Result;
 
   events: {};
 }

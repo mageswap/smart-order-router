@@ -13,57 +13,57 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface Permit2Interface extends ethers.utils.Interface {
   functions: {
-    'DOMAIN_SEPARATOR()': FunctionFragment;
-    'allowance(address,address,address)': FunctionFragment;
-    'approve(address,address,uint160,uint48)': FunctionFragment;
-    'invalidateNonces(address,address,uint48)': FunctionFragment;
-    'invalidateUnorderedNonces(uint256,uint256)': FunctionFragment;
-    'lockdown(tuple[])': FunctionFragment;
-    'nonceBitmap(address,uint256)': FunctionFragment;
-    'permit(address,(tuple[],address,uint256),bytes)': FunctionFragment;
-    'permitTransferFrom(((address,uint256),uint256,uint256),(address,uint256),address,bytes)': FunctionFragment;
-    'permitWitnessTransferFrom(((address,uint256),uint256,uint256),(address,uint256),address,bytes32,string,bytes)': FunctionFragment;
-    'transferFrom(tuple[])': FunctionFragment;
+    "DOMAIN_SEPARATOR()": FunctionFragment;
+    "allowance(address,address,address)": FunctionFragment;
+    "approve(address,address,uint160,uint48)": FunctionFragment;
+    "invalidateNonces(address,address,uint48)": FunctionFragment;
+    "invalidateUnorderedNonces(uint256,uint256)": FunctionFragment;
+    "lockdown(tuple[])": FunctionFragment;
+    "nonceBitmap(address,uint256)": FunctionFragment;
+    "permit(address,(tuple[],address,uint256),bytes)": FunctionFragment;
+    "permitTransferFrom(((address,uint256),uint256,uint256),(address,uint256),address,bytes)": FunctionFragment;
+    "permitWitnessTransferFrom(((address,uint256),uint256,uint256),(address,uint256),address,bytes32,string,bytes)": FunctionFragment;
+    "transferFrom(tuple[])": FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: 'DOMAIN_SEPARATOR',
+    functionFragment: "DOMAIN_SEPARATOR",
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: 'allowance',
+    functionFragment: "allowance",
     values: [string, string, string]
   ): string;
   encodeFunctionData(
-    functionFragment: 'approve',
+    functionFragment: "approve",
     values: [string, string, BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'invalidateNonces',
+    functionFragment: "invalidateNonces",
     values: [string, string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'invalidateUnorderedNonces',
+    functionFragment: "invalidateUnorderedNonces",
     values: [BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'lockdown',
+    functionFragment: "lockdown",
     values: [{ token: string; spender: string }[]]
   ): string;
   encodeFunctionData(
-    functionFragment: 'nonceBitmap',
+    functionFragment: "nonceBitmap",
     values: [string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'permit',
+    functionFragment: "permit",
     values: [
       string,
       {
@@ -80,7 +80,7 @@ interface Permit2Interface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: 'permitTransferFrom',
+    functionFragment: "permitTransferFrom",
     values: [
       {
         permitted: { token: string; amount: BigNumberish };
@@ -93,7 +93,7 @@ interface Permit2Interface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: 'permitWitnessTransferFrom',
+    functionFragment: "permitWitnessTransferFrom",
     values: [
       {
         permitted: { token: string; amount: BigNumberish };
@@ -108,58 +108,58 @@ interface Permit2Interface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: 'transferFrom',
+    functionFragment: "transferFrom",
     values: [
       { from: string; to: string; amount: BigNumberish; token: string }[]
     ]
   ): string;
 
   decodeFunctionResult(
-    functionFragment: 'DOMAIN_SEPARATOR',
+    functionFragment: "DOMAIN_SEPARATOR",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: 'allowance', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'approve', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "allowance", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "approve", data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: 'invalidateNonces',
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: 'invalidateUnorderedNonces',
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: 'lockdown', data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: 'nonceBitmap',
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: 'permit', data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: 'permitTransferFrom',
+    functionFragment: "invalidateNonces",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'permitWitnessTransferFrom',
+    functionFragment: "invalidateUnorderedNonces",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(functionFragment: "lockdown", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "nonceBitmap",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(functionFragment: "permit", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "permitTransferFrom",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'transferFrom',
+    functionFragment: "permitWitnessTransferFrom",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "transferFrom",
     data: BytesLike
   ): Result;
 
   events: {
-    'Approval(address,address,address,uint160,uint48)': EventFragment;
-    'Lockdown(address,address,address)': EventFragment;
-    'NonceInvalidation(address,address,address,uint48,uint48)': EventFragment;
-    'Permit(address,address,address,uint160,uint48,uint48)': EventFragment;
-    'UnorderedNonceInvalidation(address,uint256,uint256)': EventFragment;
+    "Approval(address,address,address,uint160,uint48)": EventFragment;
+    "Lockdown(address,address,address)": EventFragment;
+    "NonceInvalidation(address,address,address,uint48,uint48)": EventFragment;
+    "Permit(address,address,address,uint160,uint48,uint48)": EventFragment;
+    "UnorderedNonceInvalidation(address,uint256,uint256)": EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: 'Approval'): EventFragment;
-  getEvent(nameOrSignatureOrTopic: 'Lockdown'): EventFragment;
-  getEvent(nameOrSignatureOrTopic: 'NonceInvalidation'): EventFragment;
-  getEvent(nameOrSignatureOrTopic: 'Permit'): EventFragment;
-  getEvent(nameOrSignatureOrTopic: 'UnorderedNonceInvalidation'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "Approval"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "Lockdown"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "NonceInvalidation"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "Permit"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "UnorderedNonceInvalidation"): EventFragment;
 }
 
 export type ApprovalEvent = TypedEvent<
@@ -296,7 +296,7 @@ export class Permit2 extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
 
-    'permit(address,(tuple[],address,uint256),bytes)'(
+    "permit(address,(tuple[],address,uint256),bytes)"(
       owner: string,
       permitBatch: {
         details: {
@@ -312,7 +312,7 @@ export class Permit2 extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    'permit(address,((address,uint160,uint48,uint48),address,uint256),bytes)'(
+    "permit(address,((address,uint160,uint48,uint48),address,uint256),bytes)"(
       owner: string,
       permitSingle: {
         details: {
@@ -328,7 +328,7 @@ export class Permit2 extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    'permitTransferFrom(((address,uint256),uint256,uint256),(address,uint256),address,bytes)'(
+    "permitTransferFrom(((address,uint256),uint256,uint256),(address,uint256),address,bytes)"(
       permit: {
         permitted: { token: string; amount: BigNumberish };
         nonce: BigNumberish;
@@ -340,7 +340,7 @@ export class Permit2 extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    'permitTransferFrom((tuple[],uint256,uint256),tuple[],address,bytes)'(
+    "permitTransferFrom((tuple[],uint256,uint256),tuple[],address,bytes)"(
       permit: {
         permitted: { token: string; amount: BigNumberish }[];
         nonce: BigNumberish;
@@ -352,7 +352,7 @@ export class Permit2 extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    'permitWitnessTransferFrom(((address,uint256),uint256,uint256),(address,uint256),address,bytes32,string,bytes)'(
+    "permitWitnessTransferFrom(((address,uint256),uint256,uint256),(address,uint256),address,bytes32,string,bytes)"(
       permit: {
         permitted: { token: string; amount: BigNumberish };
         nonce: BigNumberish;
@@ -366,7 +366,7 @@ export class Permit2 extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    'permitWitnessTransferFrom((tuple[],uint256,uint256),tuple[],address,bytes32,string,bytes)'(
+    "permitWitnessTransferFrom((tuple[],uint256,uint256),tuple[],address,bytes32,string,bytes)"(
       permit: {
         permitted: { token: string; amount: BigNumberish }[];
         nonce: BigNumberish;
@@ -380,7 +380,7 @@ export class Permit2 extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    'transferFrom(tuple[])'(
+    "transferFrom(tuple[])"(
       transferDetails: {
         from: string;
         to: string;
@@ -390,7 +390,7 @@ export class Permit2 extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    'transferFrom(address,address,uint160,address)'(
+    "transferFrom(address,address,uint160,address)"(
       from: string,
       to: string,
       amount: BigNumberish,
@@ -446,7 +446,7 @@ export class Permit2 extends BaseContract {
     overrides?: CallOverrides
   ): Promise<BigNumber>;
 
-  'permit(address,(tuple[],address,uint256),bytes)'(
+  "permit(address,(tuple[],address,uint256),bytes)"(
     owner: string,
     permitBatch: {
       details: {
@@ -462,7 +462,7 @@ export class Permit2 extends BaseContract {
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  'permit(address,((address,uint160,uint48,uint48),address,uint256),bytes)'(
+  "permit(address,((address,uint160,uint48,uint48),address,uint256),bytes)"(
     owner: string,
     permitSingle: {
       details: {
@@ -478,7 +478,7 @@ export class Permit2 extends BaseContract {
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  'permitTransferFrom(((address,uint256),uint256,uint256),(address,uint256),address,bytes)'(
+  "permitTransferFrom(((address,uint256),uint256,uint256),(address,uint256),address,bytes)"(
     permit: {
       permitted: { token: string; amount: BigNumberish };
       nonce: BigNumberish;
@@ -490,7 +490,7 @@ export class Permit2 extends BaseContract {
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  'permitTransferFrom((tuple[],uint256,uint256),tuple[],address,bytes)'(
+  "permitTransferFrom((tuple[],uint256,uint256),tuple[],address,bytes)"(
     permit: {
       permitted: { token: string; amount: BigNumberish }[];
       nonce: BigNumberish;
@@ -502,7 +502,7 @@ export class Permit2 extends BaseContract {
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  'permitWitnessTransferFrom(((address,uint256),uint256,uint256),(address,uint256),address,bytes32,string,bytes)'(
+  "permitWitnessTransferFrom(((address,uint256),uint256,uint256),(address,uint256),address,bytes32,string,bytes)"(
     permit: {
       permitted: { token: string; amount: BigNumberish };
       nonce: BigNumberish;
@@ -516,7 +516,7 @@ export class Permit2 extends BaseContract {
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  'permitWitnessTransferFrom((tuple[],uint256,uint256),tuple[],address,bytes32,string,bytes)'(
+  "permitWitnessTransferFrom((tuple[],uint256,uint256),tuple[],address,bytes32,string,bytes)"(
     permit: {
       permitted: { token: string; amount: BigNumberish }[];
       nonce: BigNumberish;
@@ -530,7 +530,7 @@ export class Permit2 extends BaseContract {
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  'transferFrom(tuple[])'(
+  "transferFrom(tuple[])"(
     transferDetails: {
       from: string;
       to: string;
@@ -540,7 +540,7 @@ export class Permit2 extends BaseContract {
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  'transferFrom(address,address,uint160,address)'(
+  "transferFrom(address,address,uint160,address)"(
     from: string,
     to: string,
     amount: BigNumberish,
@@ -596,7 +596,7 @@ export class Permit2 extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    'permit(address,(tuple[],address,uint256),bytes)'(
+    "permit(address,(tuple[],address,uint256),bytes)"(
       owner: string,
       permitBatch: {
         details: {
@@ -612,7 +612,7 @@ export class Permit2 extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    'permit(address,((address,uint160,uint48,uint48),address,uint256),bytes)'(
+    "permit(address,((address,uint160,uint48,uint48),address,uint256),bytes)"(
       owner: string,
       permitSingle: {
         details: {
@@ -628,7 +628,7 @@ export class Permit2 extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    'permitTransferFrom(((address,uint256),uint256,uint256),(address,uint256),address,bytes)'(
+    "permitTransferFrom(((address,uint256),uint256,uint256),(address,uint256),address,bytes)"(
       permit: {
         permitted: { token: string; amount: BigNumberish };
         nonce: BigNumberish;
@@ -640,7 +640,7 @@ export class Permit2 extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    'permitTransferFrom((tuple[],uint256,uint256),tuple[],address,bytes)'(
+    "permitTransferFrom((tuple[],uint256,uint256),tuple[],address,bytes)"(
       permit: {
         permitted: { token: string; amount: BigNumberish }[];
         nonce: BigNumberish;
@@ -652,7 +652,7 @@ export class Permit2 extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    'permitWitnessTransferFrom(((address,uint256),uint256,uint256),(address,uint256),address,bytes32,string,bytes)'(
+    "permitWitnessTransferFrom(((address,uint256),uint256,uint256),(address,uint256),address,bytes32,string,bytes)"(
       permit: {
         permitted: { token: string; amount: BigNumberish };
         nonce: BigNumberish;
@@ -666,7 +666,7 @@ export class Permit2 extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    'permitWitnessTransferFrom((tuple[],uint256,uint256),tuple[],address,bytes32,string,bytes)'(
+    "permitWitnessTransferFrom((tuple[],uint256,uint256),tuple[],address,bytes32,string,bytes)"(
       permit: {
         permitted: { token: string; amount: BigNumberish }[];
         nonce: BigNumberish;
@@ -680,7 +680,7 @@ export class Permit2 extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    'transferFrom(tuple[])'(
+    "transferFrom(tuple[])"(
       transferDetails: {
         from: string;
         to: string;
@@ -690,7 +690,7 @@ export class Permit2 extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    'transferFrom(address,address,uint160,address)'(
+    "transferFrom(address,address,uint160,address)"(
       from: string,
       to: string,
       amount: BigNumberish,
@@ -700,7 +700,7 @@ export class Permit2 extends BaseContract {
   };
 
   filters: {
-    'Approval(address,address,address,uint160,uint48)'(
+    "Approval(address,address,address,uint160,uint48)"(
       owner?: string | null,
       token?: string | null,
       spender?: string | null,
@@ -734,7 +734,7 @@ export class Permit2 extends BaseContract {
       }
     >;
 
-    'Lockdown(address,address,address)'(
+    "Lockdown(address,address,address)"(
       owner?: string | null,
       token?: null,
       spender?: null
@@ -752,7 +752,7 @@ export class Permit2 extends BaseContract {
       { owner: string; token: string; spender: string }
     >;
 
-    'NonceInvalidation(address,address,address,uint48,uint48)'(
+    "NonceInvalidation(address,address,address,uint48,uint48)"(
       owner?: string | null,
       token?: string | null,
       spender?: string | null,
@@ -786,7 +786,7 @@ export class Permit2 extends BaseContract {
       }
     >;
 
-    'Permit(address,address,address,uint160,uint48,uint48)'(
+    "Permit(address,address,address,uint160,uint48,uint48)"(
       owner?: string | null,
       token?: string | null,
       spender?: string | null,
@@ -824,7 +824,7 @@ export class Permit2 extends BaseContract {
       }
     >;
 
-    'UnorderedNonceInvalidation(address,uint256,uint256)'(
+    "UnorderedNonceInvalidation(address,uint256,uint256)"(
       owner?: string | null,
       word?: null,
       mask?: null
@@ -885,7 +885,7 @@ export class Permit2 extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    'permit(address,(tuple[],address,uint256),bytes)'(
+    "permit(address,(tuple[],address,uint256),bytes)"(
       owner: string,
       permitBatch: {
         details: {
@@ -901,7 +901,7 @@ export class Permit2 extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    'permit(address,((address,uint160,uint48,uint48),address,uint256),bytes)'(
+    "permit(address,((address,uint160,uint48,uint48),address,uint256),bytes)"(
       owner: string,
       permitSingle: {
         details: {
@@ -917,7 +917,7 @@ export class Permit2 extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    'permitTransferFrom(((address,uint256),uint256,uint256),(address,uint256),address,bytes)'(
+    "permitTransferFrom(((address,uint256),uint256,uint256),(address,uint256),address,bytes)"(
       permit: {
         permitted: { token: string; amount: BigNumberish };
         nonce: BigNumberish;
@@ -929,7 +929,7 @@ export class Permit2 extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    'permitTransferFrom((tuple[],uint256,uint256),tuple[],address,bytes)'(
+    "permitTransferFrom((tuple[],uint256,uint256),tuple[],address,bytes)"(
       permit: {
         permitted: { token: string; amount: BigNumberish }[];
         nonce: BigNumberish;
@@ -941,7 +941,7 @@ export class Permit2 extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    'permitWitnessTransferFrom(((address,uint256),uint256,uint256),(address,uint256),address,bytes32,string,bytes)'(
+    "permitWitnessTransferFrom(((address,uint256),uint256,uint256),(address,uint256),address,bytes32,string,bytes)"(
       permit: {
         permitted: { token: string; amount: BigNumberish };
         nonce: BigNumberish;
@@ -955,7 +955,7 @@ export class Permit2 extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    'permitWitnessTransferFrom((tuple[],uint256,uint256),tuple[],address,bytes32,string,bytes)'(
+    "permitWitnessTransferFrom((tuple[],uint256,uint256),tuple[],address,bytes32,string,bytes)"(
       permit: {
         permitted: { token: string; amount: BigNumberish }[];
         nonce: BigNumberish;
@@ -969,7 +969,7 @@ export class Permit2 extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    'transferFrom(tuple[])'(
+    "transferFrom(tuple[])"(
       transferDetails: {
         from: string;
         to: string;
@@ -979,7 +979,7 @@ export class Permit2 extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    'transferFrom(address,address,uint160,address)'(
+    "transferFrom(address,address,uint160,address)"(
       from: string,
       to: string,
       amount: BigNumberish,
@@ -1030,7 +1030,7 @@ export class Permit2 extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    'permit(address,(tuple[],address,uint256),bytes)'(
+    "permit(address,(tuple[],address,uint256),bytes)"(
       owner: string,
       permitBatch: {
         details: {
@@ -1046,7 +1046,7 @@ export class Permit2 extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
-    'permit(address,((address,uint160,uint48,uint48),address,uint256),bytes)'(
+    "permit(address,((address,uint160,uint48,uint48),address,uint256),bytes)"(
       owner: string,
       permitSingle: {
         details: {
@@ -1062,7 +1062,7 @@ export class Permit2 extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
-    'permitTransferFrom(((address,uint256),uint256,uint256),(address,uint256),address,bytes)'(
+    "permitTransferFrom(((address,uint256),uint256,uint256),(address,uint256),address,bytes)"(
       permit: {
         permitted: { token: string; amount: BigNumberish };
         nonce: BigNumberish;
@@ -1074,7 +1074,7 @@ export class Permit2 extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
-    'permitTransferFrom((tuple[],uint256,uint256),tuple[],address,bytes)'(
+    "permitTransferFrom((tuple[],uint256,uint256),tuple[],address,bytes)"(
       permit: {
         permitted: { token: string; amount: BigNumberish }[];
         nonce: BigNumberish;
@@ -1086,7 +1086,7 @@ export class Permit2 extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
-    'permitWitnessTransferFrom(((address,uint256),uint256,uint256),(address,uint256),address,bytes32,string,bytes)'(
+    "permitWitnessTransferFrom(((address,uint256),uint256,uint256),(address,uint256),address,bytes32,string,bytes)"(
       permit: {
         permitted: { token: string; amount: BigNumberish };
         nonce: BigNumberish;
@@ -1100,7 +1100,7 @@ export class Permit2 extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
-    'permitWitnessTransferFrom((tuple[],uint256,uint256),tuple[],address,bytes32,string,bytes)'(
+    "permitWitnessTransferFrom((tuple[],uint256,uint256),tuple[],address,bytes32,string,bytes)"(
       permit: {
         permitted: { token: string; amount: BigNumberish }[];
         nonce: BigNumberish;
@@ -1114,7 +1114,7 @@ export class Permit2 extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
-    'transferFrom(tuple[])'(
+    "transferFrom(tuple[])"(
       transferDetails: {
         from: string;
         to: string;
@@ -1124,7 +1124,7 @@ export class Permit2 extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
-    'transferFrom(address,address,uint160,address)'(
+    "transferFrom(address,address,uint160,address)"(
       from: string,
       to: string,
       amount: BigNumberish,

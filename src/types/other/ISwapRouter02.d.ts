@@ -14,55 +14,55 @@ import {
   Overrides,
   PayableOverrides,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface ISwapRouter02Interface extends ethers.utils.Interface {
   functions: {
-    'approveMax(address)': FunctionFragment;
-    'approveMaxMinusOne(address)': FunctionFragment;
-    'approveZeroThenMax(address)': FunctionFragment;
-    'approveZeroThenMaxMinusOne(address)': FunctionFragment;
-    'callPositionManager(bytes)': FunctionFragment;
-    'exactInput((bytes,address,uint256,uint256))': FunctionFragment;
-    'exactInputSingle((address,address,uint24,address,uint256,uint256,uint160))': FunctionFragment;
-    'exactOutput((bytes,address,uint256,uint256))': FunctionFragment;
-    'exactOutputSingle((address,address,uint24,address,uint256,uint256,uint160))': FunctionFragment;
-    'getApprovalType(address,uint256)': FunctionFragment;
-    'increaseLiquidity((address,address,uint256,uint256,uint256))': FunctionFragment;
-    'mint((address,address,uint24,int24,int24,uint256,uint256,address))': FunctionFragment;
-    'multicall(bytes32,bytes[])': FunctionFragment;
-    'selfPermit(address,uint256,uint256,uint8,bytes32,bytes32)': FunctionFragment;
-    'selfPermitAllowed(address,uint256,uint256,uint8,bytes32,bytes32)': FunctionFragment;
-    'selfPermitAllowedIfNecessary(address,uint256,uint256,uint8,bytes32,bytes32)': FunctionFragment;
-    'selfPermitIfNecessary(address,uint256,uint256,uint8,bytes32,bytes32)': FunctionFragment;
-    'swapExactTokensForTokens(uint256,uint256,address[],address)': FunctionFragment;
-    'swapTokensForExactTokens(uint256,uint256,address[],address)': FunctionFragment;
-    'uniswapV3SwapCallback(int256,int256,bytes)': FunctionFragment;
+    "approveMax(address)": FunctionFragment;
+    "approveMaxMinusOne(address)": FunctionFragment;
+    "approveZeroThenMax(address)": FunctionFragment;
+    "approveZeroThenMaxMinusOne(address)": FunctionFragment;
+    "callPositionManager(bytes)": FunctionFragment;
+    "exactInput((bytes,address,uint256,uint256))": FunctionFragment;
+    "exactInputSingle((address,address,uint24,address,uint256,uint256,uint160))": FunctionFragment;
+    "exactOutput((bytes,address,uint256,uint256))": FunctionFragment;
+    "exactOutputSingle((address,address,uint24,address,uint256,uint256,uint160))": FunctionFragment;
+    "getApprovalType(address,uint256)": FunctionFragment;
+    "increaseLiquidity((address,address,uint256,uint256,uint256))": FunctionFragment;
+    "mint((address,address,uint24,int24,int24,uint256,uint256,address))": FunctionFragment;
+    "multicall(bytes32,bytes[])": FunctionFragment;
+    "selfPermit(address,uint256,uint256,uint8,bytes32,bytes32)": FunctionFragment;
+    "selfPermitAllowed(address,uint256,uint256,uint8,bytes32,bytes32)": FunctionFragment;
+    "selfPermitAllowedIfNecessary(address,uint256,uint256,uint8,bytes32,bytes32)": FunctionFragment;
+    "selfPermitIfNecessary(address,uint256,uint256,uint8,bytes32,bytes32)": FunctionFragment;
+    "swapExactTokensForTokens(uint256,uint256,address[],address)": FunctionFragment;
+    "swapTokensForExactTokens(uint256,uint256,address[],address)": FunctionFragment;
+    "uniswapV3SwapCallback(int256,int256,bytes)": FunctionFragment;
   };
 
-  encodeFunctionData(functionFragment: 'approveMax', values: [string]): string;
+  encodeFunctionData(functionFragment: "approveMax", values: [string]): string;
   encodeFunctionData(
-    functionFragment: 'approveMaxMinusOne',
+    functionFragment: "approveMaxMinusOne",
     values: [string]
   ): string;
   encodeFunctionData(
-    functionFragment: 'approveZeroThenMax',
+    functionFragment: "approveZeroThenMax",
     values: [string]
   ): string;
   encodeFunctionData(
-    functionFragment: 'approveZeroThenMaxMinusOne',
+    functionFragment: "approveZeroThenMaxMinusOne",
     values: [string]
   ): string;
   encodeFunctionData(
-    functionFragment: 'callPositionManager',
+    functionFragment: "callPositionManager",
     values: [BytesLike]
   ): string;
   encodeFunctionData(
-    functionFragment: 'exactInput',
+    functionFragment: "exactInput",
     values: [
       {
         path: BytesLike;
@@ -73,7 +73,7 @@ interface ISwapRouter02Interface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: 'exactInputSingle',
+    functionFragment: "exactInputSingle",
     values: [
       {
         tokenIn: string;
@@ -87,7 +87,7 @@ interface ISwapRouter02Interface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: 'exactOutput',
+    functionFragment: "exactOutput",
     values: [
       {
         path: BytesLike;
@@ -98,7 +98,7 @@ interface ISwapRouter02Interface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: 'exactOutputSingle',
+    functionFragment: "exactOutputSingle",
     values: [
       {
         tokenIn: string;
@@ -112,11 +112,11 @@ interface ISwapRouter02Interface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getApprovalType',
+    functionFragment: "getApprovalType",
     values: [string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'increaseLiquidity',
+    functionFragment: "increaseLiquidity",
     values: [
       {
         token0: string;
@@ -128,7 +128,7 @@ interface ISwapRouter02Interface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: 'mint',
+    functionFragment: "mint",
     values: [
       {
         token0: string;
@@ -143,11 +143,11 @@ interface ISwapRouter02Interface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: 'multicall',
+    functionFragment: "multicall",
     values: [BytesLike, BytesLike[]]
   ): string;
   encodeFunctionData(
-    functionFragment: 'selfPermit',
+    functionFragment: "selfPermit",
     values: [
       string,
       BigNumberish,
@@ -158,7 +158,7 @@ interface ISwapRouter02Interface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: 'selfPermitAllowed',
+    functionFragment: "selfPermitAllowed",
     values: [
       string,
       BigNumberish,
@@ -169,7 +169,7 @@ interface ISwapRouter02Interface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: 'selfPermitAllowedIfNecessary',
+    functionFragment: "selfPermitAllowedIfNecessary",
     values: [
       string,
       BigNumberish,
@@ -180,7 +180,7 @@ interface ISwapRouter02Interface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: 'selfPermitIfNecessary',
+    functionFragment: "selfPermitIfNecessary",
     values: [
       string,
       BigNumberish,
@@ -191,81 +191,81 @@ interface ISwapRouter02Interface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: 'swapExactTokensForTokens',
+    functionFragment: "swapExactTokensForTokens",
     values: [BigNumberish, BigNumberish, string[], string]
   ): string;
   encodeFunctionData(
-    functionFragment: 'swapTokensForExactTokens',
+    functionFragment: "swapTokensForExactTokens",
     values: [BigNumberish, BigNumberish, string[], string]
   ): string;
   encodeFunctionData(
-    functionFragment: 'uniswapV3SwapCallback',
+    functionFragment: "uniswapV3SwapCallback",
     values: [BigNumberish, BigNumberish, BytesLike]
   ): string;
 
-  decodeFunctionResult(functionFragment: 'approveMax', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "approveMax", data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: 'approveMaxMinusOne',
+    functionFragment: "approveMaxMinusOne",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'approveZeroThenMax',
+    functionFragment: "approveZeroThenMax",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'approveZeroThenMaxMinusOne',
+    functionFragment: "approveZeroThenMaxMinusOne",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'callPositionManager',
+    functionFragment: "callPositionManager",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: 'exactInput', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "exactInput", data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: 'exactInputSingle',
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: 'exactOutput',
+    functionFragment: "exactInputSingle",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'exactOutputSingle',
+    functionFragment: "exactOutput",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getApprovalType',
+    functionFragment: "exactOutputSingle",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'increaseLiquidity',
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: 'mint', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'multicall', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'selfPermit', data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: 'selfPermitAllowed',
+    functionFragment: "getApprovalType",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'selfPermitAllowedIfNecessary',
+    functionFragment: "increaseLiquidity",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(functionFragment: "mint", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "multicall", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "selfPermit", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "selfPermitAllowed",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'selfPermitIfNecessary',
+    functionFragment: "selfPermitAllowedIfNecessary",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'swapExactTokensForTokens',
+    functionFragment: "selfPermitIfNecessary",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'swapTokensForExactTokens',
+    functionFragment: "swapExactTokensForTokens",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'uniswapV3SwapCallback',
+    functionFragment: "swapTokensForExactTokens",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "uniswapV3SwapCallback",
     data: BytesLike
   ): Result;
 
@@ -418,19 +418,19 @@ export class ISwapRouter02 extends BaseContract {
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    'multicall(bytes32,bytes[])'(
+    "multicall(bytes32,bytes[])"(
       previousBlockhash: BytesLike,
       data: BytesLike[],
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    'multicall(uint256,bytes[])'(
+    "multicall(uint256,bytes[])"(
       deadline: BigNumberish,
       data: BytesLike[],
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    'multicall(bytes[])'(
+    "multicall(bytes[])"(
       data: BytesLike[],
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
@@ -601,19 +601,19 @@ export class ISwapRouter02 extends BaseContract {
     overrides?: PayableOverrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  'multicall(bytes32,bytes[])'(
+  "multicall(bytes32,bytes[])"(
     previousBlockhash: BytesLike,
     data: BytesLike[],
     overrides?: PayableOverrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  'multicall(uint256,bytes[])'(
+  "multicall(uint256,bytes[])"(
     deadline: BigNumberish,
     data: BytesLike[],
     overrides?: PayableOverrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  'multicall(bytes[])'(
+  "multicall(bytes[])"(
     data: BytesLike[],
     overrides?: PayableOverrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
@@ -775,19 +775,19 @@ export class ISwapRouter02 extends BaseContract {
       overrides?: CallOverrides
     ): Promise<string>;
 
-    'multicall(bytes32,bytes[])'(
+    "multicall(bytes32,bytes[])"(
       previousBlockhash: BytesLike,
       data: BytesLike[],
       overrides?: CallOverrides
     ): Promise<string[]>;
 
-    'multicall(uint256,bytes[])'(
+    "multicall(uint256,bytes[])"(
       deadline: BigNumberish,
       data: BytesLike[],
       overrides?: CallOverrides
     ): Promise<string[]>;
 
-    'multicall(bytes[])'(
+    "multicall(bytes[])"(
       data: BytesLike[],
       overrides?: CallOverrides
     ): Promise<string[]>;
@@ -961,19 +961,19 @@ export class ISwapRouter02 extends BaseContract {
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    'multicall(bytes32,bytes[])'(
+    "multicall(bytes32,bytes[])"(
       previousBlockhash: BytesLike,
       data: BytesLike[],
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    'multicall(uint256,bytes[])'(
+    "multicall(uint256,bytes[])"(
       deadline: BigNumberish,
       data: BytesLike[],
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    'multicall(bytes[])'(
+    "multicall(bytes[])"(
       data: BytesLike[],
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
@@ -1145,19 +1145,19 @@ export class ISwapRouter02 extends BaseContract {
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
-    'multicall(bytes32,bytes[])'(
+    "multicall(bytes32,bytes[])"(
       previousBlockhash: BytesLike,
       data: BytesLike[],
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
-    'multicall(uint256,bytes[])'(
+    "multicall(uint256,bytes[])"(
       deadline: BigNumberish,
       data: BytesLike[],
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
-    'multicall(bytes[])'(
+    "multicall(bytes[])"(
       data: BytesLike[],
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;

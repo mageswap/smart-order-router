@@ -13,19 +13,19 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface IERC20PermitAllowedInterface extends ethers.utils.Interface {
   functions: {
-    'permit(address,address,uint256,uint256,bool,uint8,bytes32,bytes32)': FunctionFragment;
+    "permit(address,address,uint256,uint256,bool,uint8,bytes32,bytes32)": FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: 'permit',
+    functionFragment: "permit",
     values: [
       string,
       string,
@@ -38,7 +38,7 @@ interface IERC20PermitAllowedInterface extends ethers.utils.Interface {
     ]
   ): string;
 
-  decodeFunctionResult(functionFragment: 'permit', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "permit", data: BytesLike): Result;
 
   events: {};
 }

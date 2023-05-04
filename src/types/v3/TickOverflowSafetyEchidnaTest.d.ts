@@ -13,49 +13,49 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface TickOverflowSafetyEchidnaTestInterface
   extends ethers.utils.Interface {
   functions: {
-    'increaseFeeGrowthGlobal0X128(uint256)': FunctionFragment;
-    'increaseFeeGrowthGlobal1X128(uint256)': FunctionFragment;
-    'moveToTick(int24)': FunctionFragment;
-    'setPosition(int24,int24,int128)': FunctionFragment;
+    "increaseFeeGrowthGlobal0X128(uint256)": FunctionFragment;
+    "increaseFeeGrowthGlobal1X128(uint256)": FunctionFragment;
+    "moveToTick(int24)": FunctionFragment;
+    "setPosition(int24,int24,int128)": FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: 'increaseFeeGrowthGlobal0X128',
+    functionFragment: "increaseFeeGrowthGlobal0X128",
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'increaseFeeGrowthGlobal1X128',
+    functionFragment: "increaseFeeGrowthGlobal1X128",
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'moveToTick',
+    functionFragment: "moveToTick",
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'setPosition',
+    functionFragment: "setPosition",
     values: [BigNumberish, BigNumberish, BigNumberish]
   ): string;
 
   decodeFunctionResult(
-    functionFragment: 'increaseFeeGrowthGlobal0X128',
+    functionFragment: "increaseFeeGrowthGlobal0X128",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'increaseFeeGrowthGlobal1X128',
+    functionFragment: "increaseFeeGrowthGlobal1X128",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: 'moveToTick', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "moveToTick", data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: 'setPosition',
+    functionFragment: "setPosition",
     data: BytesLike
   ): Result;
 

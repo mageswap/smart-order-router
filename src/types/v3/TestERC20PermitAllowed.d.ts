@@ -13,56 +13,56 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface TestERC20PermitAllowedInterface extends ethers.utils.Interface {
   functions: {
-    'DOMAIN_SEPARATOR()': FunctionFragment;
-    'allowance(address,address)': FunctionFragment;
-    'approve(address,uint256)': FunctionFragment;
-    'balanceOf(address)': FunctionFragment;
-    'decimals()': FunctionFragment;
-    'decreaseAllowance(address,uint256)': FunctionFragment;
-    'increaseAllowance(address,uint256)': FunctionFragment;
-    'name()': FunctionFragment;
-    'nonces(address)': FunctionFragment;
-    'permit(address,address,uint256,uint256,bool,uint8,bytes32,bytes32)': FunctionFragment;
-    'symbol()': FunctionFragment;
-    'totalSupply()': FunctionFragment;
-    'transfer(address,uint256)': FunctionFragment;
-    'transferFrom(address,address,uint256)': FunctionFragment;
+    "DOMAIN_SEPARATOR()": FunctionFragment;
+    "allowance(address,address)": FunctionFragment;
+    "approve(address,uint256)": FunctionFragment;
+    "balanceOf(address)": FunctionFragment;
+    "decimals()": FunctionFragment;
+    "decreaseAllowance(address,uint256)": FunctionFragment;
+    "increaseAllowance(address,uint256)": FunctionFragment;
+    "name()": FunctionFragment;
+    "nonces(address)": FunctionFragment;
+    "permit(address,address,uint256,uint256,bool,uint8,bytes32,bytes32)": FunctionFragment;
+    "symbol()": FunctionFragment;
+    "totalSupply()": FunctionFragment;
+    "transfer(address,uint256)": FunctionFragment;
+    "transferFrom(address,address,uint256)": FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: 'DOMAIN_SEPARATOR',
+    functionFragment: "DOMAIN_SEPARATOR",
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: 'allowance',
+    functionFragment: "allowance",
     values: [string, string]
   ): string;
   encodeFunctionData(
-    functionFragment: 'approve',
+    functionFragment: "approve",
     values: [string, BigNumberish]
   ): string;
-  encodeFunctionData(functionFragment: 'balanceOf', values: [string]): string;
-  encodeFunctionData(functionFragment: 'decimals', values?: undefined): string;
+  encodeFunctionData(functionFragment: "balanceOf", values: [string]): string;
+  encodeFunctionData(functionFragment: "decimals", values?: undefined): string;
   encodeFunctionData(
-    functionFragment: 'decreaseAllowance',
+    functionFragment: "decreaseAllowance",
     values: [string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'increaseAllowance',
+    functionFragment: "increaseAllowance",
     values: [string, BigNumberish]
   ): string;
-  encodeFunctionData(functionFragment: 'name', values?: undefined): string;
-  encodeFunctionData(functionFragment: 'nonces', values: [string]): string;
+  encodeFunctionData(functionFragment: "name", values?: undefined): string;
+  encodeFunctionData(functionFragment: "nonces", values: [string]): string;
   encodeFunctionData(
-    functionFragment: 'permit',
+    functionFragment: "permit",
     values: [
       string,
       string,
@@ -74,57 +74,57 @@ interface TestERC20PermitAllowedInterface extends ethers.utils.Interface {
       BytesLike
     ]
   ): string;
-  encodeFunctionData(functionFragment: 'symbol', values?: undefined): string;
+  encodeFunctionData(functionFragment: "symbol", values?: undefined): string;
   encodeFunctionData(
-    functionFragment: 'totalSupply',
+    functionFragment: "totalSupply",
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: 'transfer',
+    functionFragment: "transfer",
     values: [string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'transferFrom',
+    functionFragment: "transferFrom",
     values: [string, string, BigNumberish]
   ): string;
 
   decodeFunctionResult(
-    functionFragment: 'DOMAIN_SEPARATOR',
+    functionFragment: "DOMAIN_SEPARATOR",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: 'allowance', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'approve', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'balanceOf', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'decimals', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "allowance", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "approve", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "balanceOf", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "decimals", data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: 'decreaseAllowance',
+    functionFragment: "decreaseAllowance",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'increaseAllowance',
+    functionFragment: "increaseAllowance",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: 'name', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'nonces', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'permit', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'symbol', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "name", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "nonces", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "permit", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "symbol", data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: 'totalSupply',
+    functionFragment: "totalSupply",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: 'transfer', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "transfer", data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: 'transferFrom',
+    functionFragment: "transferFrom",
     data: BytesLike
   ): Result;
 
   events: {
-    'Approval(address,address,uint256)': EventFragment;
-    'Transfer(address,address,uint256)': EventFragment;
+    "Approval(address,address,uint256)": EventFragment;
+    "Transfer(address,address,uint256)": EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: 'Approval'): EventFragment;
-  getEvent(nameOrSignatureOrTopic: 'Transfer'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "Approval"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "Transfer"): EventFragment;
 }
 
 export type ApprovalEvent = TypedEvent<
@@ -217,7 +217,7 @@ export class TestERC20PermitAllowed extends BaseContract {
 
     nonces(owner: string, overrides?: CallOverrides): Promise<[BigNumber]>;
 
-    'permit(address,address,uint256,uint256,bool,uint8,bytes32,bytes32)'(
+    "permit(address,address,uint256,uint256,bool,uint8,bytes32,bytes32)"(
       holder: string,
       spender: string,
       nonce: BigNumberish,
@@ -229,7 +229,7 @@ export class TestERC20PermitAllowed extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    'permit(address,address,uint256,uint256,uint8,bytes32,bytes32)'(
+    "permit(address,address,uint256,uint256,uint8,bytes32,bytes32)"(
       owner: string,
       spender: string,
       value: BigNumberish,
@@ -292,7 +292,7 @@ export class TestERC20PermitAllowed extends BaseContract {
 
   nonces(owner: string, overrides?: CallOverrides): Promise<BigNumber>;
 
-  'permit(address,address,uint256,uint256,bool,uint8,bytes32,bytes32)'(
+  "permit(address,address,uint256,uint256,bool,uint8,bytes32,bytes32)"(
     holder: string,
     spender: string,
     nonce: BigNumberish,
@@ -304,7 +304,7 @@ export class TestERC20PermitAllowed extends BaseContract {
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  'permit(address,address,uint256,uint256,uint8,bytes32,bytes32)'(
+  "permit(address,address,uint256,uint256,uint8,bytes32,bytes32)"(
     owner: string,
     spender: string,
     value: BigNumberish,
@@ -367,7 +367,7 @@ export class TestERC20PermitAllowed extends BaseContract {
 
     nonces(owner: string, overrides?: CallOverrides): Promise<BigNumber>;
 
-    'permit(address,address,uint256,uint256,bool,uint8,bytes32,bytes32)'(
+    "permit(address,address,uint256,uint256,bool,uint8,bytes32,bytes32)"(
       holder: string,
       spender: string,
       nonce: BigNumberish,
@@ -379,7 +379,7 @@ export class TestERC20PermitAllowed extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    'permit(address,address,uint256,uint256,uint8,bytes32,bytes32)'(
+    "permit(address,address,uint256,uint256,uint8,bytes32,bytes32)"(
       owner: string,
       spender: string,
       value: BigNumberish,
@@ -409,7 +409,7 @@ export class TestERC20PermitAllowed extends BaseContract {
   };
 
   filters: {
-    'Approval(address,address,uint256)'(
+    "Approval(address,address,uint256)"(
       owner?: string | null,
       spender?: string | null,
       value?: null
@@ -427,7 +427,7 @@ export class TestERC20PermitAllowed extends BaseContract {
       { owner: string; spender: string; value: BigNumber }
     >;
 
-    'Transfer(address,address,uint256)'(
+    "Transfer(address,address,uint256)"(
       from?: string | null,
       to?: string | null,
       value?: null
@@ -481,7 +481,7 @@ export class TestERC20PermitAllowed extends BaseContract {
 
     nonces(owner: string, overrides?: CallOverrides): Promise<BigNumber>;
 
-    'permit(address,address,uint256,uint256,bool,uint8,bytes32,bytes32)'(
+    "permit(address,address,uint256,uint256,bool,uint8,bytes32,bytes32)"(
       holder: string,
       spender: string,
       nonce: BigNumberish,
@@ -493,7 +493,7 @@ export class TestERC20PermitAllowed extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    'permit(address,address,uint256,uint256,uint8,bytes32,bytes32)'(
+    "permit(address,address,uint256,uint256,uint8,bytes32,bytes32)"(
       owner: string,
       spender: string,
       value: BigNumberish,
@@ -563,7 +563,7 @@ export class TestERC20PermitAllowed extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    'permit(address,address,uint256,uint256,bool,uint8,bytes32,bytes32)'(
+    "permit(address,address,uint256,uint256,bool,uint8,bytes32,bytes32)"(
       holder: string,
       spender: string,
       nonce: BigNumberish,
@@ -575,7 +575,7 @@ export class TestERC20PermitAllowed extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
-    'permit(address,address,uint256,uint256,uint8,bytes32,bytes32)'(
+    "permit(address,address,uint256,uint256,uint8,bytes32,bytes32)"(
       owner: string,
       spender: string,
       value: BigNumberish,

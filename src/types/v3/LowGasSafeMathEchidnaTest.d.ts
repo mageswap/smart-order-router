@@ -12,47 +12,47 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface LowGasSafeMathEchidnaTestInterface extends ethers.utils.Interface {
   functions: {
-    'checkAdd(uint256,uint256)': FunctionFragment;
-    'checkAddi(int256,int256)': FunctionFragment;
-    'checkMul(uint256,uint256)': FunctionFragment;
-    'checkSub(uint256,uint256)': FunctionFragment;
-    'checkSubi(int256,int256)': FunctionFragment;
+    "checkAdd(uint256,uint256)": FunctionFragment;
+    "checkAddi(int256,int256)": FunctionFragment;
+    "checkMul(uint256,uint256)": FunctionFragment;
+    "checkSub(uint256,uint256)": FunctionFragment;
+    "checkSubi(int256,int256)": FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: 'checkAdd',
+    functionFragment: "checkAdd",
     values: [BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'checkAddi',
+    functionFragment: "checkAddi",
     values: [BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'checkMul',
+    functionFragment: "checkMul",
     values: [BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'checkSub',
+    functionFragment: "checkSub",
     values: [BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'checkSubi',
+    functionFragment: "checkSubi",
     values: [BigNumberish, BigNumberish]
   ): string;
 
-  decodeFunctionResult(functionFragment: 'checkAdd', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'checkAddi', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'checkMul', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'checkSub', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'checkSubi', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "checkAdd", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "checkAddi", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "checkMul", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "checkSub", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "checkSubi", data: BytesLike): Result;
 
   events: {};
 }

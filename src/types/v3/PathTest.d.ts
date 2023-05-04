@@ -12,59 +12,59 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface PathTestInterface extends ethers.utils.Interface {
   functions: {
-    'decodeFirstPool(bytes)': FunctionFragment;
-    'getFirstPool(bytes)': FunctionFragment;
-    'getGasCostOfDecodeFirstPool(bytes)': FunctionFragment;
-    'hasMultiplePools(bytes)': FunctionFragment;
-    'skipToken(bytes)': FunctionFragment;
+    "decodeFirstPool(bytes)": FunctionFragment;
+    "getFirstPool(bytes)": FunctionFragment;
+    "getGasCostOfDecodeFirstPool(bytes)": FunctionFragment;
+    "hasMultiplePools(bytes)": FunctionFragment;
+    "skipToken(bytes)": FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: 'decodeFirstPool',
+    functionFragment: "decodeFirstPool",
     values: [BytesLike]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getFirstPool',
+    functionFragment: "getFirstPool",
     values: [BytesLike]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getGasCostOfDecodeFirstPool',
+    functionFragment: "getGasCostOfDecodeFirstPool",
     values: [BytesLike]
   ): string;
   encodeFunctionData(
-    functionFragment: 'hasMultiplePools',
+    functionFragment: "hasMultiplePools",
     values: [BytesLike]
   ): string;
   encodeFunctionData(
-    functionFragment: 'skipToken',
+    functionFragment: "skipToken",
     values: [BytesLike]
   ): string;
 
   decodeFunctionResult(
-    functionFragment: 'decodeFirstPool',
+    functionFragment: "decodeFirstPool",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getFirstPool',
+    functionFragment: "getFirstPool",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getGasCostOfDecodeFirstPool',
+    functionFragment: "getGasCostOfDecodeFirstPool",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'hasMultiplePools',
+    functionFragment: "hasMultiplePools",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: 'skipToken', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "skipToken", data: BytesLike): Result;
 
   events: {};
 }

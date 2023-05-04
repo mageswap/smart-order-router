@@ -41,7 +41,7 @@ export declare class CachedRoutes {
      * @param originalAmount
      * @param blocksToLive
      */
-    constructor({ routes, chainId, tokenIn, tokenOut, protocolsCovered, blockNumber, tradeType, originalAmount, blocksToLive }: CachedRoutesParams);
+    constructor({ routes, chainId, tokenIn, tokenOut, protocolsCovered, blockNumber, tradeType, originalAmount, blocksToLive, }: CachedRoutesParams);
     /**
      * Factory method that creates a `CachedRoutes` object from an array of RouteWithValidQuote.
      *

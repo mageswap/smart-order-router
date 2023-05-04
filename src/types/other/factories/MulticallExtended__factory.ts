@@ -2,80 +2,80 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from 'ethers';
-import { Provider } from '@ethersproject/providers';
+import { Contract, Signer, utils } from "ethers";
+import { Provider } from "@ethersproject/providers";
 import type {
   MulticallExtended,
   MulticallExtendedInterface,
-} from '../MulticallExtended';
+} from "../MulticallExtended";
 
 const _abi = [
   {
     inputs: [
       {
-        internalType: 'bytes32',
-        name: 'previousBlockhash',
-        type: 'bytes32',
+        internalType: "bytes32",
+        name: "previousBlockhash",
+        type: "bytes32",
       },
       {
-        internalType: 'bytes[]',
-        name: 'data',
-        type: 'bytes[]',
+        internalType: "bytes[]",
+        name: "data",
+        type: "bytes[]",
       },
     ],
-    name: 'multicall',
+    name: "multicall",
     outputs: [
       {
-        internalType: 'bytes[]',
-        name: '',
-        type: 'bytes[]',
+        internalType: "bytes[]",
+        name: "",
+        type: "bytes[]",
       },
     ],
-    stateMutability: 'payable',
-    type: 'function',
+    stateMutability: "payable",
+    type: "function",
   },
   {
     inputs: [
       {
-        internalType: 'uint256',
-        name: 'deadline',
-        type: 'uint256',
+        internalType: "uint256",
+        name: "deadline",
+        type: "uint256",
       },
       {
-        internalType: 'bytes[]',
-        name: 'data',
-        type: 'bytes[]',
+        internalType: "bytes[]",
+        name: "data",
+        type: "bytes[]",
       },
     ],
-    name: 'multicall',
+    name: "multicall",
     outputs: [
       {
-        internalType: 'bytes[]',
-        name: '',
-        type: 'bytes[]',
+        internalType: "bytes[]",
+        name: "",
+        type: "bytes[]",
       },
     ],
-    stateMutability: 'payable',
-    type: 'function',
+    stateMutability: "payable",
+    type: "function",
   },
   {
     inputs: [
       {
-        internalType: 'bytes[]',
-        name: 'data',
-        type: 'bytes[]',
+        internalType: "bytes[]",
+        name: "data",
+        type: "bytes[]",
       },
     ],
-    name: 'multicall',
+    name: "multicall",
     outputs: [
       {
-        internalType: 'bytes[]',
-        name: 'results',
-        type: 'bytes[]',
+        internalType: "bytes[]",
+        name: "results",
+        type: "bytes[]",
       },
     ],
-    stateMutability: 'payable',
-    type: 'function',
+    stateMutability: "payable",
+    type: "function",
   },
 ];
 

@@ -13,54 +13,54 @@ import {
   ContractTransaction,
   PayableOverrides,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface TestMulticallInterface extends ethers.utils.Interface {
   functions: {
-    'functionThatReturnsTuple(uint256,uint256)': FunctionFragment;
-    'functionThatRevertsWithError(string)': FunctionFragment;
-    'multicall(bytes[])': FunctionFragment;
-    'paid()': FunctionFragment;
-    'pays()': FunctionFragment;
-    'returnSender()': FunctionFragment;
+    "functionThatReturnsTuple(uint256,uint256)": FunctionFragment;
+    "functionThatRevertsWithError(string)": FunctionFragment;
+    "multicall(bytes[])": FunctionFragment;
+    "paid()": FunctionFragment;
+    "pays()": FunctionFragment;
+    "returnSender()": FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: 'functionThatReturnsTuple',
+    functionFragment: "functionThatReturnsTuple",
     values: [BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'functionThatRevertsWithError',
+    functionFragment: "functionThatRevertsWithError",
     values: [string]
   ): string;
   encodeFunctionData(
-    functionFragment: 'multicall',
+    functionFragment: "multicall",
     values: [BytesLike[]]
   ): string;
-  encodeFunctionData(functionFragment: 'paid', values?: undefined): string;
-  encodeFunctionData(functionFragment: 'pays', values?: undefined): string;
+  encodeFunctionData(functionFragment: "paid", values?: undefined): string;
+  encodeFunctionData(functionFragment: "pays", values?: undefined): string;
   encodeFunctionData(
-    functionFragment: 'returnSender',
+    functionFragment: "returnSender",
     values?: undefined
   ): string;
 
   decodeFunctionResult(
-    functionFragment: 'functionThatReturnsTuple',
+    functionFragment: "functionThatReturnsTuple",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'functionThatRevertsWithError',
+    functionFragment: "functionThatRevertsWithError",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: 'multicall', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'paid', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'pays', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "multicall", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "paid", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "pays", data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: 'returnSender',
+    functionFragment: "returnSender",
     data: BytesLike
   ): Result;
 

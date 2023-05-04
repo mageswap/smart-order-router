@@ -2,73 +2,73 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from 'ethers';
-import { Provider } from '@ethersproject/providers';
+import { Contract, Signer, utils } from "ethers";
+import { Provider } from "@ethersproject/providers";
 import type {
   PoolInitializer,
   PoolInitializerInterface,
-} from '../PoolInitializer';
+} from "../PoolInitializer";
 
 const _abi = [
   {
     inputs: [],
-    name: 'WETH9',
+    name: "WETH9",
     outputs: [
       {
-        internalType: 'address',
-        name: '',
-        type: 'address',
+        internalType: "address",
+        name: "",
+        type: "address",
       },
     ],
-    stateMutability: 'view',
-    type: 'function',
+    stateMutability: "view",
+    type: "function",
   },
   {
     inputs: [
       {
-        internalType: 'address',
-        name: 'token0',
-        type: 'address',
+        internalType: "address",
+        name: "token0",
+        type: "address",
       },
       {
-        internalType: 'address',
-        name: 'token1',
-        type: 'address',
+        internalType: "address",
+        name: "token1",
+        type: "address",
       },
       {
-        internalType: 'uint24',
-        name: 'fee',
-        type: 'uint24',
+        internalType: "uint24",
+        name: "fee",
+        type: "uint24",
       },
       {
-        internalType: 'uint160',
-        name: 'sqrtPriceX96',
-        type: 'uint160',
+        internalType: "uint160",
+        name: "sqrtPriceX96",
+        type: "uint160",
       },
     ],
-    name: 'createAndInitializePoolIfNecessary',
+    name: "createAndInitializePoolIfNecessary",
     outputs: [
       {
-        internalType: 'address',
-        name: 'pool',
-        type: 'address',
+        internalType: "address",
+        name: "pool",
+        type: "address",
       },
     ],
-    stateMutability: 'payable',
-    type: 'function',
+    stateMutability: "payable",
+    type: "function",
   },
   {
     inputs: [],
-    name: 'factory',
+    name: "factory",
     outputs: [
       {
-        internalType: 'address',
-        name: '',
-        type: 'address',
+        internalType: "address",
+        name: "",
+        type: "address",
       },
     ],
-    stateMutability: 'view',
-    type: 'function',
+    stateMutability: "view",
+    type: "function",
   },
 ];
 

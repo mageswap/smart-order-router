@@ -12,20 +12,20 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface SwapMathTestInterface extends ethers.utils.Interface {
   functions: {
-    'computeSwapStep(uint160,uint160,uint128,int256,uint24)': FunctionFragment;
-    'getGasCostOfComputeSwapStep(uint160,uint160,uint128,int256,uint24)': FunctionFragment;
+    "computeSwapStep(uint160,uint160,uint128,int256,uint24)": FunctionFragment;
+    "getGasCostOfComputeSwapStep(uint160,uint160,uint128,int256,uint24)": FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: 'computeSwapStep',
+    functionFragment: "computeSwapStep",
     values: [
       BigNumberish,
       BigNumberish,
@@ -35,7 +35,7 @@ interface SwapMathTestInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getGasCostOfComputeSwapStep',
+    functionFragment: "getGasCostOfComputeSwapStep",
     values: [
       BigNumberish,
       BigNumberish,
@@ -46,11 +46,11 @@ interface SwapMathTestInterface extends ethers.utils.Interface {
   ): string;
 
   decodeFunctionResult(
-    functionFragment: 'computeSwapStep',
+    functionFragment: "computeSwapStep",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getGasCostOfComputeSwapStep',
+    functionFragment: "getGasCostOfComputeSwapStep",
     data: BytesLike
   ): Result;
 

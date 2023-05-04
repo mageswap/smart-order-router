@@ -12,123 +12,123 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface SqrtPriceMathEchidnaTestInterface extends ethers.utils.Interface {
   functions: {
-    'getAmount0DeltaEquivalency(uint160,uint160,uint128,bool)': FunctionFragment;
-    'getAmount0DeltaInvariants(uint160,uint160,uint128)': FunctionFragment;
-    'getAmount0DeltaSignedInvariants(uint160,uint160,int128)': FunctionFragment;
-    'getAmount1DeltaInvariants(uint160,uint160,uint128)': FunctionFragment;
-    'getAmount1DeltaSignedInvariants(uint160,uint160,int128)': FunctionFragment;
-    'getInRangeMintInvariants(uint160,uint160,uint160,int128)': FunctionFragment;
-    'getNextSqrtPriceFromAmount0RoundingUpInvariants(uint160,uint128,uint256,bool)': FunctionFragment;
-    'getNextSqrtPriceFromAmount1RoundingDownInvariants(uint160,uint128,uint256,bool)': FunctionFragment;
-    'getNextSqrtPriceFromInputInvariants(uint160,uint128,uint256,bool)': FunctionFragment;
-    'getNextSqrtPriceFromOutputInvariants(uint160,uint128,uint256,bool)': FunctionFragment;
-    'getOutOfRangeMintInvariants(uint160,uint160,int128)': FunctionFragment;
-    'mulDivRoundingUpInvariants(uint256,uint256,uint256)': FunctionFragment;
+    "getAmount0DeltaEquivalency(uint160,uint160,uint128,bool)": FunctionFragment;
+    "getAmount0DeltaInvariants(uint160,uint160,uint128)": FunctionFragment;
+    "getAmount0DeltaSignedInvariants(uint160,uint160,int128)": FunctionFragment;
+    "getAmount1DeltaInvariants(uint160,uint160,uint128)": FunctionFragment;
+    "getAmount1DeltaSignedInvariants(uint160,uint160,int128)": FunctionFragment;
+    "getInRangeMintInvariants(uint160,uint160,uint160,int128)": FunctionFragment;
+    "getNextSqrtPriceFromAmount0RoundingUpInvariants(uint160,uint128,uint256,bool)": FunctionFragment;
+    "getNextSqrtPriceFromAmount1RoundingDownInvariants(uint160,uint128,uint256,bool)": FunctionFragment;
+    "getNextSqrtPriceFromInputInvariants(uint160,uint128,uint256,bool)": FunctionFragment;
+    "getNextSqrtPriceFromOutputInvariants(uint160,uint128,uint256,bool)": FunctionFragment;
+    "getOutOfRangeMintInvariants(uint160,uint160,int128)": FunctionFragment;
+    "mulDivRoundingUpInvariants(uint256,uint256,uint256)": FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: 'getAmount0DeltaEquivalency',
+    functionFragment: "getAmount0DeltaEquivalency",
     values: [BigNumberish, BigNumberish, BigNumberish, boolean]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getAmount0DeltaInvariants',
+    functionFragment: "getAmount0DeltaInvariants",
     values: [BigNumberish, BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getAmount0DeltaSignedInvariants',
+    functionFragment: "getAmount0DeltaSignedInvariants",
     values: [BigNumberish, BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getAmount1DeltaInvariants',
+    functionFragment: "getAmount1DeltaInvariants",
     values: [BigNumberish, BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getAmount1DeltaSignedInvariants',
+    functionFragment: "getAmount1DeltaSignedInvariants",
     values: [BigNumberish, BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getInRangeMintInvariants',
+    functionFragment: "getInRangeMintInvariants",
     values: [BigNumberish, BigNumberish, BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getNextSqrtPriceFromAmount0RoundingUpInvariants',
+    functionFragment: "getNextSqrtPriceFromAmount0RoundingUpInvariants",
     values: [BigNumberish, BigNumberish, BigNumberish, boolean]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getNextSqrtPriceFromAmount1RoundingDownInvariants',
+    functionFragment: "getNextSqrtPriceFromAmount1RoundingDownInvariants",
     values: [BigNumberish, BigNumberish, BigNumberish, boolean]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getNextSqrtPriceFromInputInvariants',
+    functionFragment: "getNextSqrtPriceFromInputInvariants",
     values: [BigNumberish, BigNumberish, BigNumberish, boolean]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getNextSqrtPriceFromOutputInvariants',
+    functionFragment: "getNextSqrtPriceFromOutputInvariants",
     values: [BigNumberish, BigNumberish, BigNumberish, boolean]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getOutOfRangeMintInvariants',
+    functionFragment: "getOutOfRangeMintInvariants",
     values: [BigNumberish, BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'mulDivRoundingUpInvariants',
+    functionFragment: "mulDivRoundingUpInvariants",
     values: [BigNumberish, BigNumberish, BigNumberish]
   ): string;
 
   decodeFunctionResult(
-    functionFragment: 'getAmount0DeltaEquivalency',
+    functionFragment: "getAmount0DeltaEquivalency",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getAmount0DeltaInvariants',
+    functionFragment: "getAmount0DeltaInvariants",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getAmount0DeltaSignedInvariants',
+    functionFragment: "getAmount0DeltaSignedInvariants",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getAmount1DeltaInvariants',
+    functionFragment: "getAmount1DeltaInvariants",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getAmount1DeltaSignedInvariants',
+    functionFragment: "getAmount1DeltaSignedInvariants",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getInRangeMintInvariants',
+    functionFragment: "getInRangeMintInvariants",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getNextSqrtPriceFromAmount0RoundingUpInvariants',
+    functionFragment: "getNextSqrtPriceFromAmount0RoundingUpInvariants",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getNextSqrtPriceFromAmount1RoundingDownInvariants',
+    functionFragment: "getNextSqrtPriceFromAmount1RoundingDownInvariants",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getNextSqrtPriceFromInputInvariants',
+    functionFragment: "getNextSqrtPriceFromInputInvariants",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getNextSqrtPriceFromOutputInvariants',
+    functionFragment: "getNextSqrtPriceFromOutputInvariants",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getOutOfRangeMintInvariants',
+    functionFragment: "getOutOfRangeMintInvariants",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'mulDivRoundingUpInvariants',
+    functionFragment: "mulDivRoundingUpInvariants",
     data: BytesLike
   ): Result;
 

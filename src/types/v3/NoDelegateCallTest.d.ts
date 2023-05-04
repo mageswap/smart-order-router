@@ -12,60 +12,60 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface NoDelegateCallTestInterface extends ethers.utils.Interface {
   functions: {
-    'callsIntoNoDelegateCallFunction()': FunctionFragment;
-    'canBeDelegateCalled()': FunctionFragment;
-    'cannotBeDelegateCalled()': FunctionFragment;
-    'getGasCostOfCanBeDelegateCalled()': FunctionFragment;
-    'getGasCostOfCannotBeDelegateCalled()': FunctionFragment;
+    "callsIntoNoDelegateCallFunction()": FunctionFragment;
+    "canBeDelegateCalled()": FunctionFragment;
+    "cannotBeDelegateCalled()": FunctionFragment;
+    "getGasCostOfCanBeDelegateCalled()": FunctionFragment;
+    "getGasCostOfCannotBeDelegateCalled()": FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: 'callsIntoNoDelegateCallFunction',
+    functionFragment: "callsIntoNoDelegateCallFunction",
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: 'canBeDelegateCalled',
+    functionFragment: "canBeDelegateCalled",
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: 'cannotBeDelegateCalled',
+    functionFragment: "cannotBeDelegateCalled",
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: 'getGasCostOfCanBeDelegateCalled',
+    functionFragment: "getGasCostOfCanBeDelegateCalled",
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: 'getGasCostOfCannotBeDelegateCalled',
+    functionFragment: "getGasCostOfCannotBeDelegateCalled",
     values?: undefined
   ): string;
 
   decodeFunctionResult(
-    functionFragment: 'callsIntoNoDelegateCallFunction',
+    functionFragment: "callsIntoNoDelegateCallFunction",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'canBeDelegateCalled',
+    functionFragment: "canBeDelegateCalled",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'cannotBeDelegateCalled',
+    functionFragment: "cannotBeDelegateCalled",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getGasCostOfCanBeDelegateCalled',
+    functionFragment: "getGasCostOfCanBeDelegateCalled",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getGasCostOfCannotBeDelegateCalled',
+    functionFragment: "getGasCostOfCannotBeDelegateCalled",
     data: BytesLike
   ): Result;
 

@@ -2,37 +2,37 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from 'ethers';
-import { Provider } from '@ethersproject/providers';
+import { Contract, Signer, utils } from "ethers";
+import { Provider } from "@ethersproject/providers";
 import type {
   INonfungibleTokenPositionDescriptor,
   INonfungibleTokenPositionDescriptorInterface,
-} from '../INonfungibleTokenPositionDescriptor';
+} from "../INonfungibleTokenPositionDescriptor";
 
 const _abi = [
   {
     inputs: [
       {
-        internalType: 'contract INonfungiblePositionManager',
-        name: 'positionManager',
-        type: 'address',
+        internalType: "contract INonfungiblePositionManager",
+        name: "positionManager",
+        type: "address",
       },
       {
-        internalType: 'uint256',
-        name: 'tokenId',
-        type: 'uint256',
+        internalType: "uint256",
+        name: "tokenId",
+        type: "uint256",
       },
     ],
-    name: 'tokenURI',
+    name: "tokenURI",
     outputs: [
       {
-        internalType: 'string',
-        name: '',
-        type: 'string',
+        internalType: "string",
+        name: "",
+        type: "string",
       },
     ],
-    stateMutability: 'view',
-    type: 'function',
+    stateMutability: "view",
+    type: "function",
   },
 ];
 

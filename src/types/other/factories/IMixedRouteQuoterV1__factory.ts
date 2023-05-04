@@ -2,151 +2,151 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from 'ethers';
-import { Provider } from '@ethersproject/providers';
+import { Contract, Signer, utils } from "ethers";
+import { Provider } from "@ethersproject/providers";
 import type {
   IMixedRouteQuoterV1,
   IMixedRouteQuoterV1Interface,
-} from '../IMixedRouteQuoterV1';
+} from "../IMixedRouteQuoterV1";
 
 const _abi = [
   {
     inputs: [
       {
-        internalType: 'bytes',
-        name: 'path',
-        type: 'bytes',
+        internalType: "bytes",
+        name: "path",
+        type: "bytes",
       },
       {
-        internalType: 'uint256',
-        name: 'amountIn',
-        type: 'uint256',
+        internalType: "uint256",
+        name: "amountIn",
+        type: "uint256",
       },
     ],
-    name: 'quoteExactInput',
+    name: "quoteExactInput",
     outputs: [
       {
-        internalType: 'uint256',
-        name: 'amountOut',
-        type: 'uint256',
+        internalType: "uint256",
+        name: "amountOut",
+        type: "uint256",
       },
       {
-        internalType: 'uint160[]',
-        name: 'v3SqrtPriceX96AfterList',
-        type: 'uint160[]',
+        internalType: "uint160[]",
+        name: "v3SqrtPriceX96AfterList",
+        type: "uint160[]",
       },
       {
-        internalType: 'uint32[]',
-        name: 'v3InitializedTicksCrossedList',
-        type: 'uint32[]',
+        internalType: "uint32[]",
+        name: "v3InitializedTicksCrossedList",
+        type: "uint32[]",
       },
       {
-        internalType: 'uint256',
-        name: 'v3SwapGasEstimate',
-        type: 'uint256',
+        internalType: "uint256",
+        name: "v3SwapGasEstimate",
+        type: "uint256",
       },
     ],
-    stateMutability: 'nonpayable',
-    type: 'function',
+    stateMutability: "nonpayable",
+    type: "function",
   },
   {
     inputs: [
       {
         components: [
           {
-            internalType: 'address',
-            name: 'tokenIn',
-            type: 'address',
+            internalType: "address",
+            name: "tokenIn",
+            type: "address",
           },
           {
-            internalType: 'address',
-            name: 'tokenOut',
-            type: 'address',
+            internalType: "address",
+            name: "tokenOut",
+            type: "address",
           },
           {
-            internalType: 'uint256',
-            name: 'amountIn',
-            type: 'uint256',
+            internalType: "uint256",
+            name: "amountIn",
+            type: "uint256",
           },
         ],
         internalType:
-          'struct IMixedRouteQuoterV1.QuoteExactInputSingleV2Params',
-        name: 'params',
-        type: 'tuple',
+          "struct IMixedRouteQuoterV1.QuoteExactInputSingleV2Params",
+        name: "params",
+        type: "tuple",
       },
     ],
-    name: 'quoteExactInputSingleV2',
+    name: "quoteExactInputSingleV2",
     outputs: [
       {
-        internalType: 'uint256',
-        name: 'amountOut',
-        type: 'uint256',
+        internalType: "uint256",
+        name: "amountOut",
+        type: "uint256",
       },
     ],
-    stateMutability: 'nonpayable',
-    type: 'function',
+    stateMutability: "nonpayable",
+    type: "function",
   },
   {
     inputs: [
       {
         components: [
           {
-            internalType: 'address',
-            name: 'tokenIn',
-            type: 'address',
+            internalType: "address",
+            name: "tokenIn",
+            type: "address",
           },
           {
-            internalType: 'address',
-            name: 'tokenOut',
-            type: 'address',
+            internalType: "address",
+            name: "tokenOut",
+            type: "address",
           },
           {
-            internalType: 'uint256',
-            name: 'amountIn',
-            type: 'uint256',
+            internalType: "uint256",
+            name: "amountIn",
+            type: "uint256",
           },
           {
-            internalType: 'uint24',
-            name: 'fee',
-            type: 'uint24',
+            internalType: "uint24",
+            name: "fee",
+            type: "uint24",
           },
           {
-            internalType: 'uint160',
-            name: 'sqrtPriceLimitX96',
-            type: 'uint160',
+            internalType: "uint160",
+            name: "sqrtPriceLimitX96",
+            type: "uint160",
           },
         ],
         internalType:
-          'struct IMixedRouteQuoterV1.QuoteExactInputSingleV3Params',
-        name: 'params',
-        type: 'tuple',
+          "struct IMixedRouteQuoterV1.QuoteExactInputSingleV3Params",
+        name: "params",
+        type: "tuple",
       },
     ],
-    name: 'quoteExactInputSingleV3',
+    name: "quoteExactInputSingleV3",
     outputs: [
       {
-        internalType: 'uint256',
-        name: 'amountOut',
-        type: 'uint256',
+        internalType: "uint256",
+        name: "amountOut",
+        type: "uint256",
       },
       {
-        internalType: 'uint160',
-        name: 'sqrtPriceX96After',
-        type: 'uint160',
+        internalType: "uint160",
+        name: "sqrtPriceX96After",
+        type: "uint160",
       },
       {
-        internalType: 'uint32',
-        name: 'initializedTicksCrossed',
-        type: 'uint32',
+        internalType: "uint32",
+        name: "initializedTicksCrossed",
+        type: "uint32",
       },
       {
-        internalType: 'uint256',
-        name: 'gasEstimate',
-        type: 'uint256',
+        internalType: "uint256",
+        name: "gasEstimate",
+        type: "uint256",
       },
     ],
-    stateMutability: 'nonpayable',
-    type: 'function',
+    stateMutability: "nonpayable",
+    type: "function",
   },
 ];
 

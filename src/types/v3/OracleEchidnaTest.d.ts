@@ -13,95 +13,95 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface OracleEchidnaTestInterface extends ethers.utils.Interface {
   functions: {
-    'advanceTime(uint32)': FunctionFragment;
-    'checkTimeWeightedAveragesAlwaysFitsType(uint32)': FunctionFragment;
-    'checkTwoAdjacentObservationsTickCumulativeModTimeElapsedAlways0(uint16)': FunctionFragment;
-    'echidna_AlwaysInitialized()': FunctionFragment;
-    'echidna_canAlwaysObserve0IfInitialized()': FunctionFragment;
-    'echidna_cardinalityAlwaysLteNext()': FunctionFragment;
-    'echidna_indexAlwaysLtCardinality()': FunctionFragment;
-    'grow(uint16)': FunctionFragment;
-    'initialize(uint32,int24,uint128)': FunctionFragment;
-    'update(uint32,int24,uint128)': FunctionFragment;
+    "advanceTime(uint32)": FunctionFragment;
+    "checkTimeWeightedAveragesAlwaysFitsType(uint32)": FunctionFragment;
+    "checkTwoAdjacentObservationsTickCumulativeModTimeElapsedAlways0(uint16)": FunctionFragment;
+    "echidna_AlwaysInitialized()": FunctionFragment;
+    "echidna_canAlwaysObserve0IfInitialized()": FunctionFragment;
+    "echidna_cardinalityAlwaysLteNext()": FunctionFragment;
+    "echidna_indexAlwaysLtCardinality()": FunctionFragment;
+    "grow(uint16)": FunctionFragment;
+    "initialize(uint32,int24,uint128)": FunctionFragment;
+    "update(uint32,int24,uint128)": FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: 'advanceTime',
+    functionFragment: "advanceTime",
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'checkTimeWeightedAveragesAlwaysFitsType',
+    functionFragment: "checkTimeWeightedAveragesAlwaysFitsType",
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'checkTwoAdjacentObservationsTickCumulativeModTimeElapsedAlways0',
+    functionFragment: "checkTwoAdjacentObservationsTickCumulativeModTimeElapsedAlways0",
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'echidna_AlwaysInitialized',
+    functionFragment: "echidna_AlwaysInitialized",
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: 'echidna_canAlwaysObserve0IfInitialized',
+    functionFragment: "echidna_canAlwaysObserve0IfInitialized",
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: 'echidna_cardinalityAlwaysLteNext',
+    functionFragment: "echidna_cardinalityAlwaysLteNext",
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: 'echidna_indexAlwaysLtCardinality',
+    functionFragment: "echidna_indexAlwaysLtCardinality",
     values?: undefined
   ): string;
-  encodeFunctionData(functionFragment: 'grow', values: [BigNumberish]): string;
+  encodeFunctionData(functionFragment: "grow", values: [BigNumberish]): string;
   encodeFunctionData(
-    functionFragment: 'initialize',
+    functionFragment: "initialize",
     values: [BigNumberish, BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'update',
+    functionFragment: "update",
     values: [BigNumberish, BigNumberish, BigNumberish]
   ): string;
 
   decodeFunctionResult(
-    functionFragment: 'advanceTime',
+    functionFragment: "advanceTime",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'checkTimeWeightedAveragesAlwaysFitsType',
+    functionFragment: "checkTimeWeightedAveragesAlwaysFitsType",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'checkTwoAdjacentObservationsTickCumulativeModTimeElapsedAlways0',
+    functionFragment: "checkTwoAdjacentObservationsTickCumulativeModTimeElapsedAlways0",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'echidna_AlwaysInitialized',
+    functionFragment: "echidna_AlwaysInitialized",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'echidna_canAlwaysObserve0IfInitialized',
+    functionFragment: "echidna_canAlwaysObserve0IfInitialized",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'echidna_cardinalityAlwaysLteNext',
+    functionFragment: "echidna_cardinalityAlwaysLteNext",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'echidna_indexAlwaysLtCardinality',
+    functionFragment: "echidna_indexAlwaysLtCardinality",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: 'grow', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'initialize', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'update', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "grow", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "update", data: BytesLike): Result;
 
   events: {};
 }

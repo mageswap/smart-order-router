@@ -12,56 +12,56 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface PositionValueTestInterface extends ethers.utils.Interface {
   functions: {
-    'fees(address,uint256)': FunctionFragment;
-    'feesGas(address,uint256)': FunctionFragment;
-    'principal(address,uint256,uint160)': FunctionFragment;
-    'principalGas(address,uint256,uint160)': FunctionFragment;
-    'total(address,uint256,uint160)': FunctionFragment;
-    'totalGas(address,uint256,uint160)': FunctionFragment;
+    "fees(address,uint256)": FunctionFragment;
+    "feesGas(address,uint256)": FunctionFragment;
+    "principal(address,uint256,uint160)": FunctionFragment;
+    "principalGas(address,uint256,uint160)": FunctionFragment;
+    "total(address,uint256,uint160)": FunctionFragment;
+    "totalGas(address,uint256,uint160)": FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: 'fees',
+    functionFragment: "fees",
     values: [string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'feesGas',
+    functionFragment: "feesGas",
     values: [string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'principal',
+    functionFragment: "principal",
     values: [string, BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'principalGas',
+    functionFragment: "principalGas",
     values: [string, BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'total',
+    functionFragment: "total",
     values: [string, BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'totalGas',
+    functionFragment: "totalGas",
     values: [string, BigNumberish, BigNumberish]
   ): string;
 
-  decodeFunctionResult(functionFragment: 'fees', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'feesGas', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'principal', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "fees", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "feesGas", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "principal", data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: 'principalGas',
+    functionFragment: "principalGas",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: 'total', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'totalGas', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "total", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "totalGas", data: BytesLike): Result;
 
   events: {};
 }

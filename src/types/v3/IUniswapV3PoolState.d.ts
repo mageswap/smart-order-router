@@ -12,74 +12,74 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface IUniswapV3PoolStateInterface extends ethers.utils.Interface {
   functions: {
-    'feeGrowthGlobal0X128()': FunctionFragment;
-    'feeGrowthGlobal1X128()': FunctionFragment;
-    'liquidity()': FunctionFragment;
-    'observations(uint256)': FunctionFragment;
-    'positions(bytes32)': FunctionFragment;
-    'protocolFees()': FunctionFragment;
-    'slot0()': FunctionFragment;
-    'tickBitmap(int16)': FunctionFragment;
-    'ticks(int24)': FunctionFragment;
+    "feeGrowthGlobal0X128()": FunctionFragment;
+    "feeGrowthGlobal1X128()": FunctionFragment;
+    "liquidity()": FunctionFragment;
+    "observations(uint256)": FunctionFragment;
+    "positions(bytes32)": FunctionFragment;
+    "protocolFees()": FunctionFragment;
+    "slot0()": FunctionFragment;
+    "tickBitmap(int16)": FunctionFragment;
+    "ticks(int24)": FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: 'feeGrowthGlobal0X128',
+    functionFragment: "feeGrowthGlobal0X128",
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: 'feeGrowthGlobal1X128',
+    functionFragment: "feeGrowthGlobal1X128",
     values?: undefined
   ): string;
-  encodeFunctionData(functionFragment: 'liquidity', values?: undefined): string;
+  encodeFunctionData(functionFragment: "liquidity", values?: undefined): string;
   encodeFunctionData(
-    functionFragment: 'observations',
+    functionFragment: "observations",
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'positions',
+    functionFragment: "positions",
     values: [BytesLike]
   ): string;
   encodeFunctionData(
-    functionFragment: 'protocolFees',
+    functionFragment: "protocolFees",
     values?: undefined
   ): string;
-  encodeFunctionData(functionFragment: 'slot0', values?: undefined): string;
+  encodeFunctionData(functionFragment: "slot0", values?: undefined): string;
   encodeFunctionData(
-    functionFragment: 'tickBitmap',
+    functionFragment: "tickBitmap",
     values: [BigNumberish]
   ): string;
-  encodeFunctionData(functionFragment: 'ticks', values: [BigNumberish]): string;
+  encodeFunctionData(functionFragment: "ticks", values: [BigNumberish]): string;
 
   decodeFunctionResult(
-    functionFragment: 'feeGrowthGlobal0X128',
+    functionFragment: "feeGrowthGlobal0X128",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'feeGrowthGlobal1X128',
+    functionFragment: "feeGrowthGlobal1X128",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: 'liquidity', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "liquidity", data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: 'observations',
+    functionFragment: "observations",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: 'positions', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "positions", data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: 'protocolFees',
+    functionFragment: "protocolFees",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: 'slot0', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'tickBitmap', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'ticks', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "slot0", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "tickBitmap", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "ticks", data: BytesLike): Result;
 
   events: {};
 }
@@ -165,7 +165,9 @@ export class IUniswapV3PoolState extends BaseContract {
       [BigNumber, BigNumber] & { token0: BigNumber; token1: BigNumber }
     >;
 
-    slot0(overrides?: CallOverrides): Promise<
+    slot0(
+      overrides?: CallOverrides
+    ): Promise<
       [BigNumber, number, number, number, number, number, boolean] & {
         sqrtPriceX96: BigNumber;
         tick: number;
@@ -243,7 +245,9 @@ export class IUniswapV3PoolState extends BaseContract {
     overrides?: CallOverrides
   ): Promise<[BigNumber, BigNumber] & { token0: BigNumber; token1: BigNumber }>;
 
-  slot0(overrides?: CallOverrides): Promise<
+  slot0(
+    overrides?: CallOverrides
+  ): Promise<
     [BigNumber, number, number, number, number, number, boolean] & {
       sqrtPriceX96: BigNumber;
       tick: number;
@@ -323,7 +327,9 @@ export class IUniswapV3PoolState extends BaseContract {
       [BigNumber, BigNumber] & { token0: BigNumber; token1: BigNumber }
     >;
 
-    slot0(overrides?: CallOverrides): Promise<
+    slot0(
+      overrides?: CallOverrides
+    ): Promise<
       [BigNumber, number, number, number, number, number, boolean] & {
         sqrtPriceX96: BigNumber;
         tick: number;

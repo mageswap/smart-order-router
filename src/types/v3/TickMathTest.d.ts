@@ -12,69 +12,69 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface TickMathTestInterface extends ethers.utils.Interface {
   functions: {
-    'MAX_SQRT_RATIO()': FunctionFragment;
-    'MIN_SQRT_RATIO()': FunctionFragment;
-    'getGasCostOfGetSqrtRatioAtTick(int24)': FunctionFragment;
-    'getGasCostOfGetTickAtSqrtRatio(uint160)': FunctionFragment;
-    'getSqrtRatioAtTick(int24)': FunctionFragment;
-    'getTickAtSqrtRatio(uint160)': FunctionFragment;
+    "MAX_SQRT_RATIO()": FunctionFragment;
+    "MIN_SQRT_RATIO()": FunctionFragment;
+    "getGasCostOfGetSqrtRatioAtTick(int24)": FunctionFragment;
+    "getGasCostOfGetTickAtSqrtRatio(uint160)": FunctionFragment;
+    "getSqrtRatioAtTick(int24)": FunctionFragment;
+    "getTickAtSqrtRatio(uint160)": FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: 'MAX_SQRT_RATIO',
+    functionFragment: "MAX_SQRT_RATIO",
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: 'MIN_SQRT_RATIO',
+    functionFragment: "MIN_SQRT_RATIO",
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: 'getGasCostOfGetSqrtRatioAtTick',
+    functionFragment: "getGasCostOfGetSqrtRatioAtTick",
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getGasCostOfGetTickAtSqrtRatio',
+    functionFragment: "getGasCostOfGetTickAtSqrtRatio",
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getSqrtRatioAtTick',
+    functionFragment: "getSqrtRatioAtTick",
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getTickAtSqrtRatio',
+    functionFragment: "getTickAtSqrtRatio",
     values: [BigNumberish]
   ): string;
 
   decodeFunctionResult(
-    functionFragment: 'MAX_SQRT_RATIO',
+    functionFragment: "MAX_SQRT_RATIO",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'MIN_SQRT_RATIO',
+    functionFragment: "MIN_SQRT_RATIO",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getGasCostOfGetSqrtRatioAtTick',
+    functionFragment: "getGasCostOfGetSqrtRatioAtTick",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getGasCostOfGetTickAtSqrtRatio',
+    functionFragment: "getGasCostOfGetTickAtSqrtRatio",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getSqrtRatioAtTick',
+    functionFragment: "getSqrtRatioAtTick",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getTickAtSqrtRatio',
+    functionFragment: "getTickAtSqrtRatio",
     data: BytesLike
   ): Result;
 

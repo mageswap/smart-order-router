@@ -2,46 +2,46 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from 'ethers';
-import { Provider } from '@ethersproject/providers';
+import { Contract, Signer, utils } from "ethers";
+import { Provider } from "@ethersproject/providers";
 import type {
   IUniswapV2Migrator,
   IUniswapV2MigratorInterface,
-} from '../IUniswapV2Migrator';
+} from "../IUniswapV2Migrator";
 
 const _abi = [
   {
     inputs: [
       {
-        internalType: 'address',
-        name: 'token',
-        type: 'address',
+        internalType: "address",
+        name: "token",
+        type: "address",
       },
       {
-        internalType: 'uint256',
-        name: 'amountTokenMin',
-        type: 'uint256',
+        internalType: "uint256",
+        name: "amountTokenMin",
+        type: "uint256",
       },
       {
-        internalType: 'uint256',
-        name: 'amountETHMin',
-        type: 'uint256',
+        internalType: "uint256",
+        name: "amountETHMin",
+        type: "uint256",
       },
       {
-        internalType: 'address',
-        name: 'to',
-        type: 'address',
+        internalType: "address",
+        name: "to",
+        type: "address",
       },
       {
-        internalType: 'uint256',
-        name: 'deadline',
-        type: 'uint256',
+        internalType: "uint256",
+        name: "deadline",
+        type: "uint256",
       },
     ],
-    name: 'migrate',
+    name: "migrate",
     outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function',
+    stateMutability: "nonpayable",
+    type: "function",
   },
 ];
 

@@ -11,38 +11,38 @@ import {
   PopulatedTransaction,
   BaseContract,
   ContractTransaction,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface IUniswapV3PoolEventsInterface extends ethers.utils.Interface {
   functions: {};
 
   events: {
-    'Burn(address,int24,int24,uint128,uint256,uint256)': EventFragment;
-    'Collect(address,address,int24,int24,uint128,uint128)': EventFragment;
-    'CollectProtocol(address,address,uint128,uint128)': EventFragment;
-    'Flash(address,address,uint256,uint256,uint256,uint256)': EventFragment;
-    'IncreaseObservationCardinalityNext(uint16,uint16)': EventFragment;
-    'Initialize(uint160,int24)': EventFragment;
-    'Mint(address,address,int24,int24,uint128,uint256,uint256)': EventFragment;
-    'SetFeeProtocol(uint8,uint8,uint8,uint8)': EventFragment;
-    'Swap(address,address,int256,int256,uint160,uint128,int24)': EventFragment;
+    "Burn(address,int24,int24,uint128,uint256,uint256)": EventFragment;
+    "Collect(address,address,int24,int24,uint128,uint128)": EventFragment;
+    "CollectProtocol(address,address,uint128,uint128)": EventFragment;
+    "Flash(address,address,uint256,uint256,uint256,uint256)": EventFragment;
+    "IncreaseObservationCardinalityNext(uint16,uint16)": EventFragment;
+    "Initialize(uint160,int24)": EventFragment;
+    "Mint(address,address,int24,int24,uint128,uint256,uint256)": EventFragment;
+    "SetFeeProtocol(uint8,uint8,uint8,uint8)": EventFragment;
+    "Swap(address,address,int256,int256,uint160,uint128,int24)": EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: 'Burn'): EventFragment;
-  getEvent(nameOrSignatureOrTopic: 'Collect'): EventFragment;
-  getEvent(nameOrSignatureOrTopic: 'CollectProtocol'): EventFragment;
-  getEvent(nameOrSignatureOrTopic: 'Flash'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "Burn"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "Collect"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "CollectProtocol"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "Flash"): EventFragment;
   getEvent(
-    nameOrSignatureOrTopic: 'IncreaseObservationCardinalityNext'
+    nameOrSignatureOrTopic: "IncreaseObservationCardinalityNext"
   ): EventFragment;
-  getEvent(nameOrSignatureOrTopic: 'Initialize'): EventFragment;
-  getEvent(nameOrSignatureOrTopic: 'Mint'): EventFragment;
-  getEvent(nameOrSignatureOrTopic: 'SetFeeProtocol'): EventFragment;
-  getEvent(nameOrSignatureOrTopic: 'Swap'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "Initialize"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "Mint"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "SetFeeProtocol"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "Swap"): EventFragment;
 }
 
 export type BurnEvent = TypedEvent<
@@ -179,7 +179,7 @@ export class IUniswapV3PoolEvents extends BaseContract {
   callStatic: {};
 
   filters: {
-    'Burn(address,int24,int24,uint128,uint256,uint256)'(
+    "Burn(address,int24,int24,uint128,uint256,uint256)"(
       owner?: string | null,
       tickLower?: BigNumberish | null,
       tickUpper?: BigNumberish | null,
@@ -217,7 +217,7 @@ export class IUniswapV3PoolEvents extends BaseContract {
       }
     >;
 
-    'Collect(address,address,int24,int24,uint128,uint128)'(
+    "Collect(address,address,int24,int24,uint128,uint128)"(
       owner?: string | null,
       recipient?: null,
       tickLower?: BigNumberish | null,
@@ -255,7 +255,7 @@ export class IUniswapV3PoolEvents extends BaseContract {
       }
     >;
 
-    'CollectProtocol(address,address,uint128,uint128)'(
+    "CollectProtocol(address,address,uint128,uint128)"(
       sender?: string | null,
       recipient?: string | null,
       amount0?: null,
@@ -285,7 +285,7 @@ export class IUniswapV3PoolEvents extends BaseContract {
       }
     >;
 
-    'Flash(address,address,uint256,uint256,uint256,uint256)'(
+    "Flash(address,address,uint256,uint256,uint256,uint256)"(
       sender?: string | null,
       recipient?: string | null,
       amount0?: null,
@@ -323,7 +323,7 @@ export class IUniswapV3PoolEvents extends BaseContract {
       }
     >;
 
-    'IncreaseObservationCardinalityNext(uint16,uint16)'(
+    "IncreaseObservationCardinalityNext(uint16,uint16)"(
       observationCardinalityNextOld?: null,
       observationCardinalityNextNew?: null
     ): TypedEventFilter<
@@ -345,7 +345,7 @@ export class IUniswapV3PoolEvents extends BaseContract {
       }
     >;
 
-    'Initialize(uint160,int24)'(
+    "Initialize(uint160,int24)"(
       sqrtPriceX96?: null,
       tick?: null
     ): TypedEventFilter<
@@ -361,7 +361,7 @@ export class IUniswapV3PoolEvents extends BaseContract {
       { sqrtPriceX96: BigNumber; tick: number }
     >;
 
-    'Mint(address,address,int24,int24,uint128,uint256,uint256)'(
+    "Mint(address,address,int24,int24,uint128,uint256,uint256)"(
       sender?: null,
       owner?: string | null,
       tickLower?: BigNumberish | null,
@@ -403,7 +403,7 @@ export class IUniswapV3PoolEvents extends BaseContract {
       }
     >;
 
-    'SetFeeProtocol(uint8,uint8,uint8,uint8)'(
+    "SetFeeProtocol(uint8,uint8,uint8,uint8)"(
       feeProtocol0Old?: null,
       feeProtocol1Old?: null,
       feeProtocol0New?: null,
@@ -433,7 +433,7 @@ export class IUniswapV3PoolEvents extends BaseContract {
       }
     >;
 
-    'Swap(address,address,int256,int256,uint160,uint128,int24)'(
+    "Swap(address,address,int256,int256,uint160,uint128,int24)"(
       sender?: string | null,
       recipient?: string | null,
       amount0?: null,

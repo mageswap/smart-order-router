@@ -14,28 +14,28 @@ import {
   Overrides,
   PayableOverrides,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface PairFlashInterface extends ethers.utils.Interface {
   functions: {
-    'WETH9()': FunctionFragment;
-    'factory()': FunctionFragment;
-    'initFlash((address,address,uint24,uint256,uint256,uint24,uint24))': FunctionFragment;
-    'refundETH()': FunctionFragment;
-    'swapRouter()': FunctionFragment;
-    'sweepToken(address,uint256,address)': FunctionFragment;
-    'uniswapV3FlashCallback(uint256,uint256,bytes)': FunctionFragment;
-    'unwrapWETH9(uint256,address)': FunctionFragment;
+    "WETH9()": FunctionFragment;
+    "factory()": FunctionFragment;
+    "initFlash((address,address,uint24,uint256,uint256,uint24,uint24))": FunctionFragment;
+    "refundETH()": FunctionFragment;
+    "swapRouter()": FunctionFragment;
+    "sweepToken(address,uint256,address)": FunctionFragment;
+    "uniswapV3FlashCallback(uint256,uint256,bytes)": FunctionFragment;
+    "unwrapWETH9(uint256,address)": FunctionFragment;
   };
 
-  encodeFunctionData(functionFragment: 'WETH9', values?: undefined): string;
-  encodeFunctionData(functionFragment: 'factory', values?: undefined): string;
+  encodeFunctionData(functionFragment: "WETH9", values?: undefined): string;
+  encodeFunctionData(functionFragment: "factory", values?: undefined): string;
   encodeFunctionData(
-    functionFragment: 'initFlash',
+    functionFragment: "initFlash",
     values: [
       {
         token0: string;
@@ -48,36 +48,36 @@ interface PairFlashInterface extends ethers.utils.Interface {
       }
     ]
   ): string;
-  encodeFunctionData(functionFragment: 'refundETH', values?: undefined): string;
+  encodeFunctionData(functionFragment: "refundETH", values?: undefined): string;
   encodeFunctionData(
-    functionFragment: 'swapRouter',
+    functionFragment: "swapRouter",
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: 'sweepToken',
+    functionFragment: "sweepToken",
     values: [string, BigNumberish, string]
   ): string;
   encodeFunctionData(
-    functionFragment: 'uniswapV3FlashCallback',
+    functionFragment: "uniswapV3FlashCallback",
     values: [BigNumberish, BigNumberish, BytesLike]
   ): string;
   encodeFunctionData(
-    functionFragment: 'unwrapWETH9',
+    functionFragment: "unwrapWETH9",
     values: [BigNumberish, string]
   ): string;
 
-  decodeFunctionResult(functionFragment: 'WETH9', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'factory', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'initFlash', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'refundETH', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'swapRouter', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'sweepToken', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "WETH9", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "factory", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "initFlash", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "refundETH", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "swapRouter", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "sweepToken", data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: 'uniswapV3FlashCallback',
+    functionFragment: "uniswapV3FlashCallback",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'unwrapWETH9',
+    functionFragment: "unwrapWETH9",
     data: BytesLike
   ): Result;
 

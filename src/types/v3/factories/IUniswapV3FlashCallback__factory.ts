@@ -2,36 +2,36 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from 'ethers';
-import { Provider } from '@ethersproject/providers';
+import { Contract, Signer, utils } from "ethers";
+import { Provider } from "@ethersproject/providers";
 import type {
   IUniswapV3FlashCallback,
   IUniswapV3FlashCallbackInterface,
-} from '../IUniswapV3FlashCallback';
+} from "../IUniswapV3FlashCallback";
 
 const _abi = [
   {
     inputs: [
       {
-        internalType: 'uint256',
-        name: 'fee0',
-        type: 'uint256',
+        internalType: "uint256",
+        name: "fee0",
+        type: "uint256",
       },
       {
-        internalType: 'uint256',
-        name: 'fee1',
-        type: 'uint256',
+        internalType: "uint256",
+        name: "fee1",
+        type: "uint256",
       },
       {
-        internalType: 'bytes',
-        name: 'data',
-        type: 'bytes',
+        internalType: "bytes",
+        name: "data",
+        type: "bytes",
       },
     ],
-    name: 'uniswapV3FlashCallback',
+    name: "uniswapV3FlashCallback",
     outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function',
+    stateMutability: "nonpayable",
+    type: "function",
   },
 ];
 

@@ -12,33 +12,33 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface BitMathEchidnaTestInterface extends ethers.utils.Interface {
   functions: {
-    'leastSignificantBitInvariant(uint256)': FunctionFragment;
-    'mostSignificantBitInvariant(uint256)': FunctionFragment;
+    "leastSignificantBitInvariant(uint256)": FunctionFragment;
+    "mostSignificantBitInvariant(uint256)": FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: 'leastSignificantBitInvariant',
+    functionFragment: "leastSignificantBitInvariant",
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'mostSignificantBitInvariant',
+    functionFragment: "mostSignificantBitInvariant",
     values: [BigNumberish]
   ): string;
 
   decodeFunctionResult(
-    functionFragment: 'leastSignificantBitInvariant',
+    functionFragment: "leastSignificantBitInvariant",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'mostSignificantBitInvariant',
+    functionFragment: "mostSignificantBitInvariant",
     data: BytesLike
   ): Result;
 

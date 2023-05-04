@@ -13,62 +13,62 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface IUniswapV3PoolActionsInterface extends ethers.utils.Interface {
   functions: {
-    'burn(int24,int24,uint128)': FunctionFragment;
-    'collect(address,int24,int24,uint128,uint128)': FunctionFragment;
-    'flash(address,uint256,uint256,bytes)': FunctionFragment;
-    'increaseObservationCardinalityNext(uint16)': FunctionFragment;
-    'initialize(uint160)': FunctionFragment;
-    'mint(address,int24,int24,uint128,bytes)': FunctionFragment;
-    'swap(address,bool,int256,uint160,bytes)': FunctionFragment;
+    "burn(int24,int24,uint128)": FunctionFragment;
+    "collect(address,int24,int24,uint128,uint128)": FunctionFragment;
+    "flash(address,uint256,uint256,bytes)": FunctionFragment;
+    "increaseObservationCardinalityNext(uint16)": FunctionFragment;
+    "initialize(uint160)": FunctionFragment;
+    "mint(address,int24,int24,uint128,bytes)": FunctionFragment;
+    "swap(address,bool,int256,uint160,bytes)": FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: 'burn',
+    functionFragment: "burn",
     values: [BigNumberish, BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'collect',
+    functionFragment: "collect",
     values: [string, BigNumberish, BigNumberish, BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'flash',
+    functionFragment: "flash",
     values: [string, BigNumberish, BigNumberish, BytesLike]
   ): string;
   encodeFunctionData(
-    functionFragment: 'increaseObservationCardinalityNext',
+    functionFragment: "increaseObservationCardinalityNext",
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'initialize',
+    functionFragment: "initialize",
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'mint',
+    functionFragment: "mint",
     values: [string, BigNumberish, BigNumberish, BigNumberish, BytesLike]
   ): string;
   encodeFunctionData(
-    functionFragment: 'swap',
+    functionFragment: "swap",
     values: [string, boolean, BigNumberish, BigNumberish, BytesLike]
   ): string;
 
-  decodeFunctionResult(functionFragment: 'burn', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'collect', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'flash', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "burn", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "collect", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "flash", data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: 'increaseObservationCardinalityNext',
+    functionFragment: "increaseObservationCardinalityNext",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: 'initialize', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'mint', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'swap', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "mint", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "swap", data: BytesLike): Result;
 
   events: {};
 }

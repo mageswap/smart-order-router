@@ -2,41 +2,41 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from 'ethers';
-import { Provider } from '@ethersproject/providers';
+import { Contract, Signer, utils } from "ethers";
+import { Provider } from "@ethersproject/providers";
 import type {
   IUniswapV2Callee,
   IUniswapV2CalleeInterface,
-} from '../IUniswapV2Callee';
+} from "../IUniswapV2Callee";
 
 const _abi = [
   {
     inputs: [
       {
-        internalType: 'address',
-        name: 'sender',
-        type: 'address',
+        internalType: "address",
+        name: "sender",
+        type: "address",
       },
       {
-        internalType: 'uint256',
-        name: 'amount0',
-        type: 'uint256',
+        internalType: "uint256",
+        name: "amount0",
+        type: "uint256",
       },
       {
-        internalType: 'uint256',
-        name: 'amount1',
-        type: 'uint256',
+        internalType: "uint256",
+        name: "amount1",
+        type: "uint256",
       },
       {
-        internalType: 'bytes',
-        name: 'data',
-        type: 'bytes',
+        internalType: "bytes",
+        name: "data",
+        type: "bytes",
       },
     ],
-    name: 'uniswapV2Call',
+    name: "uniswapV2Call",
     outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function',
+    stateMutability: "nonpayable",
+    type: "function",
   },
 ];
 

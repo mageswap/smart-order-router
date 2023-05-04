@@ -13,23 +13,23 @@ import {
   ContractTransaction,
   PayableOverrides,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface MulticallExtendedInterface extends ethers.utils.Interface {
   functions: {
-    'multicall(bytes32,bytes[])': FunctionFragment;
+    "multicall(bytes32,bytes[])": FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: 'multicall',
+    functionFragment: "multicall",
     values: [BytesLike, BytesLike[]]
   ): string;
 
-  decodeFunctionResult(functionFragment: 'multicall', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "multicall", data: BytesLike): Result;
 
   events: {};
 }
@@ -78,55 +78,55 @@ export class MulticallExtended extends BaseContract {
   interface: MulticallExtendedInterface;
 
   functions: {
-    'multicall(bytes32,bytes[])'(
+    "multicall(bytes32,bytes[])"(
       previousBlockhash: BytesLike,
       data: BytesLike[],
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    'multicall(uint256,bytes[])'(
+    "multicall(uint256,bytes[])"(
       deadline: BigNumberish,
       data: BytesLike[],
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    'multicall(bytes[])'(
+    "multicall(bytes[])"(
       data: BytesLike[],
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
   };
 
-  'multicall(bytes32,bytes[])'(
+  "multicall(bytes32,bytes[])"(
     previousBlockhash: BytesLike,
     data: BytesLike[],
     overrides?: PayableOverrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  'multicall(uint256,bytes[])'(
+  "multicall(uint256,bytes[])"(
     deadline: BigNumberish,
     data: BytesLike[],
     overrides?: PayableOverrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  'multicall(bytes[])'(
+  "multicall(bytes[])"(
     data: BytesLike[],
     overrides?: PayableOverrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
   callStatic: {
-    'multicall(bytes32,bytes[])'(
+    "multicall(bytes32,bytes[])"(
       previousBlockhash: BytesLike,
       data: BytesLike[],
       overrides?: CallOverrides
     ): Promise<string[]>;
 
-    'multicall(uint256,bytes[])'(
+    "multicall(uint256,bytes[])"(
       deadline: BigNumberish,
       data: BytesLike[],
       overrides?: CallOverrides
     ): Promise<string[]>;
 
-    'multicall(bytes[])'(
+    "multicall(bytes[])"(
       data: BytesLike[],
       overrides?: CallOverrides
     ): Promise<string[]>;
@@ -135,38 +135,38 @@ export class MulticallExtended extends BaseContract {
   filters: {};
 
   estimateGas: {
-    'multicall(bytes32,bytes[])'(
+    "multicall(bytes32,bytes[])"(
       previousBlockhash: BytesLike,
       data: BytesLike[],
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    'multicall(uint256,bytes[])'(
+    "multicall(uint256,bytes[])"(
       deadline: BigNumberish,
       data: BytesLike[],
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    'multicall(bytes[])'(
+    "multicall(bytes[])"(
       data: BytesLike[],
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
   };
 
   populateTransaction: {
-    'multicall(bytes32,bytes[])'(
+    "multicall(bytes32,bytes[])"(
       previousBlockhash: BytesLike,
       data: BytesLike[],
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
-    'multicall(uint256,bytes[])'(
+    "multicall(uint256,bytes[])"(
       deadline: BigNumberish,
       data: BytesLike[],
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
-    'multicall(bytes[])'(
+    "multicall(bytes[])"(
       data: BytesLike[],
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;

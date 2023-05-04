@@ -13,26 +13,26 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface TickTestInterface extends ethers.utils.Interface {
   functions: {
-    'clear(int24)': FunctionFragment;
-    'cross(int24,uint256,uint256,uint160,int56,uint32)': FunctionFragment;
-    'getFeeGrowthInside(int24,int24,int24,uint256,uint256)': FunctionFragment;
-    'setTick(int24,(uint128,int128,uint256,uint256,int56,uint160,uint32,bool))': FunctionFragment;
-    'tickSpacingToMaxLiquidityPerTick(int24)': FunctionFragment;
-    'ticks(int24)': FunctionFragment;
-    'update(int24,int24,int128,uint256,uint256,uint160,int56,uint32,bool,uint128)': FunctionFragment;
+    "clear(int24)": FunctionFragment;
+    "cross(int24,uint256,uint256,uint160,int56,uint32)": FunctionFragment;
+    "getFeeGrowthInside(int24,int24,int24,uint256,uint256)": FunctionFragment;
+    "setTick(int24,(uint128,int128,uint256,uint256,int56,uint160,uint32,bool))": FunctionFragment;
+    "tickSpacingToMaxLiquidityPerTick(int24)": FunctionFragment;
+    "ticks(int24)": FunctionFragment;
+    "update(int24,int24,int128,uint256,uint256,uint160,int56,uint32,bool,uint128)": FunctionFragment;
   };
 
-  encodeFunctionData(functionFragment: 'clear', values: [BigNumberish]): string;
+  encodeFunctionData(functionFragment: "clear", values: [BigNumberish]): string;
   encodeFunctionData(
-    functionFragment: 'cross',
+    functionFragment: "cross",
     values: [
       BigNumberish,
       BigNumberish,
@@ -43,7 +43,7 @@ interface TickTestInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getFeeGrowthInside',
+    functionFragment: "getFeeGrowthInside",
     values: [
       BigNumberish,
       BigNumberish,
@@ -53,7 +53,7 @@ interface TickTestInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: 'setTick',
+    functionFragment: "setTick",
     values: [
       BigNumberish,
       {
@@ -69,12 +69,12 @@ interface TickTestInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: 'tickSpacingToMaxLiquidityPerTick',
+    functionFragment: "tickSpacingToMaxLiquidityPerTick",
     values: [BigNumberish]
   ): string;
-  encodeFunctionData(functionFragment: 'ticks', values: [BigNumberish]): string;
+  encodeFunctionData(functionFragment: "ticks", values: [BigNumberish]): string;
   encodeFunctionData(
-    functionFragment: 'update',
+    functionFragment: "update",
     values: [
       BigNumberish,
       BigNumberish,
@@ -89,19 +89,19 @@ interface TickTestInterface extends ethers.utils.Interface {
     ]
   ): string;
 
-  decodeFunctionResult(functionFragment: 'clear', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'cross', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "clear", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "cross", data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: 'getFeeGrowthInside',
+    functionFragment: "getFeeGrowthInside",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: 'setTick', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "setTick", data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: 'tickSpacingToMaxLiquidityPerTick',
+    functionFragment: "tickSpacingToMaxLiquidityPerTick",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: 'ticks', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'update', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "ticks", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "update", data: BytesLike): Result;
 
   events: {};
 }

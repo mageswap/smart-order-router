@@ -12,25 +12,25 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface NonfungiblePositionManagerPositionsGasTestInterface
   extends ethers.utils.Interface {
   functions: {
-    'getGasCostOfPositions(uint256)': FunctionFragment;
+    "getGasCostOfPositions(uint256)": FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: 'getGasCostOfPositions',
+    functionFragment: "getGasCostOfPositions",
     values: [BigNumberish]
   ): string;
 
   decodeFunctionResult(
-    functionFragment: 'getGasCostOfPositions',
+    functionFragment: "getGasCostOfPositions",
     data: BytesLike
   ): Result;
 

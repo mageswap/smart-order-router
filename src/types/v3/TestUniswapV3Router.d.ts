@@ -13,50 +13,50 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface TestUniswapV3RouterInterface extends ethers.utils.Interface {
   functions: {
-    'swapForExact0Multi(address,address,address,uint256)': FunctionFragment;
-    'swapForExact1Multi(address,address,address,uint256)': FunctionFragment;
-    'uniswapV3SwapCallback(int256,int256,bytes)': FunctionFragment;
+    "swapForExact0Multi(address,address,address,uint256)": FunctionFragment;
+    "swapForExact1Multi(address,address,address,uint256)": FunctionFragment;
+    "uniswapV3SwapCallback(int256,int256,bytes)": FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: 'swapForExact0Multi',
+    functionFragment: "swapForExact0Multi",
     values: [string, string, string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'swapForExact1Multi',
+    functionFragment: "swapForExact1Multi",
     values: [string, string, string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'uniswapV3SwapCallback',
+    functionFragment: "uniswapV3SwapCallback",
     values: [BigNumberish, BigNumberish, BytesLike]
   ): string;
 
   decodeFunctionResult(
-    functionFragment: 'swapForExact0Multi',
+    functionFragment: "swapForExact0Multi",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'swapForExact1Multi',
+    functionFragment: "swapForExact1Multi",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'uniswapV3SwapCallback',
+    functionFragment: "uniswapV3SwapCallback",
     data: BytesLike
   ): Result;
 
   events: {
-    'SwapCallback(int256,int256)': EventFragment;
+    "SwapCallback(int256,int256)": EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: 'SwapCallback'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: "SwapCallback"): EventFragment;
 }
 
 export type SwapCallbackEvent = TypedEvent<
@@ -180,7 +180,7 @@ export class TestUniswapV3Router extends BaseContract {
   };
 
   filters: {
-    'SwapCallback(int256,int256)'(
+    "SwapCallback(int256,int256)"(
       amount0Delta?: null,
       amount1Delta?: null
     ): TypedEventFilter<

@@ -14,38 +14,38 @@ import {
   Overrides,
   PayableOverrides,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface UniswapV2Router01Interface extends ethers.utils.Interface {
   functions: {
-    'WETH()': FunctionFragment;
-    'addLiquidity(address,address,uint256,uint256,uint256,uint256,address,uint256)': FunctionFragment;
-    'addLiquidityETH(address,uint256,uint256,uint256,address,uint256)': FunctionFragment;
-    'factory()': FunctionFragment;
-    'getAmountIn(uint256,uint256,uint256)': FunctionFragment;
-    'getAmountOut(uint256,uint256,uint256)': FunctionFragment;
-    'getAmountsIn(uint256,address[])': FunctionFragment;
-    'getAmountsOut(uint256,address[])': FunctionFragment;
-    'quote(uint256,uint256,uint256)': FunctionFragment;
-    'removeLiquidity(address,address,uint256,uint256,uint256,address,uint256)': FunctionFragment;
-    'removeLiquidityETH(address,uint256,uint256,uint256,address,uint256)': FunctionFragment;
-    'removeLiquidityETHWithPermit(address,uint256,uint256,uint256,address,uint256,bool,uint8,bytes32,bytes32)': FunctionFragment;
-    'removeLiquidityWithPermit(address,address,uint256,uint256,uint256,address,uint256,bool,uint8,bytes32,bytes32)': FunctionFragment;
-    'swapETHForExactTokens(uint256,address[],address,uint256)': FunctionFragment;
-    'swapExactETHForTokens(uint256,address[],address,uint256)': FunctionFragment;
-    'swapExactTokensForETH(uint256,uint256,address[],address,uint256)': FunctionFragment;
-    'swapExactTokensForTokens(uint256,uint256,address[],address,uint256)': FunctionFragment;
-    'swapTokensForExactETH(uint256,uint256,address[],address,uint256)': FunctionFragment;
-    'swapTokensForExactTokens(uint256,uint256,address[],address,uint256)': FunctionFragment;
+    "WETH()": FunctionFragment;
+    "addLiquidity(address,address,uint256,uint256,uint256,uint256,address,uint256)": FunctionFragment;
+    "addLiquidityETH(address,uint256,uint256,uint256,address,uint256)": FunctionFragment;
+    "factory()": FunctionFragment;
+    "getAmountIn(uint256,uint256,uint256)": FunctionFragment;
+    "getAmountOut(uint256,uint256,uint256)": FunctionFragment;
+    "getAmountsIn(uint256,address[])": FunctionFragment;
+    "getAmountsOut(uint256,address[])": FunctionFragment;
+    "quote(uint256,uint256,uint256)": FunctionFragment;
+    "removeLiquidity(address,address,uint256,uint256,uint256,address,uint256)": FunctionFragment;
+    "removeLiquidityETH(address,uint256,uint256,uint256,address,uint256)": FunctionFragment;
+    "removeLiquidityETHWithPermit(address,uint256,uint256,uint256,address,uint256,bool,uint8,bytes32,bytes32)": FunctionFragment;
+    "removeLiquidityWithPermit(address,address,uint256,uint256,uint256,address,uint256,bool,uint8,bytes32,bytes32)": FunctionFragment;
+    "swapETHForExactTokens(uint256,address[],address,uint256)": FunctionFragment;
+    "swapExactETHForTokens(uint256,address[],address,uint256)": FunctionFragment;
+    "swapExactTokensForETH(uint256,uint256,address[],address,uint256)": FunctionFragment;
+    "swapExactTokensForTokens(uint256,uint256,address[],address,uint256)": FunctionFragment;
+    "swapTokensForExactETH(uint256,uint256,address[],address,uint256)": FunctionFragment;
+    "swapTokensForExactTokens(uint256,uint256,address[],address,uint256)": FunctionFragment;
   };
 
-  encodeFunctionData(functionFragment: 'WETH', values?: undefined): string;
+  encodeFunctionData(functionFragment: "WETH", values?: undefined): string;
   encodeFunctionData(
-    functionFragment: 'addLiquidity',
+    functionFragment: "addLiquidity",
     values: [
       string,
       string,
@@ -58,7 +58,7 @@ interface UniswapV2Router01Interface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: 'addLiquidityETH',
+    functionFragment: "addLiquidityETH",
     values: [
       string,
       BigNumberish,
@@ -68,29 +68,29 @@ interface UniswapV2Router01Interface extends ethers.utils.Interface {
       BigNumberish
     ]
   ): string;
-  encodeFunctionData(functionFragment: 'factory', values?: undefined): string;
+  encodeFunctionData(functionFragment: "factory", values?: undefined): string;
   encodeFunctionData(
-    functionFragment: 'getAmountIn',
+    functionFragment: "getAmountIn",
     values: [BigNumberish, BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getAmountOut',
+    functionFragment: "getAmountOut",
     values: [BigNumberish, BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getAmountsIn',
+    functionFragment: "getAmountsIn",
     values: [BigNumberish, string[]]
   ): string;
   encodeFunctionData(
-    functionFragment: 'getAmountsOut',
+    functionFragment: "getAmountsOut",
     values: [BigNumberish, string[]]
   ): string;
   encodeFunctionData(
-    functionFragment: 'quote',
+    functionFragment: "quote",
     values: [BigNumberish, BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'removeLiquidity',
+    functionFragment: "removeLiquidity",
     values: [
       string,
       string,
@@ -102,7 +102,7 @@ interface UniswapV2Router01Interface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: 'removeLiquidityETH',
+    functionFragment: "removeLiquidityETH",
     values: [
       string,
       BigNumberish,
@@ -113,7 +113,7 @@ interface UniswapV2Router01Interface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: 'removeLiquidityETHWithPermit',
+    functionFragment: "removeLiquidityETHWithPermit",
     values: [
       string,
       BigNumberish,
@@ -128,7 +128,7 @@ interface UniswapV2Router01Interface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: 'removeLiquidityWithPermit',
+    functionFragment: "removeLiquidityWithPermit",
     values: [
       string,
       string,
@@ -144,95 +144,95 @@ interface UniswapV2Router01Interface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: 'swapETHForExactTokens',
+    functionFragment: "swapETHForExactTokens",
     values: [BigNumberish, string[], string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'swapExactETHForTokens',
+    functionFragment: "swapExactETHForTokens",
     values: [BigNumberish, string[], string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'swapExactTokensForETH',
+    functionFragment: "swapExactTokensForETH",
     values: [BigNumberish, BigNumberish, string[], string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'swapExactTokensForTokens',
+    functionFragment: "swapExactTokensForTokens",
     values: [BigNumberish, BigNumberish, string[], string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'swapTokensForExactETH',
+    functionFragment: "swapTokensForExactETH",
     values: [BigNumberish, BigNumberish, string[], string, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'swapTokensForExactTokens',
+    functionFragment: "swapTokensForExactTokens",
     values: [BigNumberish, BigNumberish, string[], string, BigNumberish]
   ): string;
 
-  decodeFunctionResult(functionFragment: 'WETH', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "WETH", data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: 'addLiquidity',
+    functionFragment: "addLiquidity",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'addLiquidityETH',
+    functionFragment: "addLiquidityETH",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: 'factory', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "factory", data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: 'getAmountIn',
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: 'getAmountOut',
+    functionFragment: "getAmountIn",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getAmountsIn',
+    functionFragment: "getAmountOut",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getAmountsOut',
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: 'quote', data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: 'removeLiquidity',
+    functionFragment: "getAmountsIn",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'removeLiquidityETH',
+    functionFragment: "getAmountsOut",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(functionFragment: "quote", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "removeLiquidity",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'removeLiquidityETHWithPermit',
+    functionFragment: "removeLiquidityETH",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'removeLiquidityWithPermit',
+    functionFragment: "removeLiquidityETHWithPermit",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'swapETHForExactTokens',
+    functionFragment: "removeLiquidityWithPermit",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'swapExactETHForTokens',
+    functionFragment: "swapETHForExactTokens",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'swapExactTokensForETH',
+    functionFragment: "swapExactETHForTokens",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'swapExactTokensForTokens',
+    functionFragment: "swapExactTokensForETH",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'swapTokensForExactETH',
+    functionFragment: "swapExactTokensForTokens",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'swapTokensForExactTokens',
+    functionFragment: "swapTokensForExactETH",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "swapTokensForExactTokens",
     data: BytesLike
   ): Result;
 

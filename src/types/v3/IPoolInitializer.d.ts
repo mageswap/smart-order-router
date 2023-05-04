@@ -13,24 +13,24 @@ import {
   ContractTransaction,
   PayableOverrides,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface IPoolInitializerInterface extends ethers.utils.Interface {
   functions: {
-    'createAndInitializePoolIfNecessary(address,address,uint24,uint160)': FunctionFragment;
+    "createAndInitializePoolIfNecessary(address,address,uint24,uint160)": FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: 'createAndInitializePoolIfNecessary',
+    functionFragment: "createAndInitializePoolIfNecessary",
     values: [string, string, BigNumberish, BigNumberish]
   ): string;
 
   decodeFunctionResult(
-    functionFragment: 'createAndInitializePoolIfNecessary',
+    functionFragment: "createAndInitializePoolIfNecessary",
     data: BytesLike
   ): Result;
 

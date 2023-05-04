@@ -13,41 +13,41 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface UniswapInterfaceMulticallInterface extends ethers.utils.Interface {
   functions: {
-    'getCurrentBlockTimestamp()': FunctionFragment;
-    'getEthBalance(address)': FunctionFragment;
-    'multicall(tuple[])': FunctionFragment;
+    "getCurrentBlockTimestamp()": FunctionFragment;
+    "getEthBalance(address)": FunctionFragment;
+    "multicall(tuple[])": FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: 'getCurrentBlockTimestamp',
+    functionFragment: "getCurrentBlockTimestamp",
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: 'getEthBalance',
+    functionFragment: "getEthBalance",
     values: [string]
   ): string;
   encodeFunctionData(
-    functionFragment: 'multicall',
+    functionFragment: "multicall",
     values: [{ target: string; gasLimit: BigNumberish; callData: BytesLike }[]]
   ): string;
 
   decodeFunctionResult(
-    functionFragment: 'getCurrentBlockTimestamp',
+    functionFragment: "getCurrentBlockTimestamp",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'getEthBalance',
+    functionFragment: "getEthBalance",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: 'multicall', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "multicall", data: BytesLike): Result;
 
   events: {};
 }

@@ -12,19 +12,19 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface SwapMathEchidnaTestInterface extends ethers.utils.Interface {
   functions: {
-    'checkComputeSwapStepInvariants(uint160,uint160,uint128,int256,uint24)': FunctionFragment;
+    "checkComputeSwapStepInvariants(uint160,uint160,uint128,int256,uint24)": FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: 'checkComputeSwapStepInvariants',
+    functionFragment: "checkComputeSwapStepInvariants",
     values: [
       BigNumberish,
       BigNumberish,
@@ -35,7 +35,7 @@ interface SwapMathEchidnaTestInterface extends ethers.utils.Interface {
   ): string;
 
   decodeFunctionResult(
-    functionFragment: 'checkComputeSwapStepInvariants',
+    functionFragment: "checkComputeSwapStepInvariants",
     data: BytesLike
   ): Result;
 

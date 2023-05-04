@@ -2,65 +2,65 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from 'ethers';
-import { Provider } from '@ethersproject/providers';
+import { Contract, Signer, utils } from "ethers";
+import { Provider } from "@ethersproject/providers";
 import type {
   IUniswapV3PoolOwnerActions,
   IUniswapV3PoolOwnerActionsInterface,
-} from '../IUniswapV3PoolOwnerActions';
+} from "../IUniswapV3PoolOwnerActions";
 
 const _abi = [
   {
     inputs: [
       {
-        internalType: 'address',
-        name: 'recipient',
-        type: 'address',
+        internalType: "address",
+        name: "recipient",
+        type: "address",
       },
       {
-        internalType: 'uint128',
-        name: 'amount0Requested',
-        type: 'uint128',
+        internalType: "uint128",
+        name: "amount0Requested",
+        type: "uint128",
       },
       {
-        internalType: 'uint128',
-        name: 'amount1Requested',
-        type: 'uint128',
+        internalType: "uint128",
+        name: "amount1Requested",
+        type: "uint128",
       },
     ],
-    name: 'collectProtocol',
+    name: "collectProtocol",
     outputs: [
       {
-        internalType: 'uint128',
-        name: 'amount0',
-        type: 'uint128',
+        internalType: "uint128",
+        name: "amount0",
+        type: "uint128",
       },
       {
-        internalType: 'uint128',
-        name: 'amount1',
-        type: 'uint128',
+        internalType: "uint128",
+        name: "amount1",
+        type: "uint128",
       },
     ],
-    stateMutability: 'nonpayable',
-    type: 'function',
+    stateMutability: "nonpayable",
+    type: "function",
   },
   {
     inputs: [
       {
-        internalType: 'uint8',
-        name: 'feeProtocol0',
-        type: 'uint8',
+        internalType: "uint8",
+        name: "feeProtocol0",
+        type: "uint8",
       },
       {
-        internalType: 'uint8',
-        name: 'feeProtocol1',
-        type: 'uint8',
+        internalType: "uint8",
+        name: "feeProtocol1",
+        type: "uint8",
       },
     ],
-    name: 'setFeeProtocol',
+    name: "setFeeProtocol",
     outputs: [],
-    stateMutability: 'nonpayable',
-    type: 'function',
+    stateMutability: "nonpayable",
+    type: "function",
   },
 ];
 

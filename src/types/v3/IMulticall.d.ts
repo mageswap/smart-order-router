@@ -13,23 +13,23 @@ import {
   ContractTransaction,
   PayableOverrides,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface IMulticallInterface extends ethers.utils.Interface {
   functions: {
-    'multicall(bytes[])': FunctionFragment;
+    "multicall(bytes[])": FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: 'multicall',
+    functionFragment: "multicall",
     values: [BytesLike[]]
   ): string;
 
-  decodeFunctionResult(functionFragment: 'multicall', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "multicall", data: BytesLike): Result;
 
   events: {};
 }

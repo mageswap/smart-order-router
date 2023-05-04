@@ -14,38 +14,38 @@ import {
   Overrides,
   PayableOverrides,
   CallOverrides,
-} from 'ethers';
-import { BytesLike } from '@ethersproject/bytes';
-import { Listener, Provider } from '@ethersproject/providers';
-import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
-import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
+} from "ethers";
+import { BytesLike } from "@ethersproject/bytes";
+import { Listener, Provider } from "@ethersproject/providers";
+import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
+import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 interface V3SwapRouterInterface extends ethers.utils.Interface {
   functions: {
-    'WETH9()': FunctionFragment;
-    'checkOracleSlippage(bytes[],uint128[],uint24,uint32)': FunctionFragment;
-    'exactInput((bytes,address,uint256,uint256))': FunctionFragment;
-    'exactInputSingle((address,address,uint24,address,uint256,uint256,uint160))': FunctionFragment;
-    'exactOutput((bytes,address,uint256,uint256))': FunctionFragment;
-    'exactOutputSingle((address,address,uint24,address,uint256,uint256,uint160))': FunctionFragment;
-    'factory()': FunctionFragment;
-    'pull(address,uint256)': FunctionFragment;
-    'refundETH()': FunctionFragment;
-    'sweepToken(address,uint256,address)': FunctionFragment;
-    'sweepTokenWithFee(address,uint256,uint256,address)': FunctionFragment;
-    'uniswapV3SwapCallback(int256,int256,bytes)': FunctionFragment;
-    'unwrapWETH9(uint256,address)': FunctionFragment;
-    'unwrapWETH9WithFee(uint256,address,uint256,address)': FunctionFragment;
-    'wrapETH(uint256)': FunctionFragment;
+    "WETH9()": FunctionFragment;
+    "checkOracleSlippage(bytes[],uint128[],uint24,uint32)": FunctionFragment;
+    "exactInput((bytes,address,uint256,uint256))": FunctionFragment;
+    "exactInputSingle((address,address,uint24,address,uint256,uint256,uint160))": FunctionFragment;
+    "exactOutput((bytes,address,uint256,uint256))": FunctionFragment;
+    "exactOutputSingle((address,address,uint24,address,uint256,uint256,uint160))": FunctionFragment;
+    "factory()": FunctionFragment;
+    "pull(address,uint256)": FunctionFragment;
+    "refundETH()": FunctionFragment;
+    "sweepToken(address,uint256,address)": FunctionFragment;
+    "sweepTokenWithFee(address,uint256,uint256,address)": FunctionFragment;
+    "uniswapV3SwapCallback(int256,int256,bytes)": FunctionFragment;
+    "unwrapWETH9(uint256,address)": FunctionFragment;
+    "unwrapWETH9WithFee(uint256,address,uint256,address)": FunctionFragment;
+    "wrapETH(uint256)": FunctionFragment;
   };
 
-  encodeFunctionData(functionFragment: 'WETH9', values?: undefined): string;
+  encodeFunctionData(functionFragment: "WETH9", values?: undefined): string;
   encodeFunctionData(
-    functionFragment: 'checkOracleSlippage',
+    functionFragment: "checkOracleSlippage",
     values: [BytesLike[], BigNumberish[], BigNumberish, BigNumberish]
   ): string;
   encodeFunctionData(
-    functionFragment: 'exactInput',
+    functionFragment: "exactInput",
     values: [
       {
         path: BytesLike;
@@ -56,7 +56,7 @@ interface V3SwapRouterInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: 'exactInputSingle',
+    functionFragment: "exactInputSingle",
     values: [
       {
         tokenIn: string;
@@ -70,7 +70,7 @@ interface V3SwapRouterInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: 'exactOutput',
+    functionFragment: "exactOutput",
     values: [
       {
         path: BytesLike;
@@ -81,7 +81,7 @@ interface V3SwapRouterInterface extends ethers.utils.Interface {
     ]
   ): string;
   encodeFunctionData(
-    functionFragment: 'exactOutputSingle',
+    functionFragment: "exactOutputSingle",
     values: [
       {
         tokenIn: string;
@@ -94,76 +94,76 @@ interface V3SwapRouterInterface extends ethers.utils.Interface {
       }
     ]
   ): string;
-  encodeFunctionData(functionFragment: 'factory', values?: undefined): string;
+  encodeFunctionData(functionFragment: "factory", values?: undefined): string;
   encodeFunctionData(
-    functionFragment: 'pull',
+    functionFragment: "pull",
     values: [string, BigNumberish]
   ): string;
-  encodeFunctionData(functionFragment: 'refundETH', values?: undefined): string;
+  encodeFunctionData(functionFragment: "refundETH", values?: undefined): string;
   encodeFunctionData(
-    functionFragment: 'sweepToken',
+    functionFragment: "sweepToken",
     values: [string, BigNumberish, string]
   ): string;
   encodeFunctionData(
-    functionFragment: 'sweepTokenWithFee',
+    functionFragment: "sweepTokenWithFee",
     values: [string, BigNumberish, BigNumberish, string]
   ): string;
   encodeFunctionData(
-    functionFragment: 'uniswapV3SwapCallback',
+    functionFragment: "uniswapV3SwapCallback",
     values: [BigNumberish, BigNumberish, BytesLike]
   ): string;
   encodeFunctionData(
-    functionFragment: 'unwrapWETH9',
+    functionFragment: "unwrapWETH9",
     values: [BigNumberish, string]
   ): string;
   encodeFunctionData(
-    functionFragment: 'unwrapWETH9WithFee',
+    functionFragment: "unwrapWETH9WithFee",
     values: [BigNumberish, string, BigNumberish, string]
   ): string;
   encodeFunctionData(
-    functionFragment: 'wrapETH',
+    functionFragment: "wrapETH",
     values: [BigNumberish]
   ): string;
 
-  decodeFunctionResult(functionFragment: 'WETH9', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "WETH9", data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: 'checkOracleSlippage',
+    functionFragment: "checkOracleSlippage",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: 'exactInput', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "exactInput", data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: 'exactInputSingle',
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: 'exactOutput',
+    functionFragment: "exactInputSingle",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'exactOutputSingle',
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: 'factory', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'pull', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'refundETH', data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: 'sweepToken', data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: 'sweepTokenWithFee',
+    functionFragment: "exactOutput",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'uniswapV3SwapCallback',
+    functionFragment: "exactOutputSingle",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(functionFragment: "factory", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "pull", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "refundETH", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "sweepToken", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "sweepTokenWithFee",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'unwrapWETH9',
+    functionFragment: "uniswapV3SwapCallback",
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: 'unwrapWETH9WithFee',
+    functionFragment: "unwrapWETH9",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: 'wrapETH', data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: "unwrapWETH9WithFee",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(functionFragment: "wrapETH", data: BytesLike): Result;
 
   events: {};
 }
@@ -214,7 +214,7 @@ export class V3SwapRouter extends BaseContract {
   functions: {
     WETH9(overrides?: CallOverrides): Promise<[string]>;
 
-    'checkOracleSlippage(bytes[],uint128[],uint24,uint32)'(
+    "checkOracleSlippage(bytes[],uint128[],uint24,uint32)"(
       paths: BytesLike[],
       amounts: BigNumberish[],
       maximumTickDivergence: BigNumberish,
@@ -222,7 +222,7 @@ export class V3SwapRouter extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[void]>;
 
-    'checkOracleSlippage(bytes,uint24,uint32)'(
+    "checkOracleSlippage(bytes,uint24,uint32)"(
       path: BytesLike,
       maximumTickDivergence: BigNumberish,
       secondsAgo: BigNumberish,
@@ -287,20 +287,20 @@ export class V3SwapRouter extends BaseContract {
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    'sweepToken(address,uint256,address)'(
+    "sweepToken(address,uint256,address)"(
       token: string,
       amountMinimum: BigNumberish,
       recipient: string,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    'sweepToken(address,uint256)'(
+    "sweepToken(address,uint256)"(
       token: string,
       amountMinimum: BigNumberish,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    'sweepTokenWithFee(address,uint256,uint256,address)'(
+    "sweepTokenWithFee(address,uint256,uint256,address)"(
       token: string,
       amountMinimum: BigNumberish,
       feeBips: BigNumberish,
@@ -308,7 +308,7 @@ export class V3SwapRouter extends BaseContract {
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    'sweepTokenWithFee(address,uint256,address,uint256,address)'(
+    "sweepTokenWithFee(address,uint256,address,uint256,address)"(
       token: string,
       amountMinimum: BigNumberish,
       recipient: string,
@@ -324,18 +324,18 @@ export class V3SwapRouter extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    'unwrapWETH9(uint256,address)'(
+    "unwrapWETH9(uint256,address)"(
       amountMinimum: BigNumberish,
       recipient: string,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    'unwrapWETH9(uint256)'(
+    "unwrapWETH9(uint256)"(
       amountMinimum: BigNumberish,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    'unwrapWETH9WithFee(uint256,address,uint256,address)'(
+    "unwrapWETH9WithFee(uint256,address,uint256,address)"(
       amountMinimum: BigNumberish,
       recipient: string,
       feeBips: BigNumberish,
@@ -343,7 +343,7 @@ export class V3SwapRouter extends BaseContract {
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    'unwrapWETH9WithFee(uint256,uint256,address)'(
+    "unwrapWETH9WithFee(uint256,uint256,address)"(
       amountMinimum: BigNumberish,
       feeBips: BigNumberish,
       feeRecipient: string,
@@ -358,7 +358,7 @@ export class V3SwapRouter extends BaseContract {
 
   WETH9(overrides?: CallOverrides): Promise<string>;
 
-  'checkOracleSlippage(bytes[],uint128[],uint24,uint32)'(
+  "checkOracleSlippage(bytes[],uint128[],uint24,uint32)"(
     paths: BytesLike[],
     amounts: BigNumberish[],
     maximumTickDivergence: BigNumberish,
@@ -366,7 +366,7 @@ export class V3SwapRouter extends BaseContract {
     overrides?: CallOverrides
   ): Promise<void>;
 
-  'checkOracleSlippage(bytes,uint24,uint32)'(
+  "checkOracleSlippage(bytes,uint24,uint32)"(
     path: BytesLike,
     maximumTickDivergence: BigNumberish,
     secondsAgo: BigNumberish,
@@ -431,20 +431,20 @@ export class V3SwapRouter extends BaseContract {
     overrides?: PayableOverrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  'sweepToken(address,uint256,address)'(
+  "sweepToken(address,uint256,address)"(
     token: string,
     amountMinimum: BigNumberish,
     recipient: string,
     overrides?: PayableOverrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  'sweepToken(address,uint256)'(
+  "sweepToken(address,uint256)"(
     token: string,
     amountMinimum: BigNumberish,
     overrides?: PayableOverrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  'sweepTokenWithFee(address,uint256,uint256,address)'(
+  "sweepTokenWithFee(address,uint256,uint256,address)"(
     token: string,
     amountMinimum: BigNumberish,
     feeBips: BigNumberish,
@@ -452,7 +452,7 @@ export class V3SwapRouter extends BaseContract {
     overrides?: PayableOverrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  'sweepTokenWithFee(address,uint256,address,uint256,address)'(
+  "sweepTokenWithFee(address,uint256,address,uint256,address)"(
     token: string,
     amountMinimum: BigNumberish,
     recipient: string,
@@ -468,18 +468,18 @@ export class V3SwapRouter extends BaseContract {
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  'unwrapWETH9(uint256,address)'(
+  "unwrapWETH9(uint256,address)"(
     amountMinimum: BigNumberish,
     recipient: string,
     overrides?: PayableOverrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  'unwrapWETH9(uint256)'(
+  "unwrapWETH9(uint256)"(
     amountMinimum: BigNumberish,
     overrides?: PayableOverrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  'unwrapWETH9WithFee(uint256,address,uint256,address)'(
+  "unwrapWETH9WithFee(uint256,address,uint256,address)"(
     amountMinimum: BigNumberish,
     recipient: string,
     feeBips: BigNumberish,
@@ -487,7 +487,7 @@ export class V3SwapRouter extends BaseContract {
     overrides?: PayableOverrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  'unwrapWETH9WithFee(uint256,uint256,address)'(
+  "unwrapWETH9WithFee(uint256,uint256,address)"(
     amountMinimum: BigNumberish,
     feeBips: BigNumberish,
     feeRecipient: string,
@@ -502,7 +502,7 @@ export class V3SwapRouter extends BaseContract {
   callStatic: {
     WETH9(overrides?: CallOverrides): Promise<string>;
 
-    'checkOracleSlippage(bytes[],uint128[],uint24,uint32)'(
+    "checkOracleSlippage(bytes[],uint128[],uint24,uint32)"(
       paths: BytesLike[],
       amounts: BigNumberish[],
       maximumTickDivergence: BigNumberish,
@@ -510,7 +510,7 @@ export class V3SwapRouter extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    'checkOracleSlippage(bytes,uint24,uint32)'(
+    "checkOracleSlippage(bytes,uint24,uint32)"(
       path: BytesLike,
       maximumTickDivergence: BigNumberish,
       secondsAgo: BigNumberish,
@@ -573,20 +573,20 @@ export class V3SwapRouter extends BaseContract {
 
     refundETH(overrides?: CallOverrides): Promise<void>;
 
-    'sweepToken(address,uint256,address)'(
+    "sweepToken(address,uint256,address)"(
       token: string,
       amountMinimum: BigNumberish,
       recipient: string,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    'sweepToken(address,uint256)'(
+    "sweepToken(address,uint256)"(
       token: string,
       amountMinimum: BigNumberish,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    'sweepTokenWithFee(address,uint256,uint256,address)'(
+    "sweepTokenWithFee(address,uint256,uint256,address)"(
       token: string,
       amountMinimum: BigNumberish,
       feeBips: BigNumberish,
@@ -594,7 +594,7 @@ export class V3SwapRouter extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    'sweepTokenWithFee(address,uint256,address,uint256,address)'(
+    "sweepTokenWithFee(address,uint256,address,uint256,address)"(
       token: string,
       amountMinimum: BigNumberish,
       recipient: string,
@@ -610,18 +610,18 @@ export class V3SwapRouter extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    'unwrapWETH9(uint256,address)'(
+    "unwrapWETH9(uint256,address)"(
       amountMinimum: BigNumberish,
       recipient: string,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    'unwrapWETH9(uint256)'(
+    "unwrapWETH9(uint256)"(
       amountMinimum: BigNumberish,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    'unwrapWETH9WithFee(uint256,address,uint256,address)'(
+    "unwrapWETH9WithFee(uint256,address,uint256,address)"(
       amountMinimum: BigNumberish,
       recipient: string,
       feeBips: BigNumberish,
@@ -629,7 +629,7 @@ export class V3SwapRouter extends BaseContract {
       overrides?: CallOverrides
     ): Promise<void>;
 
-    'unwrapWETH9WithFee(uint256,uint256,address)'(
+    "unwrapWETH9WithFee(uint256,uint256,address)"(
       amountMinimum: BigNumberish,
       feeBips: BigNumberish,
       feeRecipient: string,
@@ -644,7 +644,7 @@ export class V3SwapRouter extends BaseContract {
   estimateGas: {
     WETH9(overrides?: CallOverrides): Promise<BigNumber>;
 
-    'checkOracleSlippage(bytes[],uint128[],uint24,uint32)'(
+    "checkOracleSlippage(bytes[],uint128[],uint24,uint32)"(
       paths: BytesLike[],
       amounts: BigNumberish[],
       maximumTickDivergence: BigNumberish,
@@ -652,7 +652,7 @@ export class V3SwapRouter extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    'checkOracleSlippage(bytes,uint24,uint32)'(
+    "checkOracleSlippage(bytes,uint24,uint32)"(
       path: BytesLike,
       maximumTickDivergence: BigNumberish,
       secondsAgo: BigNumberish,
@@ -717,20 +717,20 @@ export class V3SwapRouter extends BaseContract {
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    'sweepToken(address,uint256,address)'(
+    "sweepToken(address,uint256,address)"(
       token: string,
       amountMinimum: BigNumberish,
       recipient: string,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    'sweepToken(address,uint256)'(
+    "sweepToken(address,uint256)"(
       token: string,
       amountMinimum: BigNumberish,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    'sweepTokenWithFee(address,uint256,uint256,address)'(
+    "sweepTokenWithFee(address,uint256,uint256,address)"(
       token: string,
       amountMinimum: BigNumberish,
       feeBips: BigNumberish,
@@ -738,7 +738,7 @@ export class V3SwapRouter extends BaseContract {
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    'sweepTokenWithFee(address,uint256,address,uint256,address)'(
+    "sweepTokenWithFee(address,uint256,address,uint256,address)"(
       token: string,
       amountMinimum: BigNumberish,
       recipient: string,
@@ -754,18 +754,18 @@ export class V3SwapRouter extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    'unwrapWETH9(uint256,address)'(
+    "unwrapWETH9(uint256,address)"(
       amountMinimum: BigNumberish,
       recipient: string,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    'unwrapWETH9(uint256)'(
+    "unwrapWETH9(uint256)"(
       amountMinimum: BigNumberish,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    'unwrapWETH9WithFee(uint256,address,uint256,address)'(
+    "unwrapWETH9WithFee(uint256,address,uint256,address)"(
       amountMinimum: BigNumberish,
       recipient: string,
       feeBips: BigNumberish,
@@ -773,7 +773,7 @@ export class V3SwapRouter extends BaseContract {
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    'unwrapWETH9WithFee(uint256,uint256,address)'(
+    "unwrapWETH9WithFee(uint256,uint256,address)"(
       amountMinimum: BigNumberish,
       feeBips: BigNumberish,
       feeRecipient: string,
@@ -789,7 +789,7 @@ export class V3SwapRouter extends BaseContract {
   populateTransaction: {
     WETH9(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    'checkOracleSlippage(bytes[],uint128[],uint24,uint32)'(
+    "checkOracleSlippage(bytes[],uint128[],uint24,uint32)"(
       paths: BytesLike[],
       amounts: BigNumberish[],
       maximumTickDivergence: BigNumberish,
@@ -797,7 +797,7 @@ export class V3SwapRouter extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    'checkOracleSlippage(bytes,uint24,uint32)'(
+    "checkOracleSlippage(bytes,uint24,uint32)"(
       path: BytesLike,
       maximumTickDivergence: BigNumberish,
       secondsAgo: BigNumberish,
@@ -862,20 +862,20 @@ export class V3SwapRouter extends BaseContract {
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
-    'sweepToken(address,uint256,address)'(
+    "sweepToken(address,uint256,address)"(
       token: string,
       amountMinimum: BigNumberish,
       recipient: string,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
-    'sweepToken(address,uint256)'(
+    "sweepToken(address,uint256)"(
       token: string,
       amountMinimum: BigNumberish,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
-    'sweepTokenWithFee(address,uint256,uint256,address)'(
+    "sweepTokenWithFee(address,uint256,uint256,address)"(
       token: string,
       amountMinimum: BigNumberish,
       feeBips: BigNumberish,
@@ -883,7 +883,7 @@ export class V3SwapRouter extends BaseContract {
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
-    'sweepTokenWithFee(address,uint256,address,uint256,address)'(
+    "sweepTokenWithFee(address,uint256,address,uint256,address)"(
       token: string,
       amountMinimum: BigNumberish,
       recipient: string,
@@ -899,18 +899,18 @@ export class V3SwapRouter extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
-    'unwrapWETH9(uint256,address)'(
+    "unwrapWETH9(uint256,address)"(
       amountMinimum: BigNumberish,
       recipient: string,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
-    'unwrapWETH9(uint256)'(
+    "unwrapWETH9(uint256)"(
       amountMinimum: BigNumberish,
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
-    'unwrapWETH9WithFee(uint256,address,uint256,address)'(
+    "unwrapWETH9WithFee(uint256,address,uint256,address)"(
       amountMinimum: BigNumberish,
       recipient: string,
       feeBips: BigNumberish,
@@ -918,7 +918,7 @@ export class V3SwapRouter extends BaseContract {
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
-    'unwrapWETH9WithFee(uint256,uint256,address)'(
+    "unwrapWETH9WithFee(uint256,uint256,address)"(
       amountMinimum: BigNumberish,
       feeBips: BigNumberish,
       feeRecipient: string,
