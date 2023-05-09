@@ -17,10 +17,14 @@ export const BASE_SWAP_COST = (id: ChainId): BigNumber => {
     case ChainId.OPTIMISTIC_KOVAN:
     case ChainId.BSC:
     case ChainId.KOVAN:
+    case ChainId.ZKSYNC:
       return BigNumber.from(2000);
     case ChainId.ARBITRUM_ONE:
     case ChainId.ARBITRUM_RINKEBY:
     case ChainId.ARBITRUM_GOERLI:
+    case ChainId.FANTOM:
+    case ChainId.AVAX:
+    case ChainId.CANTO:
       return BigNumber.from(5000);
     case ChainId.POLYGON:
     case ChainId.POLYGON_MUMBAI:
@@ -45,6 +49,7 @@ export const COST_PER_INIT_TICK = (id: ChainId): BigNumber => {
     case ChainId.GÖRLI:
     case ChainId.BSC:
     case ChainId.KOVAN:
+    case ChainId.ZKSYNC:
       return BigNumber.from(31000);
     case ChainId.OPTIMISM:
     case ChainId.OPTIMISM_GOERLI:
@@ -63,6 +68,10 @@ export const COST_PER_INIT_TICK = (id: ChainId): BigNumber => {
     case ChainId.GNOSIS:
       return BigNumber.from(31000);
     case ChainId.MOONBEAM:
+    case ChainId.FANTOM:
+    case ChainId.AVAX:
+    case ChainId.CANTO:
+    case ChainId.ZKSYNC:
       return BigNumber.from(31000);
   }
 };
@@ -92,6 +101,11 @@ export const COST_PER_HOP = (id: ChainId): BigNumber => {
     case ChainId.GNOSIS:
       return BigNumber.from(80000);
     case ChainId.MOONBEAM:
+    case ChainId.FANTOM:
+    case ChainId.AVAX:
+    case ChainId.CANTO:
+    case ChainId.ZKSYNC:
+
       return BigNumber.from(80000);
   }
 };

@@ -17,6 +17,10 @@ export enum ChainId {
   CELO = 42220,
   CELO_ALFAJORES = 44787,
   GNOSIS = 100,
+  FANTOM = 250,
+  CANTO = 7700,
+  ZKSYNC = 324,
+  AVAX = 43114,
   MOONBEAM = 1284,
   BSC = 56,
 }
@@ -39,6 +43,8 @@ export const SUPPORTED_CHAINS: ChainId[] = [
   ChainId.CELO_ALFAJORES,
   ChainId.CELO,
   ChainId.BSC,
+  ChainId.FANTOM,
+  ChainId.CANTO,
   // Gnosis and Moonbeam don't yet have contracts deployed yet
 ];
 
@@ -48,6 +54,8 @@ export const V2_SUPPORTED = [
   ChainId.GÖRLI,
   ChainId.RINKEBY,
   ChainId.ROPSTEN,
+  ChainId.FANTOM,
+  ChainId.CANTO
 ];
 
 export const HAS_L1_FEE = [
@@ -57,6 +65,7 @@ export const HAS_L1_FEE = [
   ChainId.ARBITRUM_ONE,
   ChainId.ARBITRUM_RINKEBY,
   ChainId.ARBITRUM_GOERLI,
+  ChainId.ZKSYNC
 ];
 
 export const NETWORKS_WITH_SAME_UNISWAP_ADDRESSES = [
@@ -111,6 +120,12 @@ export const ID_TO_CHAIN_ID = (id: number): ChainId => {
       return ChainId.GNOSIS;
     case 1284:
       return ChainId.MOONBEAM;
+    case 250:
+      return ChainId.FANTOM;
+    case 7700:
+      return ChainId.CANTO;
+    case 43114:
+      return ChainId.AVAX;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -135,6 +150,9 @@ export enum ChainName {
   GNOSIS = 'gnosis-mainnet',
   MOONBEAM = 'moonbeam-mainnet',
   BSC = 'bsc-mainnet',
+  FANTOM = "fantom-opera",
+  CANTO = "canto",
+  ZKSYNC = "zksync-era",
 }
 
 export enum NativeCurrencyName {
@@ -145,6 +163,7 @@ export enum NativeCurrencyName {
   GNOSIS = 'XDAI',
   MOONBEAM = 'GLMR',
   BNB = 'BNB',
+  FANTOM = 'FTM',
 }
 export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
   [ChainId.MAINNET]: [
@@ -208,6 +227,8 @@ export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
     '0x0000000000000000000000000000000000001010',
   ],
   [ChainId.CELO]: ['CELO'],
+  [ChainId.FANTOM]: ['FTM'],
+  [ChainId.CANTO]: ['CANTO'],
   [ChainId.CELO_ALFAJORES]: ['CELO'],
   [ChainId.GNOSIS]: ['XDAI'],
   [ChainId.MOONBEAM]: ['GLMR'],
@@ -233,6 +254,7 @@ export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
   [ChainId.GNOSIS]: NativeCurrencyName.GNOSIS,
   [ChainId.MOONBEAM]: NativeCurrencyName.MOONBEAM,
   [ChainId.BSC]: NativeCurrencyName.BNB,
+  [ChainId.FANTOM]: NativeCurrencyName.FANTOM,
 };
 
 export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
@@ -273,6 +295,10 @@ export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
       return ChainName.GNOSIS;
     case 1284:
       return ChainName.MOONBEAM;
+    case 250:
+      return ChainName.FANTOM;
+    case 7700:
+      return ChainName.CANTO;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -450,6 +476,10 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId in ChainId]: Token } = {
     'WGLMR',
     'Wrapped GLMR'
   ),
+  [ChainId.FANTOM]: new Token(ChainId.FANTOM, "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83", 18, "WFTM", "Wrapped Fantom"),
+  [ChainId.CANTO]: new Token(ChainId.CANTO, "0x826551890Dc65655a0Aceca109aB11AbDbD7a07B", 18, "WCANTO", "Wrapped Canto"),
+  [ChainId.ZKSYNC]: new Token(ChainId.ZKSYNC, "0x8Ebe4A94740515945ad826238Fc4D56c6B8b0e60", 18, "WETH", "Wrapped Eth on ZKSYNC"),
+  [ChainId.AVAX]: new Token(ChainId.AVAX, "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7", 18, "WAVAX", "Wrapped Avalanche")
 };
 
 function isMatic(

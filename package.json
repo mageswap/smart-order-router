@@ -1,13 +1,13 @@
 {
   "name": "@magewap/smart-order-router",
   "version": "3.11.2",
-  "description": "Uniswap Smart Order Router",
+  "description": "Mageswap Smart Order Router",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
   "module": "build/module/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Uniswap/smart-order-router.git"
+    "url": "https://github.com/mageswap/smart-order-router.git"
   },
   "license": "GPL",
   "keywords": [],

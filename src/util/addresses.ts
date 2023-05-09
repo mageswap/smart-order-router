@@ -115,6 +115,9 @@ export const WETH9: {
     | ChainId.GNOSIS
     | ChainId.MOONBEAM
     | ChainId.BSC
+    | ChainId.FANTOM
+    | ChainId.CANTO
+    | ChainId.AVAX
   >]: Token;
 } = {
   [ChainId.MAINNET]: new Token(
@@ -189,6 +192,14 @@ export const WETH9: {
   ),
   [ChainId.ARBITRUM_GOERLI]: new Token(
     ChainId.ARBITRUM_GOERLI,
+    '0xe39Ab88f8A4777030A534146A9Ca3B52bd5D43A3',
+    18,
+    'WETH',
+    'Wrapped Ether'
+  ),
+
+  [ChainId.ZKSYNC]: new Token(
+    ChainId.ZKSYNC,
     '0xe39Ab88f8A4777030A534146A9Ca3B52bd5D43A3',
     18,
     'WETH',

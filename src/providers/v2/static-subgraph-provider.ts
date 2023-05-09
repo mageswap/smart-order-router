@@ -8,6 +8,7 @@ import {
   DAI_MAINNET,
   DAI_RINKEBY_1,
   DAI_RINKEBY_2,
+  USDC_FANTOM,
   USDC_MAINNET,
   USDT_MAINNET,
   WBTC_MAINNET,
@@ -20,6 +21,17 @@ type ChainTokenList = {
 };
 
 const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
+  [ChainId.FANTOM]: [
+    WRAPPED_NATIVE_CURRENCY[ChainId.FANTOM],
+    USDC_FANTOM
+  ],
+  [ChainId.AVAX]: [
+    WRAPPED_NATIVE_CURRENCY[ChainId.AVAX]
+  ],
+  [ChainId.ZKSYNC]: [WRAPPED_NATIVE_CURRENCY[ChainId.ZKSYNC]],
+  [ChainId.CANTO]: [
+    WRAPPED_NATIVE_CURRENCY[ChainId.CANTO]
+  ],
   [ChainId.MAINNET]: [
     WRAPPED_NATIVE_CURRENCY[ChainId.MAINNET]!,
     DAI_MAINNET,
@@ -64,7 +76,7 @@ const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
  * @class StaticV2SubgraphProvider
  */
 export class StaticV2SubgraphProvider implements IV2SubgraphProvider {
-  constructor(private chainId: ChainId) {}
+  constructor(private chainId: ChainId) { }
 
   public async getPools(
     tokenIn?: Token,
