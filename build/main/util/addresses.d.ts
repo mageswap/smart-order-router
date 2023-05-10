@@ -1,5 +1,6 @@
 import { Token } from '@mageswap/sdk-core';
 import { ChainId } from './chains';
+export declare const FANTOM_TICK_LENS_ADDRESS = "0x6d984a92610af26Bc127C86E657d032a7e3b0f86";
 export declare const BSC_TICK_LENS_ADDRESS = "0xD9270014D396281579760619CCf4c3af0501A47C";
 export declare const BSC_NONFUNGIBLE_POSITION_MANAGER_ADDRESS = "0x7b8A01B39D58278b5DE7e48c8449c9f4F5170613";
 export declare const BSC_SWAP_ROUTER_02_ADDRESS = "0xB971eF87ede563556b2ED4b1C0b0019111Dd85d2";
@@ -8,7 +9,7 @@ export declare const V3_CORE_FACTORY_ADDRESSES: AddressMap;
 export declare const QUOTER_V2_ADDRESSES: AddressMap;
 export declare const MIXED_ROUTE_QUOTER_V1_ADDRESSES: AddressMap;
 export declare const UNISWAP_MULTICALL_ADDRESSES: AddressMap;
-export declare const SWAP_ROUTER_02_ADDRESSES: (chainId: number) => "0xB971eF87ede563556b2ED4b1C0b0019111Dd85d2" | "0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45";
+export declare const SWAP_ROUTER_02_ADDRESSES: (chainId: number) => "0xaf8f29c1454D57C9903a72abF54A5f1d4A1Afc7A" | "0xB971eF87ede563556b2ED4b1C0b0019111Dd85d2" | "0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45";
 export declare const OVM_GASPRICE_ADDRESS = "0x420000000000000000000000000000000000000F";
 export declare const ARB_GASINFO_ADDRESS = "0x000000000000000000000000000000000000006C";
 export declare const TICK_LENS_ADDRESS = "0xbfd8137f7d1516D3ea5cA83523914859ec47F573";
@@ -22,5 +23,5 @@ export declare function constructSameAddressMap<T extends string>(address: T, ad
     [chainId: number]: T;
 };
 export declare const WETH9: {
-    [chainId in Exclude<ChainId, ChainId.POLYGON | ChainId.POLYGON_MUMBAI | ChainId.CELO | ChainId.CELO_ALFAJORES | ChainId.GNOSIS | ChainId.MOONBEAM | ChainId.BSC>]: Token;
+    [chainId in Exclude<ChainId, ChainId.POLYGON | ChainId.POLYGON_MUMBAI | ChainId.CELO | ChainId.CELO_ALFAJORES | ChainId.GNOSIS | ChainId.MOONBEAM | ChainId.BSC | ChainId.FANTOM | ChainId.CANTO | ChainId.AVAX>]: Token;
 };
