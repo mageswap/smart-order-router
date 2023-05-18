@@ -8,6 +8,7 @@ import {
   DAI_MAINNET,
   ITokenProvider,
   USDC_BSC,
+  USDC_FANTOM,
   USDC_MAINNET,
   USDT_BSC,
   USDT_MAINNET,
@@ -64,6 +65,7 @@ export const BASES_TO_CHECK_TRADES_AGAINST = (
       USDT_BSC,
       BTC_BSC,
     ],
+    [ChainId.FANTOM]: [WRAPPED_NATIVE_CURRENCY[ChainId.FANTOM]!, USDC_FANTOM],
   };
 };
 

@@ -115,6 +115,7 @@ export const WETH9: {
     | ChainId.GNOSIS
     | ChainId.MOONBEAM
     | ChainId.BSC
+    | ChainId.FANTOM
   >]: Token;
 } = {
   [ChainId.MAINNET]: new Token(

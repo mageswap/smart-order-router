@@ -5,6 +5,7 @@ yalc.lock
 node_modules
 src/**.js
 coverage
+dist/
 *.log
 yarn.lock
 .env

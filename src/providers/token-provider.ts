@@ -489,6 +489,14 @@ export const USDC_BSC = new Token(
   'USDC'
 );
 
+export const USDC_FANTOM = new Token(
+  ChainId.FANTOM,
+  '0x04068DA6C83AFCFA0e13ba15A6696662335D5B75',
+  18,
+  'USDC',
+  'USDC'
+);
+
 export const USDT_BSC = new Token(
   ChainId.BSC,
   '0x55d398326f99059fF775485246999027B3197955',

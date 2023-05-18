@@ -17,6 +17,7 @@ export declare enum ChainId {
     CELO_ALFAJORES = 44787,
     GNOSIS = 100,
     MOONBEAM = 1284,
+    FANTOM = 250,
     BSC = 56
 }
 export declare const SUPPORTED_CHAINS: ChainId[];

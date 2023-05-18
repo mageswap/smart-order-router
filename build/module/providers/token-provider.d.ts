@@ -82,6 +82,7 @@ export declare const BUSD_BSC: Token;
 export declare const DAI_BSC: Token;
 export declare const ETH_BSC: Token;
 export declare const USDC_BSC: Token;
+export declare const USDC_FANTOM: Token;
 export declare const USDT_BSC: Token;
 export declare const CELO: Token;
 export declare const DAI_CELO: Token;
