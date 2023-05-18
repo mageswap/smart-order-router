@@ -92,3 +92,5 @@ export const DEFAULT_ROUTING_CONFIG_BY_CHAIN = (
 };
 export const ETH_GAS_STATION_API_URL =
   'https://ethgasstation.info/api/ethgasAPI.json';
+  
+export const FANTOM_GAS_STATION_API_URL = "https://api.owlracle.info/v4/fantom/gas?apikey=216c86822d93442eaaaebead349447d1"
