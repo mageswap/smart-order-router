@@ -16,10 +16,6 @@ export declare enum ChainId {
     CELO = 42220,
     CELO_ALFAJORES = 44787,
     GNOSIS = 100,
-    FANTOM = 250,
-    CANTO = 7700,
-    ZKSYNC = 324,
-    AVAX = 43114,
     MOONBEAM = 1284,
     FANTOM = 250,
     BSC = 56
@@ -48,9 +44,7 @@ export declare enum ChainName {
     GNOSIS = "gnosis-mainnet",
     MOONBEAM = "moonbeam-mainnet",
     BSC = "bsc-mainnet",
-    FANTOM = "fantom-opera",
-    CANTO = "canto",
-    ZKSYNC = "zksync-era"
+    FANTOM = "fantom"
 }
 export declare enum NativeCurrencyName {
     ETHER = "ETH",

@@ -112,6 +112,8 @@ export const ID_TO_CHAIN_ID = (id: number): ChainId => {
       return ChainId.GNOSIS;
     case 1284:
       return ChainId.MOONBEAM;
+    case 250:
+      return ChainId.FANTOM;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -136,6 +138,7 @@ export enum ChainName {
   GNOSIS = 'gnosis-mainnet',
   MOONBEAM = 'moonbeam-mainnet',
   BSC = 'bsc-mainnet',
+  FANTOM = 'fantom',
 }
 
 export enum NativeCurrencyName {
@@ -146,6 +149,7 @@ export enum NativeCurrencyName {
   GNOSIS = 'XDAI',
   MOONBEAM = 'GLMR',
   BNB = 'BNB',
+  FANTOM = 'FTM',
 }
 export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
   [ChainId.MAINNET]: [
@@ -213,6 +217,11 @@ export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
   [ChainId.GNOSIS]: ['XDAI'],
   [ChainId.MOONBEAM]: ['GLMR'],
   [ChainId.BSC]: ['BNB', 'BNB', '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'],
+  [ChainId.FANTOM]: [
+    'FTM',
+    'FTM',
+    '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+  ],
 };
 
 export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
@@ -234,6 +243,7 @@ export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
   [ChainId.GNOSIS]: NativeCurrencyName.GNOSIS,
   [ChainId.MOONBEAM]: NativeCurrencyName.MOONBEAM,
   [ChainId.BSC]: NativeCurrencyName.BNB,
+  [ChainId.FANTOM]: NativeCurrencyName.FANTOM,
 };
 
 export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
@@ -274,6 +284,8 @@ export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
       return ChainName.GNOSIS;
     case 1284:
       return ChainName.MOONBEAM;
+    case 250:
+      return ChainName.FANTOM;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -317,6 +329,8 @@ export const ID_TO_PROVIDER = (id: ChainId): string => {
       return process.env.JSON_RPC_PROVIDER_CELO_ALFAJORES!;
     case ChainId.BSC:
       return process.env.JSON_RPC_PROVIDER_BSC!;
+    case ChainId.FANTOM:
+      return process.env.JSON_RPC_PROVIDER_FANTOM!;
     default:
       throw new Error(`Chain id: ${id} not supported`);
   }
