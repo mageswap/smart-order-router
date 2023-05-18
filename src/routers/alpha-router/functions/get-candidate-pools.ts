@@ -32,6 +32,7 @@ import {
   USDC_ARBITRUM_GOERLI,
   USDC_BSC,
   USDC_ETHEREUM_GNOSIS,
+  USDC_FANTOM,
   USDC_MAINNET,
   USDC_MOONBEAM,
   USDC_OPTIMISM,
@@ -184,6 +185,7 @@ const baseTokensByChain: { [chainId in ChainId]?: Token[] } = {
     WGLMR_MOONBEAM,
   ],
   [ChainId.BSC]: [DAI_BSC, USDC_BSC, USDT_BSC],
+  [ChainId.FANTOM]: [USDC_FANTOM, WRAPPED_NATIVE_CURRENCY[250]!],
 };
 
 export async function getV3CandidatePools({

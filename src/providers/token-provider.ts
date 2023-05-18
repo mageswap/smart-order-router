@@ -465,7 +465,6 @@ export const BUSD_BSC = new Token(
   'BUSD'
 );
 
-
 export const DAI_BSC = new Token(
   ChainId.BSC,
   '0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3',
@@ -485,14 +484,6 @@ export const ETH_BSC = new Token(
 export const USDC_BSC = new Token(
   ChainId.BSC,
   '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
-  18,
-  'USDC',
-  'USDC'
-);
-
-export const USDC_FANTOM = new Token(
-  ChainId.FANTOM,
-  '0x04068DA6C83AFCFA0e13ba15A6696662335D5B75',
   18,
   'USDC',
   'USDC'
@@ -637,12 +628,11 @@ export const USDC_FANTOM = new Token(
   'USDC'
 );
 
-
 export class TokenProvider implements ITokenProvider {
   constructor(
     private chainId: ChainId,
     protected multicall2Provider: IMulticallProvider
-  ) { }
+  ) {}
 
   public async getTokens(
     _addresses: string[],
@@ -712,8 +702,10 @@ export class TokenProvider implements ITokenProvider {
       }
 
       log.info(
-        `Got token symbol and decimals for ${Object.values(addressToToken).length
-        } out of ${addresses.length} tokens on-chain ${providerConfig ? `as of: ${providerConfig?.blockNumber}` : ''
+        `Got token symbol and decimals for ${
+          Object.values(addressToToken).length
+        } out of ${addresses.length} tokens on-chain ${
+          providerConfig ? `as of: ${providerConfig?.blockNumber}` : ''
         }`
       );
     }

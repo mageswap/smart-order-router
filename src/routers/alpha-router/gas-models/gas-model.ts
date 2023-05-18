@@ -21,6 +21,7 @@ import {
   USDC_ARBITRUM_GOERLI,
   USDC_BSC,
   USDC_ETHEREUM_GNOSIS,
+  USDC_FANTOM,
   USDC_GÖRLI,
   USDC_KOVAN,
   USDC_MAINNET,
@@ -85,6 +86,7 @@ export const usdGasTokensByChain: { [chainId in ChainId]?: Token[] } = {
   [ChainId.GNOSIS]: [USDC_ETHEREUM_GNOSIS],
   [ChainId.MOONBEAM]: [USDC_MOONBEAM],
   [ChainId.BSC]: [USDT_BSC, USDC_BSC, DAI_BSC],
+  [ChainId.FANTOM]: [USDC_FANTOM],
 };
 
 export type L1ToL2GasCosts = {
